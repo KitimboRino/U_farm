@@ -1,53 +1,53 @@
-extends layout
-block content
-    header.card-header
-        h4.card-title Welcome 
-    |&nbsp
-    div.form-row
-        div.col.form-group.col-md-10    
-            form.search(action='/uFarmList')
-                div.form-row
-                    div.col-md-8
-                        input.form-control(name='gender' placeholder="Enter your search term(gender) ...")
-                    div.col-md-4
-                        input.btn.btn-dark.btn-block(type="submit")
-    table.table
-        thead.thead-dark
-            tr
-                th firstName
-                th lastName
-                th userName
-                th Gender
-                th dateOfbirth
-                th nin
-                th Phone
-                th Ward
-                th id
-                th activities
-                th dateOfReg
-                th
-                th 
-        tbody
-            if users.length
-            each user in users
-                tr
-                    td #{user.firstname}
-                    td #{user.lastname}
-                    td #{user.username}
-                    td #{user.gender}
-                    td #{user.dateBirth}
-                    td #{user.nin}
-                    td #{user.phone}
-                    td #{user.ward}
-                    td #{user.id}
-                    td #{user.activities}
-                    td #{user.dateOfReg}
-                    td
-                    td
-                        a(href='/update/'+user._id) Update
-                    //- td
-                        //- form(method="post" action='/delete')
-                        //-     input(type="hidden", placeholder="", name="id", value=user._id)
-                        //-     button.btn.btn-dark.btn-block(type="submit") Delete
-            else
-                p No registrations yet :(
+//- extends layout
+//- block content
+//-     header.card-header
+//-         h4.card-title Welcome 
+//-     |&nbsp
+//-     div.form-row
+//-         div.col.form-group.col-md-10    
+//-             form.search(action='/uFarmList')
+//-                 div.form-row
+//-                     div.col-md-8
+//-                         input.form-control(name='gender' placeholder="Enter your search term(gender) ...")
+//-                     div.col-md-4
+//-                         input.btn.btn-dark.btn-block(type="submit")
+//-     table.table
+//-         thead.thead-dark
+//-             tr
+//-                 th firstName
+//-                 th lastName
+//-                 th userName
+//-                 th Gender
+//-                 th dateOfbirth
+//-                 th nin
+//-                 th Phone
+//-                 th Ward
+//-                 th id
+//-                 th activities
+//-                 th dateOfReg
+//-                 th
+//-                 th 
+//-         tbody
+//-             if users.length
+//-             each user in users
+//-                 tr
+//-                     td #{user.firstname}
+//-                     td #{user.lastname}
+//-                     td #{user.username}
+//-                     td #{user.gender}
+//-                     td #{user.dateBirth}
+//-                     td #{user.nin}
+//-                     td #{user.phone}
+//-                     td #{user.ward}
+//-                     td #{user.id}
+//-                     td #{user.activities}
+//-                     td #{user.dateOfReg}
+//-                     td
+//-                     td
+//-                         a(href='/update/'+user._id) Update
+//-                     //- td
+//-                         //- form(method="post" action='/delete')
+//-                         //-     input(type="hidden", placeholder="", name="id", value=user._id)
+//-                         //-     button.btn.btn-dark.btn-block(type="submit") Delete
+//-             else
+//-                 p No registrations yet :(
