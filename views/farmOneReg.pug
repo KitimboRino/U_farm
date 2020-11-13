@@ -32,6 +32,13 @@ head
       span#usename.text-danger.font-weight-bold.small
 
       // Gender
+      select#gender.form-control(name='Role')
+        option(value='default' selected='' disabled='') Gender
+        option(value='farmerone') Male
+        option(value='urbanfarmer') Female
+      span#gend.text-danger.font-weight-bold.small
+
+      // Gender
       select#gender.form-control(name='gender')
         option(value='default' selected='' disabled='') Gender
         option(value='Male') Male
