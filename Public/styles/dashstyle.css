@@ -1,0 +1,18 @@
+.bg-gradient-primary {
+  background-color: #78AB45;
+  background-image: linear-gradient(180deg,#78AB45 10%,#78AB45);
+  background-size: cover;
+}
+
+.btn-primary.focus, .btn-primary:focus, .btn-primary:hover {
+  color: #fff;
+  background-color: #78AB45;
+  border-color: #78AB45;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #78AB45;
+  border-color: #78AB45;
+}
+

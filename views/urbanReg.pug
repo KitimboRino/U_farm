@@ -1,0 +1,86 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Urban Farmer Registration
+  link(rel='stylesheet' href='bootstrap/css/bootstrap.min.css')
+  link(rel='stylesheet' href='bootstrap/css/bs/bootstrap.min.css')
+  link(rel='stylesheet' href='styles/uFarmstyle.css')
+  title Document
+.uFamerReg
+  h2
+    |Urban Farmer Registration
+  form(role='form' name='uForm' method='POST' action='/urbanFReg' )
+    fieldset
+
+      legend
+        b Personal information
+      
+      //- first name
+      input.form-control(type='text' id='' name='firstname' placeholder='firstName')
+      span#fname.text-danger.font-weight-bold.small
+
+      //- last name
+      input.form-control(type='text' id='' name='lastname' placeholder='lastname')
+      span#lname.text-danger.font-weight-bold.small
+      
+      //- Username   
+      input.form-control(type='text' id='' name='username' placeholder='Username')
+      span#usename.text-danger.font-weight-bold.small
+
+      //- password
+      input.form-control(type='text' id='' name='password' placeholder='pasword')
+      span#pword.text-danger.font-weight-bold.small
+      
+      //- Gender
+      select#gender.form-control
+        option(value='selectGender' name='gender' selected='' disabled='') Gender
+        option(value='1') Male
+        option(value='2') Female
+      span#gend.text-danger.font-weight-bold.small
+    
+      //- Date of birth
+      label
+        | Date of birth
+        input.form-control3(type='date' placeholder='dd-mm-yyyy' name='dateBirth')
+      span#doB.text-danger.font-weight-bold.small
+    
+      //- Nin
+      input.form-control(type='text' name='nin' placeholder='National Identification Number (NIN)')
+      span#niN.text-danger.font-weight-bold.small
+    
+      //- Phone number
+      input.form-control(type='text' placeholder='Phone' name='phone')
+      span#phn.text-danger.font-weight-bold.small
+    fieldset
+      legend
+        b Urban Farmer Information
+    
+      //- Ward
+      select#ward.form-control
+        option(selected='' disabled='' value='selectWard' name='ward') Ward
+        option(value='1') 1
+        option(value='2') 2
+        option(value='3') 3
+        option(value='4') 4
+      span#wd.text-danger.font-weight-bold.small
+    
+      //- Unique Identification
+      input.form-control(type='text' placeholder='Unique Identification (ID)' name='id')
+      span#uiD.text-danger.font-weight-bold.small
+    
+      //- Activities
+      select#activities.form-control
+        option(selected='' disabled='' value='selectAct' name='activities') Activities
+        option(value='Horticultre') Horticulture
+        option(value='Poultry') Poultry
+        option(value='Dairy products') Dairy products
+      span#sAct.text-danger.font-weight-bold.small
+    
+      //-Date of registration
+      label
+        | Date of registration
+        input.form-control2(type='date' placeholder='dd-mm-yyyy' name='dateReg')
+        span#dreg.text-danger.font-weight-bold.small
+    button.btn.btn-primary(type='submit' onclick='uFarm()') Button
+script(src='javascripts/uFarmer.js')

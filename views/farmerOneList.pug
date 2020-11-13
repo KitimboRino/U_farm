@@ -1,0 +1,63 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Welcome #{currentUser.username}
+    |&nbsp
+    div.form-row
+        div.col.form-group.col-md-10    
+            form.search(action='/fOneList')
+                div.form-row
+                    div.col-md-4
+                        input.form-control(name='ward' placeholder="Enter your search term(ward) ...")
+                    div.col-md-3
+                        input.btn.btn-dark.btn-block(type="submit")
+    table.table-responsive-lg.table
+        thead.bg-secondary
+            tr
+                th firstName 
+                th lastName
+                th Username
+                th Gender
+                th DateOfBirth
+                th Nin
+                th Phonenumber
+                th Address
+                th ResidenceType
+                th Ward
+                th FONumber
+                th Activities
+                th PeriodOfStay
+                th DateOfRegistration
+                th 
+                th
+        tbody
+            if users.length
+            each user in users
+                tr
+                    td #{user.firstName}
+                    td #{user.lastName}
+                    td #{user.username}
+                    td #{user.gender}
+                    td #{user.dateOfBirth}
+                    td #{user.nin}
+                    td #{user.phone}
+                    td #{user.address}
+                    td #{user.residenceType}
+                    td #{user.ward}
+                    td #{user.fOnumber}
+                    td #{user.activities}
+                    td #{user.periodOfStay}
+                    td #{user.dateOfReg}
+                    td 
+                    td
+                        a(href='/update/'+user._id) Update
+                    td
+                        form(method="post" action='/delete')
+                            input(type="hidden", placeholder="", name="id", value=user._id)
+                            button.btn.btn-secondary.btn-block(type="submit") Delete
+            else
+                p No registrations yet :(
+    div.form-row
+        div.col-md-2.offset-12
+            form(method="post" action='/logout') 
+                button.btn.btn-dark.btn-block(type="submit") Log out

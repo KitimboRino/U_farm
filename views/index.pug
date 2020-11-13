@@ -1,0 +1,168 @@
+meta(charset="utf-8")
+meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
+title Home - Ufarm
+link(rel="stylesheet", href="bootstrap/css/bootstrap.min.css")
+link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800")
+link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic")
+link(rel="stylesheet", href="bootstrap/fonts/fontawesome-all.min.css")
+link(rel="stylesheet", href="bootstrap/fonts/font-awesome.min.css")
+link(rel="stylesheet", href="bootstrap/fonts/fontawesome5-overrides.min.css")
+link(rel="stylesheet", href="styles/homestyle.css")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css")
+
+//  Nav bar 
+nav.navbar.navbar-light.navbar-expand-lg.fixed-top#mainNav
+  .container
+    button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarResponsive", type="button", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
+      i.fa.fa-align-justify
+    .collapse.navbar-collapse#navbarResponsive
+      img(src="images/logo.png", style="width: 98px; height: 60px; margin: 0px")
+      ul.nav.navbar-nav.ml-auto
+        li.nav-item(role="presentation")
+          a.nav-link.js-scroll-trigger(href="/market") Market
+        li.nav-item(role="presentation")
+          a.nav-link.js-scroll-trigger(href="#services") Services
+        li.nav-item(role="presentation")
+          a.nav-link.js-scroll-trigger(href="/cart") CART
+        li.nav-item(role="presentation")
+          .dropdown
+            a.dropdown-toggle(data-toggle='dropdown', aria-expanded='false', href='#') Sign In 
+              .dropdown-menu(role='menu')
+                a.dropdown-item(role='presentation', href='#') Agric Officer
+                a.dropdown-item(role='presentation', href='/login') Farmer One
+                a.dropdown-item(role='presentation', href='#') Urban Farmer
+                a.dropdown-item(role='presentation', href='#') Customer
+                    
+          //- a.nav-link.js-scroll-trigger(href="/login") Sign-In
+
+
+//  Header. 
+header.masthead.text-center.text-white.d-flex(style="background-image: url('images/banana.png')")
+  .container.my-auto
+    .row
+      .col-lg-10.mx-auto
+        h1.text-uppercase
+          strong(style="color: #ffff")
+            br
+            | FRESH FARM PRODUCE DELIVERED TO YOUR DOOR STEP
+            br
+            br
+        hr
+    .col-lg-8.mx-auto
+      p.text-faded.mb-5(style="color: #ffff")
+        br
+        | We cooperate with more than 100 Urban farmers in Masajja Division providing you with high quality produce
+        br
+      a.btn.btn-primary.btn-xl.js-scroll-trigger(role="button", href="#services", style="background-color: #74b72e") START SHOPPING
+//  About Section. 
+section#about.bg-primary(style="background-color: #78ab45")
+  .container
+    .row
+      .col.offset-lg-8.mx-auto.text-center
+        h2.text-white.section-heading
+          br
+          | We've got all the farm produce you need!
+          br
+        hr.light.my-4
+        p.text-faded.mb-4
+          //  Slogan 
+          br
+          | ORGANIC | FRESH | HEALTHY
+          br
+          br
+        a.btn.btn-light.btn-xl.js-scroll-trigger(role="button", href="/market") Get Started!
+
+//  Services offered Section. 
+section#services
+  .container
+    .row
+      .col-lg-12.text-center
+        h2.section-heading At Your Service
+        hr.my-4
+  .container
+    .row
+      .col-md-6.col-lg-3.text-center
+        .mx-auto.service-box.mt-5
+          i.fa.fa-hand-pointer-o.fa-4x.text-primary.mb-3.sr-icons(data-aos="zoom-in", data-aos-duration="200", data-aos-once="true")
+          h3.mb-3 Select Produce
+          p.text-muted.mb-0.
+            
+            Select from a wide range of agricultural produce  right from the farms
+            
+      .col-md-6.col-lg-4.offset-lg-1.text-center
+        .mx-auto.service-box.mt-5
+          i.fa.fa-mobile-phone.fa-4x.text-primary.mb-3.sr-icons(data-aos="zoom-in", data-aos-duration="200", data-aos-delay="200", data-aos-once="true", style="padding: 0px; width: 72px; margin: 0px 0px 16px; height: 64px;")
+          h3.mb-3 Call and Confirm Order
+          p.text-muted.mb-0
+        p.text-muted.mb-0
+          | Choose to pay via mobile money  or cash-on-delivery
+          br
+          br
+      .col-md-6.col-lg-3.offset-lg-1.text-center
+        .mx-auto.service-box.mt-5
+          i.fas.fa-shopping-cart.fa-4x.text-primary.mb-3.sr-icons(data-aos="fade", data-aos-duration="200", data-aos-delay="600", data-aos-once="true")
+          h3.mb-3 Receive Ordered Produce
+          p.text-muted.mb-0
+            | Produce provided to you at your convenience
+            br
+            br
+
+//  Categories of produces 
+section#portfolio.p-0
+  .container-fluid.p-0
+    .row.no-gutters.popup-gallery
+      //  Horticulture produce 
+      .col-sm-6.col-lg-4
+        a.portfolio-box(href="images/fullsize/horticulture.png")
+          img.img-fluid(src="images/thumbnails/horticulture.png")
+          .portfolio-box-caption
+            .portfolio-box-caption-content
+              .project-name
+                span Horticulture Produce
+      //  Poultry produce 
+      .col-sm-6.col-lg-4
+        a.portfolio-box(href="images/fullsize/poultry.png")
+          img.img-fluid(src="images/thumbnails/poultry.png")
+          .portfolio-box-caption
+            .portfolio-box-caption-content
+              .project-name
+                span Poultry Produce
+      //  Milk produce 
+      .col-sm-6.col-lg-4
+        a.portfolio-box(href="images/fullsize/milk.png")
+          img.img-fluid(src="images/thumbnails/milk.png")
+          .portfolio-box-caption
+            .portfolio-box-caption-content
+              .project-name
+                span Dairy Produce
+
+//  Contact section 
+section#contact
+  .container
+    .row
+      .col-lg-8.mx-auto.text-center
+        h2.section-heading Let's Get In Touch!
+        hr.my-4
+        p.mb-5
+          br
+          | Ready to start buying from our wonderful farmers?, and you have inquiries? That's great! Give us a call or send us an email and we will get back to you as soon as possible!
+          br
+          br
+    .row
+      .col-lg-4.ml-auto.text-center
+        i.fa.fa-phone.fa-3x.mb-3.sr-contact(data-aos="zoom-in", data-aos-duration="300", data-aos-once="true")
+        p +256-7061-44964
+      .col-lg-4.mr-auto.text-center
+        i.fa.fa-envelope-o.fa-3x.mb-3.sr-contact(data-aos="zoom-in", data-aos-duration="300", data-aos-delay="300", data-aos-once="true")
+        p
+          a(href="mailto:your-email@your-domain.com") kitimborino@ufarm.com
+
+//  Scripts links 
+script(src="javascripts/jquery.min.js")
+script(src="bootstrap/js/bootstrap.min.js")
+script(src="javascripts/bs-init.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js")
+script(src="javascripts/creative.js")

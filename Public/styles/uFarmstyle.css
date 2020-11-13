@@ -1,0 +1,59 @@
+/* Removing arrows from number input */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  text-align: center;
+  background: #78AB45;
+}
+
+.uFamerReg {
+  display: inline-block;
+  width: 500px;
+}
+
+form {
+  text-align: justify;
+  width: 500px;
+  padding-left: 35px;
+  background-color: #f6fef6;
+}
+
+fieldset {
+  width: 500px;
+}
+
+input {
+  width: 400px;
+  margin: 5px;
+}
+
+.form-control {
+  width: 400px;
+  margin: 5px;
+}
+
+.form-control2 {
+  width: 259px;
+  margin: 5px;
+}
+
+.form-control3 {
+  width: 306px;
+}
+
+legend {
+  width: 400px;
+}
+
+.btn btn-primary {
+  margin: 5px;
+}
+
+.text-danger {
+  display: block;
+}
+

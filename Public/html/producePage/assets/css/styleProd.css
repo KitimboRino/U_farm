@@ -1,0 +1,15 @@
+.text-info {
+  color: #78AB45;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #78AB45;
+  text-align: left;
+  background-color: #fff;
+}
+

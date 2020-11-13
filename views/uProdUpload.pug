@@ -1,0 +1,85 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Urban famer Upload
+  link(rel='stylesheet' href='bootstrap/css/bootstrap.min.css')
+  link(rel='stylesheet' href='styles/upload.css')
+  title Produce Upload
+.oFamerReg
+  form(role='form' name='oForm' action='/uProdUpload' method='POST')
+    fieldset
+      legend
+        b Farmer produce upload
+      //- Product Name
+      input#username.form-control(type='text' name='userName' placeholder='Produce name')
+      span#usename.text-danger.font-weight-bold.small
+
+      //- Date of upload
+      label
+        b Date of upload
+        input.form-control2(type='text' placeholder='dd-mm-yyyy' name='dateOfUpload')
+      span#dUp.text-danger.font-weight-bold.small
+      
+      //- Phone number
+      input.form-control(type='text' placeholder='Phone' name='phone')
+      span#phon.text-danger.font-weight-bold.small
+      
+      //- Address Direction
+      input#adre.form-control(type='text' name='address' placeholder='Address')
+      span#addr.text-danger.font-weight-bold.small
+      
+      //- Mode of delivery
+      label
+        b  Mode of delivery
+        .form-check
+          input#formCheck-1.form-check-input(type='radio' name='modeOfDelivery' value='Pick up') 
+          label.form-check-label(for='Mode of delivery') Pick up
+        .form-check
+          input#formCheck-2.form-check-input(type='radio' name='modeOfDelivery' value='Home delivery')
+          label.form-check-label(for='Mode of delivery') Home delivery
+      span#rad.text-danger.font-weight-bold.small
+      
+      //- Ward
+      select#ward.form-control(name='ward')
+        option(selected='' disabled='' value='selectWard' ) Ward
+        option(value='1') 1
+        option(value='2') 2
+        option(value='3') 3
+        option(value='4') 4
+      span#wad.text-danger.font-weight-bold.small
+      
+      //- Unit price/ kg
+      input.form-control(type='text' placeholder='Unit price/ kg' name='unitPrice')
+      span#fone.text-danger.font-weight-bold.small
+      
+      //- Quantity
+      input.form-control(type='text' placeholder='Quantity(kg)' name='quantity')
+      span#qt.text-danger.font-weight-bold.small
+      
+      //- Produce type
+      select#produce.form-control(name='ProduceType')
+        option(value='selectType' selected='' disabled='') Produce type
+        option(value='Organic') Organic
+        option(value='Non-organic') Non-orgnic
+      span#prod.text-danger.font-weight-bold.small
+      
+      //- Mode of payment
+      select#modeP.form-control(name='mPayment')
+        option(value='selectMode' selected='' disabled='') Mode of payment
+        option(value='Cash') Cash
+        option(value='Mobile Money') Mobile Money
+      span#mode.text-danger.font-weight-bold.small
+      
+      //- Add produce image
+      label
+        | Input produce image
+        input.form-control(type='file' accept='image/*')
+
+      //- Terms checkbox
+        <div class="form-check"><input class="form-check-input" type="checkbox" id="" />
+        <label class="form-check-label" for="formCheck-3">I've read and accept the terms and conditions</label></div>
+
+    button.btn.btn-primary(type='submit' onclick='uFarm()') Submit
+    //- <button class="btn btn-primary" type="button" onclick=()>Reset</button>
+script(src='javascripts/upload.js')

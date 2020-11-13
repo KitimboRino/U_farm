@@ -1,0 +1,79 @@
+hr {
+  max-width: 50px;
+  border-width: 3px;
+  border-color: #78AB45;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #78AB45;
+  border-color: #78AB45;
+}
+
+.bg-primary {
+  background-color: #78AB45!important;
+}
+
+.text-primary {
+  color: #78AB45!important;
+}
+
+a, a:hover {
+  color: #78AB45;
+}
+
+a:hover {
+  color: #78AB45;
+  text-decoration: underline;
+}
+
+a, a:hover {
+  color: #78AB45;
+}
+
+.portfolio-box .portfolio-box-caption {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  background: #78AB45;
+  transition: all .2s;
+}
+
+.btn-primary {
+  background-color: #78AB45;
+  border-color: #78AB45;
+}
+
+a:hover {
+  color: #78AB45;
+  text-decoration: underline;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  box-shadow: 0 0 0 .1rem rgba(240,95,64,0.5)!important;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+  color: #fff;
+  background-color: #78AB45!important;
+}
+
+#mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+  color: #78AB45;
+}
+
+a:hover {
+  color: #78AB45;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #78AB45;
+  text-decoration: underline;
+}
+

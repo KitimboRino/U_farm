@@ -1,0 +1,27 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Welcome 
+    div.form-row
+        div.col.form-group.col-md-12   
+            div.form-row
+                div.col-md-10
+                    p Here is your information #{user.firstName}
+                div.col-md-2
+                    form(method="post" action='/logout') 
+                        button.btn.btn-dark.btn-block(type="submit") Log out
+    form(method="post" action="/update?id="+user._id)
+        table.table
+            thead.thead-dark
+                tr
+                    th First name
+                    td 
+                        input.form-control(value = user.firstname name ="firstname")
+                tr
+                    th Last name
+                    td 
+                        input.form-control(value = user.lastname name ="lastname")
+                
+                tr
+                    td(colspan=2)
+                        button.btn.btn-dark.btn-block(type="submit") Update

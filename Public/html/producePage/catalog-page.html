@@ -1,0 +1,220 @@
+meta(charset="utf-8")
+meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
+title Catalog - Brand
+link(rel="stylesheet", href="assets/bootstrap/css/bootstrap.min.css")
+link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i")
+link(rel="stylesheet", href="assets/fonts/simple-line-icons.min.css")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css")
+link(rel="stylesheet", href="assets/css/smoothproducts.css")
+link(rel="stylesheet", href="assets/css/styleProd.css")
+nav.navbar.navbar-light.navbar-expand-lg.fixed-top.bg-white.clean-navbar
+  .container
+    a.navbar-brand.logo(href="#") Brand
+    button.navbar-toggler(data-toggle="collapse", data-target="#navcol-1")
+      span.sr-only Toggle navigation
+      span.navbar-toggler-icon
+    nav.navbar.navbar-dark.navbar-expand-lg.fixed-top.bg-dark.clean-navbar
+      .container
+        a.navbar-brand.logo(href="#") Brand
+        button.navbar-toggler(data-toggle="collapse", data-target="#navcol-1")
+          span.sr-only Toggle navigation
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse#navcol-1
+          ul.nav.navbar-nav.ml-auto
+            li.nav-item.item(role="presentation")
+              a.nav-link(href="/") HOME
+            li.nav-item.item(role="presentation")
+              a.nav-link(href="features.html") FEATURES
+            li.nav-item.item(role="presentation")
+              a.nav-link(href="pricing.html") PRICING
+            li.nav-item.item(role="presentation")
+              a.nav-link(href="about-us.html") ABOUT
+            li.nav-item.item(role="presentation")
+              a.nav-link(href="contact-us.html") CONTACT US
+    .collapse.navbar-collapse#navcol-1
+      ul.nav.navbar-nav.ml-auto
+main.page.catalog-page
+  section.clean-block.clean-catalog.dark
+    .container
+      .block-heading
+        h2 PRODUCE PAGE
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.
+      .content
+        .row
+          .col-md-3
+            .d-none.d-md-block
+              .filters
+                .filter-item
+                  h3 Produce type
+                  .form-check
+                    input.form-check-input#formCheck-1(type="checkbox")
+                    label.form-check-label(for="formCheck-1") Organic
+                  .form-check
+                    input.form-check-input#formCheck-2(type="checkbox")
+                    label.form-check-label(for="formCheck-2") Non-organic
+                .filter-item
+                  h3 Categories
+                  .form-check
+                    input.form-check-input#formCheck-5(type="checkbox")
+                    label.form-check-label(for="formCheck-5") Horticulture produce
+                  .form-check
+                    input.form-check-input#formCheck-6(type="checkbox")
+                    label.form-check-label(for="formCheck-6") Poultry products
+                  .form-check
+                    input.form-check-input#formCheck-7(type="checkbox")
+                    label.form-check-label(for="formCheck-7") Diary products
+            .d-md-none
+              a.btn.btn-link.d-md-none.filter-collapse(data-toggle="collapse", aria-expanded="false", aria-controls="filters", href="#filters", role="button")
+                | Filters
+                i.icon-arrow-down.filter-caret
+              .collapse#filters
+                .filters
+                  .filter-item
+                    h3 Produce type
+                    .form-check
+                      input.form-check-input#formCheck-1(type="checkbox")
+                      label.form-check-label(for="formCheck-1") Organic
+                    .form-check
+                      input.form-check-input#formCheck-2(type="checkbox")
+                      label.form-check-label(for="formCheck-2") Non-organic
+                  .filter-item
+                    h3 Categories
+                    .form-check
+                      input.form-check-input#formCheck-5(type="checkbox")
+                      label.form-check-label(for="formCheck-5") Horticulture produce
+                    .form-check
+                      input.form-check-input#formCheck-6(type="checkbox")
+                      label.form-check-label(for="formCheck-6") Poultry products
+                    .form-check
+                      input.form-check-input#formCheck-7(type="checkbox")
+                      label.form-check-label(for="formCheck-7") Diary products
+          .col-md-9
+            .products
+              .row.no-gutters
+                .col-12.col-md-6.col-lg-4
+                  .clean-product-item
+                    .image
+                    img(src="assets/img/peas.png")
+                    .product-name
+                      a.text-left(href="#") Chicken
+                    .about
+                      .price
+                        h3 Ugx 10000
+                .col-12.col-md-6.col-lg-4
+                  .clean-product-item
+                    .image
+                      a(href="#")
+                    img(src="assets/img/eggs.png")
+                    .product-name
+                      a(href="#") Eggs
+                    .about
+                      .price
+                        h3 Ugx 5000
+                .col-12.col-md-6.col-lg-4
+                  .clean-product-item
+                    .image
+                      a(href="#")
+                    img(src="assets/img/beef.png")
+                    .product-name
+                      a(href="#") Beef
+                    .about
+                      .price
+                        h3 Ugx 10000
+                .col-12.col-md-6.col-lg-4
+                  .clean-product-item
+                    img(src="assets/img/IrishP.png")
+                    .product-name
+                      a(href="#") Irish potatoes
+                    .about
+                      .price
+                        h3 Ugx 20000
+                .col-12.col-md-6.col-lg-4
+                  .clean-product-item
+                    img(src="assets/img/beans.png")
+                    .product-name
+                      a(href="#") Beans
+                    .about
+                      .price
+                        h3 Ugx 4000
+                .col-12.col-md-6.col-lg-4
+                  .clean-product-item
+                    img(src="assets/img/tilapia.png")
+                    .product-name
+                      a(href="#") Tilapia fish
+                    .about
+                      .price
+                        h3 Ugx 7500
+                .col-12.col-md-6.col-lg-4
+                  .clean-product-item
+                    img(src="assets/img/mangoes.png")
+                    .product-name
+                      a(href="#") Mangoes
+                    .about
+                      .price
+                        h3 Ugx 3000
+                .col-12.col-md-6.col-lg-4
+                  .clean-product-item
+                    img(src="assets/img/tomatoes.png")
+                    .product-name
+                      a(href="#") Tomatoes
+                    .about
+                      .price
+                        h3 Ugx 8000
+                .col-12.col-md-6.col-lg-4
+                  .clean-product-item
+                    img(src="assets/img/rice.png")
+                    .product-name
+                      a(href="#") Rice
+                    .about
+                      .price
+                        h3 Ugx 5000
+              nav
+                ul.pagination
+                  li.page-item.disabled
+                    a.page-link(href="#", aria-label="Previous")
+                      span(aria-hidden="true") «
+                  li.page-item.active
+                    a.page-link(href="#") 1
+                  li.page-item
+                    a.page-link(href="#") 2
+                  li.page-item
+                    a.page-link(href="#") 3
+                  li.page-item
+                    a.page-link(href="#", aria-label="Next")
+                      span(aria-hidden="true") »
+footer.page-footer.dark
+  .container
+    .row
+      .col-sm-3
+        h5 Get started
+        ul
+          li
+            a(href="#") Home
+      .col-sm-3
+        h5 About us
+        ul
+          li
+            a(href="#") Company Information
+          li
+            a(href="#") Contact us
+      .col-sm-3
+        h5 Support
+        ul
+          li
+            a(href="#") FAQ
+      .col-sm-3
+        h5 Legal
+        ul
+          li
+            a(href="#") Terms of Service
+          li
+            a(href="#") Terms of Use
+          li
+            a(href="#") Privacy Policy
+  .footer-copyright
+    p © 2020 Copyright Ufarm
+script(src="assets/js/jquery.min.js")
+script(src="assets/bootstrap/js/bootstrap.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js")
+script(src="assets/js/smoothproducts.min.js")
+script(src="assets/js/theme.js")

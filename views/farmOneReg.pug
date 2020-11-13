@@ -1,0 +1,116 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Farmer One Registration
+  link(rel='stylesheet' href='bootstrap/css/bs/bootstrap.min.css')
+  link(rel='stylesheet' href='styles/oFarmstyle.css')
+  title Farmer One Registration
+
+.oFamerReg
+  h2 Farmer One Registration
+  form(role='form' name='oForm' method='POST' action='/farmerOneReg')
+    fieldset
+      legend
+        b Personal information
+      
+      // First name 
+      input#firstname.form-control(type='text' name='firstName' placeholder='First Name')
+      span#fname.text-danger.font-weight-bold.small
+
+      // Last name
+      input#lastname.form-control(type='text' name='lastName' placeholder='Last Name')
+      span#lname.text-danger.font-weight-bold.small
+
+
+      // User name
+      input#username.form-control(type='text' name='username' placeholder='User Name')
+      span#usename.text-danger.font-weight-bold.small
+
+      // Password
+      input#password.form-control(type='text' name='password' placeholder='Password')
+      span#usename.text-danger.font-weight-bold.small
+
+      // Gender
+      select#gender.form-control(name='gender')
+        option(value='default' selected='' disabled='') Gender
+        option(value='Male') Male
+        option(value='Female') Female
+      span#gend.text-danger.font-weight-bold.small
+
+      // Date of birth
+      label
+        b Date of birth
+        input.form-control3(type='text' placeholder='dd-mm-yyyy' name='dateOfBirth')
+      span#dtb.text-danger.font-weight-bold.small
+
+      // NIN
+      input.form-control(type='text' name='nin' placeholder='National Identification Number (NIN)')
+      // <br>
+      span#ni.text-danger.font-weight-bold.small
+
+      // Phone number
+      input.form-control(type='text' placeholder='Phone' name='phone')
+      // <br>
+      span#phon.text-danger.font-weight-bold.small
+
+      // Address
+      input#adre.form-control(type='text' name='address' placeholder='Address')
+      // <br>
+      span#addr.text-danger.font-weight-bold.small
+
+      // Residence type
+      label
+        b  Residence type
+        .form-check
+          input#formCheck-1.form-check-input(type='radio' value='Permanent' name='residenceType')
+          label.form-check-label(for='Residence type') Permanent
+        .form-check
+          input#formCheck-2.form-check-input(type='radio' value='Temporary' name='residenceType')
+          label.form-check-label(for='Residence type') Temporary
+      // <br>
+      span#rad.text-danger.font-weight-bold.small
+    fieldset
+
+      // Farmer One infromation
+      legend
+        b Farmer One Information
+      // <br>
+
+      // Ward
+      select#uward.form-control(name='ward')
+        option(selected='' disabled='' value='selectWard') Ward
+        option(value='1') 1
+        option(value='2') 2
+        option(value='3') 3
+        option(value='4') 4
+      // <br>
+      span#wad.text-danger.font-weight-bold.small
+
+      // Farmer One Number
+      input.form-control(type='text' placeholder='Farmer One number' name='fOnumber')
+      // <br>
+      span#fone.text-danger.font-weight-bold.small
+
+      // Activities
+      select.form-control(name='activities')
+        option(value='selectAct' selected='' disabled='') Activities
+        option(value='Horticulture') Horticulture
+        option(value='Poultry') Poultry
+        option(value='Dairy products') Dairy products
+      // <br>
+      span#act.text-danger.font-weight-bold.small
+
+      // Period of stay
+      input.form-control(type='number' placeholder='Period of stay (>10 years)' name='periodOfStay')
+      span#ptay.text-danger.font-weight-bold.small
+
+      
+      // Date of registration
+      label
+        b Date of registration
+        input.form-control2(type='text' placeholder='dd-mm-yyyy' name='dateOfReg')
+      // <br>
+      span#dReg.text-danger.font-weight-bold.small
+    button.btn.btn-primary(type='submit' onclick='uFarm()') Button
+script(src='javascripts/oFarmer.js')

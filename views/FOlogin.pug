@@ -1,0 +1,58 @@
+meta(charset="utf-8")
+meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
+title Sign-In
+link(rel="stylesheet", href="bootstrap/css/bootstrap.min.css")
+link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
+link(rel="stylesheet", href="styles/Login-Form-Clean.css")
+link(rel="stylesheet", href="styles/logstyles.css")
+link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800")
+
+
+.login-clean
+  form(method="post" action="/fologin")
+    h2.sr-only Login Form
+    .illustration
+      img(src="images/logo.png", style="color: rgb(71,244,88);")
+    .form-group
+      input.form-control(type="text", name="username", placeholder="User Name")
+    .form-group
+      input.form-control(type="text", name="password", placeholder="Password")
+    .form-group
+      button.btn.btn-primary.btn-block(class='button', href='/') Log In
+    a.forgot(href="#") Forgot your id? Contact your your FO or AO
+footer.page-footer.light
+  .container
+    .row
+      .col-sm-3
+        h5 Get started
+        ul
+          li
+            a(href="#") Home
+      .col-sm-3
+        h5 About us
+        ul
+          li
+            a(href="#") Company Information
+          li
+            a(href="#") Contact us
+      .col-sm-3
+        h5 Support
+        ul
+          li
+            a(href="#") FAQ
+      .col-sm-3
+        h5 Legal
+        ul
+          li
+            a(href="#") Terms of Service
+          li
+            a(href="#") Terms of Use
+          li
+            a(href="#") Privacy Policy
+  .footer-copyright
+    p © 2020 Copyright Ufarm
+
+//- Script links
+script(src="javascripts/jquery.min.js")
+script(src="bootstrap/js/bootstrap.min.js")
+script(src="javascripts/bs-init.js")
