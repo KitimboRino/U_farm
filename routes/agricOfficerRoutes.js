@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const farmerOne = require('../models/farmOneReg');
 
-
 // Get reads the farmOneReg.pug and displays it on the path
 router.get('/farmerOneReg', (req, res) => {
   res.render('farmOneReg', { title: 'Farmer One Registration' });
@@ -15,7 +14,7 @@ router.post('/farmerOneReg', async (req, res) => {
   try {
     // const registration = new farmerOne(req.body); //create an instance of the Register model for data entered(req.body==got from the user)
     const items = new farmerOne(req.body);
-    
+
     // passing password to be checked by passport
     await farmerOne.register(items, req.body.password, (err) => {
       if (err) {
@@ -52,7 +51,6 @@ router.get('/fOneList', async (req, res) => {
       res.status(400).send('Unable to find items in the database');
     }
   } else {
-
     console.log("can't find session");
     res.redirect('/login');
   }
@@ -99,6 +97,21 @@ router.post('/update', async (req, res) => {
     }
   } else {
     console.log("can't find session");
+    res.redirect('/login');
+  }
+});
+
+router.get('/farmerdash', async (req, res) => {
+  if (req.session.user) {
+    try {
+      res.render('farmer', {
+        title: 'Farmer form',
+        currentUser: req.session,
+        currentRole: req.session.role,
+      });
+    } catch (err) {}
+  } else {
+    console.log("Can't find session");
     res.redirect('/login');
   }
 });

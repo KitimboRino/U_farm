@@ -9,7 +9,6 @@ const passportLocalMongoose = require('passport-local-mongoose');
 // Create an express application by calling the express function.(Instantiating)
 const app = express();
 
-
 //Path declarations
 const agricOfficerRoute = require('./routes/agricOfficerRoutes');
 const farmerOneRoute = require('./routes/farmerOneRoutes');
@@ -53,13 +52,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Middleware settings
 // Simple request time logger (Add to project).
-// app.use((req, res, next) => {
-//   console.log('A new request received at ' + Date.now());
+app.use((req, res, next) => {
+  console.log('A new request received at ' + Date.now());
 //   // This function call tells that more processing is
 //   // required for the current request and is in the next middleware
 //   // function/route handler.
-//   next();
-// });
+  next();
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 // Setting public folder access.

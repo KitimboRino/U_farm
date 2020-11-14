@@ -6,6 +6,10 @@ const FORegSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   username: String,
+  role: {
+    type: String,
+    required: 'Please Pick a role',
+  },
   gender: String,
   dateOfBirth: String,
   nin: String,
@@ -15,7 +19,7 @@ const FORegSchema = new mongoose.Schema({
   ward: String,
   fOnumber: String,
   activities: String,
-  periodOfStay: Number,
+  periodOfStay: String,
   dateOfReg: String,
 });
 // Setting the plugin to use passport

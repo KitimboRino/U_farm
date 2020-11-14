@@ -31,12 +31,13 @@ head
       input#password.form-control(type='text' name='password' placeholder='Password')
       span#usename.text-danger.font-weight-bold.small
 
-      // Gender
-      select#gender.form-control(name='Role')
-        option(value='default' selected='' disabled='') Gender
-        option(value='farmerone') Male
-        option(value='urbanfarmer') Female
-      span#gend.text-danger.font-weight-bold.small
+      // Role
+      select#role.form-control(name='role')
+        option(value='default' selected='' disabled='') Role
+        option(value='agricOfficer') Agric Officer
+        option(value='farmOne') Farmer One
+        option(value='urbFarmers') Urban Farmers
+      span#rol.text-danger.font-weight-bold.small
 
       // Gender
       select#gender.form-control(name='gender')
