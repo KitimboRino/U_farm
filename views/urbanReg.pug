@@ -29,9 +29,17 @@ head
       span#usename.text-danger.font-weight-bold.small
 
       //- password
-      input.form-control(type='text' id='' name='password' placeholder='pasword')
+      input.form-control(type='text' id='' name='password' placeholder='Password')
+      span#pword.text-danger.font-weight-bold.small
+
+      //- password confirmation
+      input.form-control(type='text' id='' name='confirmPassword' placeholder='Confirm Password')
       span#pword.text-danger.font-weight-bold.small
       
+      //- Role
+      input#password.form-control(type='text' name='role' value='urbFarmers' readonly)
+      span#rol.text-danger.font-weight-bold.small
+
       //- Gender
       select#gender.form-control
         option(value='selectGender' name='gender' selected='' disabled='') Gender
@@ -42,7 +50,7 @@ head
       //- Date of birth
       label
         | Date of birth
-        input.form-control3(type='date' placeholder='dd-mm-yyyy' name='dateBirth')
+        input.form-control3(type='date' placeholder='dd-mm-yyyy' name='dateOfBirth')
       span#doB.text-danger.font-weight-bold.small
     
       //- Nin
@@ -59,10 +67,10 @@ head
       //- Ward
       select#ward.form-control
         option(selected='' disabled='' value='selectWard' name='ward') Ward
-        option(value='1') 1
-        option(value='2') 2
-        option(value='3') 3
-        option(value='4') 4
+        option(value='LC1') LC1
+        option(value='LC2') LC2
+        option(value='LC3') LC3
+        option(value='LC4') LC4
       span#wd.text-danger.font-weight-bold.small
     
       //- Unique Identification
@@ -80,7 +88,7 @@ head
       //-Date of registration
       label
         | Date of registration
-        input.form-control2(type='date' placeholder='dd-mm-yyyy' name='dateReg')
+        input.form-control2(type='date' placeholder='dd-mm-yyyy' name='dateOfReg')
         span#dreg.text-danger.font-weight-bold.small
     button.btn.btn-primary(type='submit' onclick='uFarm()') Button
 script(src='javascripts/uFarmer.js')

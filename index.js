@@ -10,12 +10,11 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const app = express();
 
 //Path declarations
-const agricOfficerRoute = require('./routes/agricOfficerRoutes');
+
 const farmerOneRoute = require('./routes/farmerOneRoutes');
 const urbanFarmer = require('./routes/urbanFarmerRoutes');
-const customers = require('./routes/customer');
 const userLogin = require('./routes/login_routes');
-const farmerOne = require('./models/farmOneReg');
+const Users = require('./models/Users');
 
 require('dotenv/config');
 
@@ -71,9 +70,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // passport configs
-passport.use(farmerOne.createStrategy());
-passport.serializeUser(farmerOne.serializeUser());
-passport.deserializeUser(farmerOne.deserializeUser());
+passport.use(Users.createStrategy());
+passport.serializeUser(Users.serializeUser());
+passport.deserializeUser(Users.deserializeUser());
 
 // app.get('/', (req, res) => {
 //   // __dirname is the path to current working directory
@@ -83,18 +82,15 @@ passport.deserializeUser(farmerOne.deserializeUser());
 // Using imported routes arranged below the body perser & config
 // Farmer One
 app.use('/', farmerOneRoute);
-// Agricultural Officer.
-app.use('/', agricOfficerRoute);
 // Urban Farmer
 app.use('/', urbanFarmer);
-// Customer
-app.use('/', customers);
 // Login
 app.use('/', userLogin);
 
 // Routes......
 // Home page route.
 app.get('/index', (req, res) => {
+  // Picks up the page/ connects to page(index)
   res.render('index');
 });
 

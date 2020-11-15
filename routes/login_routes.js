@@ -9,6 +9,10 @@ router.get('/login', (req, res) => {
   res.render('login', { title: 'Login Form' });
 });
 
+router.get('/fOneList', (req, res) => {
+  res.render('farmerOneList', { title: 'Farmer One' });
+});
+
 // Process the username and password that are submitted in the login page
 router.post(
   '/login',
@@ -20,10 +24,10 @@ router.post(
     if (userRole == 'agricOfficer') {
       res.redirect('/fOneList');
     } else if (userRole == 'farmOne') {
-      res.redirect('/fOneDash');
+      res.redirect('/fOneList');
     } else userRole == 'urbFarmers';
     {
-      res.redirect('/urbanfarmDash');
+      res.redirect('/uFarmList');
     }
   }
 );

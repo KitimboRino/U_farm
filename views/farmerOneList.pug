@@ -23,10 +23,9 @@ div
         a(href="#", style="color: blue;") Prod
         a(href="#", style="color: blue;") Prod
   .page-content-wrapper
-    .container-fluid
       a.btn.btn-link#menu-toggle(role="button", href="#menu-toggle")
         i.fa.fa-bars
-      .row
+      .container-fluid
         .col-md-12
           div
         .col
@@ -36,17 +35,17 @@ div
                 header.card-header
                     h4.card-title Welcome #{currentUser.username}
                     |&nbsp
-                    div.form-row.container-fluid
+                    div.form-row
                         div.col.form-group.col-md-10    
                             form.search(action='/fOneList')
                                 div.form-row
                                     div.col-md-4
                                         input.form-control(name='ward' placeholder="Enter your search term(ward) ...")
                                     div.col-md-3
-                                        input.btn.btn-dark.btn-block(type="submit")
-                    table.table-responsive-lg.table.container-fluid
-                        thead.bg-secondary.container-fluid
-                            tr.container-fluid
+                                     input.btn.btn-dark.btn-block(type="submit")
+                    table.table.table-striped.table-responsive
+                        thead.bg-secondary
+                            tr
                                 th firstName 
                                 th lastName
                                 th Username
