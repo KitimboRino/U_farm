@@ -52,7 +52,7 @@ router.get('/uFarmList', async (req, res) => {
   }
 });
 
-router.post('/uFarmdelete', async (req, res) => {
+router.post('/uFarmDelete', async (req, res) => {
   if (req.session.user) {
     try {
       await urbfarmer.deleteOne({ _id: req.body.id });
@@ -85,7 +85,7 @@ router.post('/uFarmUpdate', async (req, res) => {
   if (req.session.user) {
     try {
       await urbfarmer.findOneAndUpdate({ _id: req.query.id }, req.body);
-      res.redirect('ufListUpdate');
+      res.redirect('uFarmList');
     } catch (err) {
       res.status(404).send('Unable to update item in the database');
     }
