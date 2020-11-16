@@ -32,16 +32,4 @@ router.post(
   }
 );
 
-// Urban farmer
-// // get for rendering the login for UF
-// router.get('/uflogin', (req, res) => {
-//   res.render('UFlogin');
-// });
-
-// // Process the username and password that are submitted in the login page
-// router.post('/uflogin', passport.authenticate('local'), (req, res) => {
-//   req.session.user = req.user;
-//   res.redirect('/uFList');
-// });
-
 module.exports = router;

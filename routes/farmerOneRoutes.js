@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const farmerOne = require('../models/farmOneReg');
 const Users = require('../models/Users');
+
 // Get reads the farmOneReg.pug and displays it on the path
 router.get('/farmerOneReg', (req, res) => {
   res.render('farmOneReg', { title: 'Farmer One Registration' });
@@ -69,7 +70,7 @@ router.get('/fOneList', async (req, res) => {
   }
 });
 
-router.post('/delete', async (req, res) => {
+router.post('/foDelete', async (req, res) => {
   // if user has seeion recorded
   if (req.session.user) {
     try {
@@ -86,7 +87,7 @@ router.post('/delete', async (req, res) => {
 });
 
 //find the details of the user using the id that has been passed using params.
-router.get('/update/:id', async (req, res) => {
+router.get('/foUpdate/:id', async (req, res) => {
   if (req.session.user) {
     try {
       const updateUser = await farmerOne.findOne({ _id: req.params.id });
@@ -100,7 +101,7 @@ router.get('/update/:id', async (req, res) => {
   }
 });
 
-router.post('/update', async (req, res) => {
+router.post('/foUpdate', async (req, res) => {
   if (req.session.user) {
     try {
       await farmerOne.findOneAndUpdate({ _id: req.query.id }, req.body);

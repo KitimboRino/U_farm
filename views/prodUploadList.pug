@@ -3,11 +3,11 @@ html
 meta(charset="utf-8")
 meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
 title= `${title}`
-link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
-link(rel="stylesheet", href="fonts/font-awesome.min.css")
-link(rel="stylesheet", href="styles/Sidebar-Menu-1.css")
-link(rel="stylesheet", href="styles/css/Sidebar-Menu.css")
-link(rel="stylesheet", href="assets/css/styles.css")
+link(rel="stylesheet", href="../bootstrap/css/bs/bootstrap.min.css")
+link(rel="stylesheet", href="../fonts/font-awesome.min.css")
+link(rel="stylesheet", href="../styles/Sidebar-Menu-1.css")
+link(rel="stylesheet", href="../styles/css/Sidebar-Menu.css")
+link(rel="stylesheet", href="../assets/css/styles.css")
 div
 #wrapper
   #sidebar-wrapper(style="background-color: #78AB45;")
@@ -17,7 +17,7 @@ div
       li
         a(href="#", style="color: blue;") Farmer One(FO)
       li
-        a(href="/farmerOneReg", style="color: blue;")  Register Urban Farmer(UF)
+        a(href="/farmerOneReg", style="color: blue;")  Upload produce(UF)
       li
         a(href="#", style="color: blue;") Urban Farmers (UF)
         a(href="#", style="color: blue;") Prod
@@ -33,55 +33,56 @@ div
             .card-body
 
                 header.card-header
-                    h4.card-title Welcome #{currentUser.username}
+                    h4.card-title Welcome 
                 |&nbsp
                 div.form-row
                     div.col.form-group.col-md-10    
-                        form.search(action='/uFarmList')
+                        form.search(action='/pUploadList')
                             div.form-row
                                 div.col-md-4
-                                    input.form-control(name='gender' placeholder="Enter your search term(gender) ...")
+                                    input.form-control(name='ward' placeholder="Enter your search term(ward) ...")
                                 div.col-md-3
                                     input.btn.btn-dark.btn-block(type="submit")
                 table.table.table-striped.table-responsive
                     thead.bg-secondary
                         tr
-                            th firstName
-                            th lastName
-                            th userName
-                            th Role
-                            th Gender
-                            th dateOfbirth
-                            th nin
+                            th UniqueID
+                            th ProduceName
+                            th DateOfUpload
                             th Phone
+                            th Address
+                            th MOdeOfDelivery
                             th Ward
-                            th id
+                            th UnitPrice
+                            th Quantity
+                            th ProduceType
+                            th MethodPayment
                             th Activities
-                            th DateOfReg
-                            th
+                            th ProductImage
                             th 
                     tbody
-                        if users.length
-                        each user in users
+                        if items.length
+                        each item in items
                             tr
-                                td #{user.firstname}
-                                td #{user.lastname}
-                                td #{user.username}
-                                td #{user.role}
-                                td #{user.gender}
-                                td #{user.dateOfBirth}
-                                td #{user.nin}
-                                td #{user.phone}
-                                td #{user.ward}
-                                td #{user.id}
-                                td #{user.activities}
-                                td #{user.dateOfReg}
+                                td #{item.id}
+                                td #{item.produceName}
+                                td #{item.dateOfUpload}
+                                td #{item.phone}
+                                td #{item.address}
+                                td #{item.modeOfDelivery}
+                                td #{item.ward}
+                                td #{item.unitPrice}
+                                td #{item.quantity}
+                                td #{item.produceType}
+                                td #{item.mPayment}
+                                td #{item.activities}
+                                td 
+                                  img(src='/uploads/'+item.image height='50px' width='50px')
                                 td
+                                    a(href='/prodUpdate/'+item._id) Update
                                 td
-                                    a(href='/uFarmUpdate/'+user._id) Update
-                                td
-                                    form(method="post" action='/uFarmdelete')
-                                        input(type="hidden", placeholder="", name="id", value=user._id)
+                                    form(method="post" action='/delete')
+                                        input(type="hidden", placeholder="", name="id", value=item._id)
                                         button.btn.btn-dark.btn-block(type="submit") Delete
                         else
                             p No registrations yet :(

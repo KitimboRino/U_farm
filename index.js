@@ -5,26 +5,29 @@ const path = require('path');
 const bodyParser = require('body-Parser');
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
-
 // Create an express application by calling the express function.(Instantiating)
 const app = express();
 
 //Path declarations
 
-const farmerOneRoute = require('./routes/farmerOneRoutes');
+const farmerOne = require('./routes/farmerOneRoutes');
 const urbanFarmer = require('./routes/urbanFarmerRoutes');
+const produce = require('./routes/produceRoutes');
 const userLogin = require('./routes/login_routes');
 const Users = require('./models/Users');
 
 require('dotenv/config');
 
+//  express-session middleware to help us save the session cookie.
 const expressSession = require('express-session')({
+  // to sign the session ID cookie
   secret: 'secret',
+  // Forces the session to be saved back to the session store
   resave: false,
+  // Forces a session that is “uninitialized” to be saved to the store
   saveUninitialized: false,
 });
 const passport = require('passport');
-
 
 // Connect to MongoDB.
 // Add { userNewUrlParser} to remove errors.
@@ -53,9 +56,9 @@ app.set('views', path.join(__dirname, 'views'));
 // Simple request time logger (Add to project).
 app.use((req, res, next) => {
   console.log('A new request received at ' + Date.now());
-//   // This function call tells that more processing is
-//   // required for the current request and is in the next middleware
-//   // function/route handler.
+  //   // This function call tells that more processing is
+  //   // required for the current request and is in the next middleware
+  //   // function/route handler.
   next();
 });
 
@@ -81,9 +84,11 @@ passport.deserializeUser(Users.deserializeUser());
 
 // Using imported routes arranged below the body perser & config
 // Farmer One
-app.use('/', farmerOneRoute);
+app.use('/', farmerOne);
 // Urban Farmer
 app.use('/', urbanFarmer);
+//produce
+app.use('/', produce);
 // Login
 app.use('/', userLogin);
 

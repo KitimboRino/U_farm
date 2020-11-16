@@ -24,9 +24,7 @@ router.post('/urbanFReg', async (req, res) => {
       console.log('save success');
       res.redirect('/uFarmlist');
     });
-
   } catch (err) {
-    
     res.status(400).send('Sorry! Something went wrong.');
     console.log(err);
   }
@@ -54,53 +52,47 @@ router.get('/uFarmList', async (req, res) => {
   }
 });
 
-router.post('/delete', async (req, res) => {
-  if(req.session.user){
-  try {
-    await urbfarmer.deleteOne({ _id: req.body.id });
-    res.redirect('back');
-  } catch (err) {
-    res.status(400).send('Unable to delete item in the database');
+router.post('/uFarmdelete', async (req, res) => {
+  if (req.session.user) {
+    try {
+      await urbfarmer.deleteOne({ _id: req.body.id });
+      res.redirect('back');
+    } catch (err) {
+      res.status(400).send('Unable to delete item in the database');
+    }
+  } else {
+    console.log('cant find session');
+    res.redirect('/login');
   }
-}else{
-  consloe.log("cant find session");
-  res.redirect('/login');
-}
 });
 
 // find the details of the user using the id that has benn passed through the parama
-router.get('/update/:id', async (req, res) => {
- if(req.session.user){
-  try {
-    const updateUser = await Registration.findOne({ _id: req.params.id });
-    res.render('ufListUpdate', { user: updateUser });
-  } catch (err) {
-    res.status(400).send('Unable to find item in the database');
+router.get('/uFarmUpdate/:id', async (req, res) => {
+  if (req.session.user) {
+    try {
+      const updateUser = await urbfarmer.findOne({ _id: req.params.id });
+      res.render('ufListUpdate', { user: updateUser });
+    } catch (err) {
+      res.status(400).send('Unable to find item in the database');
+    }
+  } else {
+    console.log("Can't find session");
+    res.redirect('/login');
   }
-}else{
-  console.log("Can't find session");
-  res.redirect('/login');
-}
 });
 
-router.post('/update', async (req, res) => {
-if(req.session.user){
-  try {
-    await urbfamer.findOneAndUpdate({ _id: req.query.id }, req.body);
-    res.redirect('urbanFarmerList');
-  } catch (err) {
-    res.status(404).send('Unable to update item in the database');
+router.post('/uFarmUpdate', async (req, res) => {
+  if (req.session.user) {
+    try {
+      await urbfarmer.findOneAndUpdate({ _id: req.query.id }, req.body);
+      res.redirect('ufListUpdate');
+    } catch (err) {
+      res.status(404).send('Unable to update item in the database');
+    }
+  } else {
+    console.log("can't find session");
+    res.redirect('/login');
   }
-}else{
-  console.log("can't find session");
-  res.redirect('/login');
-}
 });
-
-
-
-
 
 module.exports = router;
-
-

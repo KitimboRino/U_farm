@@ -39,17 +39,17 @@ div
                             div.col-md-2
                                 form(method="post" action='/logout') 
                                     button.btn.btn-dark.btn-block(type="submit") Log out
-                form(method="post" action='/foUpdate?id='+user._id)
+                form(method="post" action="/uFarmUpdate?id="+user._id)
                     table.table
                         thead.thead-dark
                             tr
                                 th First name
                                 td 
-                                    input.form-control(value = user.firstName name ="firstName")
+                                    input.form-control(value = user.firstname name ="firstname")
                             tr
                                 th Last name
                                 td 
-                                    input.form-control(value = user.lastName name ="lastName")
+                                    input.form-control(value = user.lastname name ="lastname")
                             
                             tr
                                 td(colspan=2)
@@ -57,4 +57,4 @@ div
 
 script(src="../javascripts/jquery.min.js")
 script(src="../bootstrap/js/bootstrap.min.js")
-script(src="../javascripts/Sidebar-Menu.js")
+script(src="../javascripts/Sidebar-Menu.js")                            
