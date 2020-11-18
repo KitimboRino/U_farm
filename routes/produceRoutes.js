@@ -4,11 +4,8 @@ const uProduce = require('../models/produceUploadReg');
 const multer = require('multer');
 const path = require('path');
 
-
-
-
 // settings
-//Setting image upload storage engine
+//Setting the image upload storage engine
 const storage = multer.diskStorage({
   destination: './public/uploads/',
   filename: (req, file, cb) => {

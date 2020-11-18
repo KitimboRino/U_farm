@@ -11,7 +11,7 @@ const FORegSchema = new mongoose.Schema({
   nin: String,
   phone: String,
   address: String,
-  resindenceType: String,
+  residenceType: String,
   ward: String,
   fOnumber: String,
   activities: String,

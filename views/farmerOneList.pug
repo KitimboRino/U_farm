@@ -13,15 +13,17 @@ div
   #sidebar-wrapper(style="background-color: #78AB45;")
     ul.sidebar-nav
       li.sidebar-brand
-        a(href="#", style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
+        a(href="#", style="color: rgb(0,0,0);font-size: 34px; font-weight:bold;") Ufarm
       li
-        a(href="#", style="color: blue;") Agricultural Officer (AO)
+        a(style="color: rgb(0,0,0); font-size: 14px; font-weight:bold;") AGRICULTURAL OFFICER(AO)
       li
-        a(href="/farmerOneReg", style="color: blue;")  Register Farmer One (FO)
+        a(href="#", style="color: blue; font-size: 14px; font-weight:bold;") Farmers One List (UF)
       li
-        a(href="#", style="color: blue;") Urban Farmers (UF)
-        a(href="#", style="color: blue;") Prod
-        a(href="#", style="color: blue;") Prod
+        a(href="/farmerOneReg", style="color: blue; font-size: 14px; font-weight:bold;")  Register Farmer One (FO)
+      li
+        a(href="#", style="color: blue; font-size: 14px; font-weight:bold;") Urban Farmers List (UF)
+        //- a(href="#", style="color: blue;") Prod
+        //- a(href="#", style="color: blue;") Prod
   .page-content-wrapper
       a.btn.btn-link#menu-toggle(role="button", href="#menu-toggle")
         i.fa.fa-bars

@@ -18,8 +18,6 @@ router.get('/cart', (req, res) => {
   res.render('cart', { title: 'Farmer One Registration' });
 });
 
-
-
 // save data to database (Get all route)
 // post gets info from form
 router.post('/farmerOneReg', async (req, res) => {
@@ -74,6 +72,7 @@ router.post('/foDelete', async (req, res) => {
   // if user has seeion recorded
   if (req.session.user) {
     try {
+      //Using the "deleteOne" method from the MongoDB library, to delete a document in a mongoDB collection.
       await farmerOne.deleteOne({ _id: req.body.id });
       res.redirect('back');
     } catch (err) {

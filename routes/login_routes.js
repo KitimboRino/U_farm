@@ -23,11 +23,13 @@ router.post(
 
     if (userRole == 'agricOfficer') {
       res.redirect('/fOneList');
-    } else if (userRole == 'farmOne') {
-      res.redirect('/fOneList');
-    } else userRole == 'urbFarmers';
-    {
+    } 
+    else if (userRole == 'farmOne') {
       res.redirect('/uFarmList');
+    } 
+    else userRole == 'urbFarmers';
+    {
+      res.redirect('/pUploadList');
     }
   }
 );
