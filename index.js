@@ -3,6 +3,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-Parser');
+// body-parser middleware, which will help us parse the body of our requests
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 // Create an express application by calling the express function.(Instantiating)
@@ -16,9 +17,10 @@ const produce = require('./routes/produceRoutes');
 const userLogin = require('./routes/login_routes');
 const Users = require('./models/Users');
 
+// 
 require('dotenv/config');
 
-//  express-session middleware to help us save the session cookie.
+  //  express-session middleware to help us save the session cookie.
 const expressSession = require('express-session')({
   // to sign the session ID cookie
   secret: 'secret',
@@ -30,7 +32,7 @@ const expressSession = require('express-session')({
 const passport = require('passport');
 
 // Connect to MongoDB.
-// Add { userNewUrlParser} to remove errors.
+// Add { useNewUrlParser} to remove errors.
 mongoose.connect(process.env.DB_CONNECTION, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -47,18 +49,18 @@ mongoose.connection
   });
 
 // Configurations
-// Loading view templete engine.(installing pug pt2)
+// Loading view templete engine.
 app.set('view engine', 'pug');
-// Setting view files i.e pug/ html in a directory called views.
+// Setting view files i.e pug in a directory called views.
 app.set('views', path.join(__dirname, 'views'));
 
 // Middleware settings
-// Simple request time logger (Add to project).
+// Simple request time logger.
 app.use((req, res, next) => {
   console.log('A new request received at ' + Date.now());
-  //   // This function call tells that more processing is
-  //   // required for the current request and is in the next middleware
-  //   // function/route handler.
+  // This function call tells that more processing is
+  // required for the current request and is in the next middleware
+  // function/route handler.
   next();
 });
 
@@ -68,14 +70,17 @@ app.use(express.static('public'));
 
 /*  PASSPORT SETUP  */
 app.use(expressSession);
-// initializing passport with its session authentication
+// initializing passport with its session authentication middleware
 app.use(passport.initialize());
 app.use(passport.session());
 
 // passport configs
 passport.use(Users.createStrategy());
+//invoked on authentication, and is to serialize the user instance with the information we pass on to it and store it in the session via a cookie
 passport.serializeUser(Users.serializeUser());
+//invoked every subsequent request to deserialize the instance, providing it the unique cookie identifier as a “credential”
 passport.deserializeUser(Users.deserializeUser());
+
 
 // app.get('/', (req, res) => {
 //   // __dirname is the path to current working directory
@@ -92,12 +97,13 @@ app.use('/', produce);
 // Login
 app.use('/', userLogin);
 
-// Routes......
+// Route
 // Home page route.
 app.get('/index', (req, res) => {
   // Picks up the page/ connects to page(index)
   res.render('index');
 });
+
 
 // logout, call back checking if there is a session
 app.post('/logout', (req, res) => {
@@ -112,7 +118,7 @@ app.post('/logout', (req, res) => {
   }
 });
 
-// Creates error when non existent path is selected, so we need to cater for soome of these in the project.
+// Creates error when non existent path is selected, so we need to cater for some of these in the project.
 app.get('*', (req, res) => {
   res.send('error page');
 });

@@ -23,7 +23,7 @@ router.get('/cart', (req, res) => {
 router.post('/farmerOneReg', async (req, res) => {
   // we put await inside a try to catch the errors
   try {
-    // const registration = new farmerOne(req.body); //create an instance of the Register model for data entered(req.body==got from the user)
+    //Create an instance of the user model for data entered(req.body==got from the user)
     const user = new Users(req.body);
     const items = new farmerOne(req.body);
     await items.save();
@@ -49,6 +49,7 @@ router.post('/farmerOneReg', async (req, res) => {
 router.get('/fOneList', async (req, res) => {
   // Added a check
   if (req.session.user) {
+      // Allows you to define a block of code to be tested for errors while it is being executed
     try {
       let items = await farmerOne.find();
       if (req.query.ward) {
@@ -59,6 +60,7 @@ router.get('/fOneList', async (req, res) => {
         users: items,
         currentUser: req.session.user,
       });
+      // Allows you to define a block of code to be executed, if an error occurs in the try block
     } catch (err) {
       res.status(400).send('Unable to find items in the database');
     }

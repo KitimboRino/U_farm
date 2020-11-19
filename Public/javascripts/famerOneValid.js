@@ -21,7 +21,7 @@ const fName_error = document.getElementById('fName');
 const lName_error = document.getElementById('lName');
 const Name_error = document.getElementById('Name');
 const Pwd_error = document.getElementById('Pwd');
-const PwdConf_error = document.getElementById('PwdConf');
+const PwdConf_error = document.getElementById('pwdConf');
 const gder_error = document.getElementById('gend');
 const Dob_error = document.getElementById('dtb');
 const niN_error = document.getElementById('ni');
@@ -39,18 +39,18 @@ fname.addEventListener('blur', fName_Verify, true);
 lname.addEventListener('blur', lName_Verify, true);
 Username.addEventListener('blur', Name_Verify, true);
 pass.addEventListener('blur', Pwd_Verify, true);
-passConfirm.addEventListener('blur', Pwd_Verify, true);
+passConfirm.addEventListener('blur', PwdConf_Verify, true);
 gender.addEventListener('blur', gder_Verify, true);
 dateBirth.addEventListener('blur', Dob_Verify, true);
 nin.addEventListener('blur', niN_Verify, true);
 phone.addEventListener('blur', phne_Verify, true);
 address.addEventListener('blur', addres_Verify, true);
-resident.addEventListener('blur', resid_Verify, true);
+// resident.addEventListener('blur', resid_Verify, true);
 UrbanWard.addEventListener('blur', wad_Verify, true);
-foNo.addEventListener('blur', phne_Verify, true);
-activities.addEventListener('blur', fAct_Verify, true);
+foNo.addEventListener('blur', fo_Verify, true);
+activ.addEventListener('blur', fAct_Verify, true);
+StayPeriod.addEventListener('blur', Stay_Verify, true);
 dateReg.addEventListener('blur', dor_Verify, true);
-StayPeriod.addEventListener('blur', Stay_verify, true);
 
 //validations
 function Validate() {
@@ -77,22 +77,22 @@ function Validate() {
     return false;
   }
 
-  //password validation
-  // if (pass.value == '') {
-  //   pass.style.border = '1px solid red';
-  //   pwd_error.textContent = 'Password is required';
-  //   pass.focus();
-  //   return false;
-  // }
+  // password validation
+  if (pass.value == '') {
+    pass.style.border = '1px solid red';
+    Pwd_error.textContent = 'Password is required';
+    pass.focus();
+    return false;
+  }
 
-  //password match
-  // if (pass.value != passConfirm.value) {
-  //   pass.style.border = '1px solid red';
-  //   passConfirm.style.border = '1px solid red';
-  //   pwdConf_error.innerHTML = 'Password not the same';
-  //   passConfirm.focus();
-  //   return false;
-  // }
+  // password match
+  if (pass.value != passConfirm.value) {
+    pass.style.border = '1px solid red';
+    passConfirm.style.border = '1px solid red';
+    PwdConf_error.innerHTML = 'Password not the same';
+    passConfirm.focus();
+    return false;
+  }
 
   if (gender.value == 'default') {
     gender.style.border = '1px solid red';
@@ -129,12 +129,12 @@ function Validate() {
     return false;
   }
 
-  // if (resident.value == '') {
-  //   resident.style.border = '1px solid red';
-  //   resident_error.textContent = 'Phone is required';
-  //   resident.focus();
-  //   return false;
-  // }
+  if (resident.checked == false) {
+    // resident.style.border = '1px solid red';
+    resident_error.textContent = 'Phone is required';
+    resident.focus();
+    return false;
+  }
 
   if (UrbanWard.value == 'selectWard') {
     UrbanWard.style.border = '1px solid red';
@@ -178,29 +178,133 @@ function Validate() {
   //     return false;
   //   }
   // }
+}
 
-  // Event Handlers
-  function fName_Verify() {
-    if (fname.value != '') {
-      fname.style.border = '1px solid #ffc107';
-      fName_error.innerHTML = '';
-      return true;
-    }
+// Event Handlers
+function fName_Verify() {
+  if (fname.value != '') {
+    fname.style.border = '1px solid #98FB98';
+    fName_error.innerHTML = '';
+    return true;
   }
+}
 
-  function lName_Verify() {
-    if (lname.value != '') {
-      lname.style.border = '1px solid #ffc107';
-      lName_error.innerHTML = '';
-      return true;
-    }
+function lName_Verify() {
+  if (lname.value != '') {
+    lname.style.border = '1px solid #98FB98';
+    lName_error.innerHTML = '';
+    return true;
   }
+}
 
-  // function pwd_Verify() {
-  //   if (pass.value != '') {
-  //     pass.style.border = '1px solid #ffc107';
-  //     pass_error.innerHTML = '';
-  //     return true;
-  //   }
-  // }
+function Name_Verify() {
+  if (Username.value != '') {
+    Username.style.border = '1px solid #98FB98';
+    Name_error.innerHTML = '';
+    return true;
+  }
+}
+
+function Pwd_Verify() {
+  if (pass.value != '') {
+    pass.style.border = '1px solid #98FB98';
+    Pwd_error.innerHTML = '';
+    return true;
+  }
+}
+
+function PwdConf_Verify() {
+  if (passConfirm.value != '') {
+    passConfirm.style.border = '1px solid #98FB98';
+    PwdConf_error.innerHTML = '';
+    return true;
+  }
+}
+
+function gder_Verify() {
+  if (gender.value != '') {
+    gender.style.border = '1px solid #98FB98';
+    gder_error.innerHTML = '';
+    return true;
+  }
+}
+
+function Dob_Verify() {
+  if (dateBirth.value != '') {
+    dateBirth.style.border = '1px solid #98FB98';
+    Dob_error.innerHTML = '';
+    return true;
+  }
+}
+
+function niN_Verify() {
+  if (nin.value != '') {
+    nin.style.border = '1px solid #98FB98';
+    niN_error.innerHTML = '';
+    return true;
+  }
+}
+
+function phne_Verify() {
+  if (phone.value != '') {
+    phone.style.border = '1px solid #98FB98';
+    phne_error.innerHTML = '';
+    return true;
+  }
+}
+
+function addres_Verify() {
+  if (address.value != '') {
+    address.style.border = '1px solid #98FB98';
+    addres_error.innerHTML = '';
+    return true;
+  }
+}
+
+// function resid_Verify() {
+//   if (resident.value != '') {
+//     resident.style.border = '1px solid #98FB98';
+//     resident_error.innerHTML = '';
+//     return true;
+//   }
+// }
+
+function wad_Verify() {
+  if (UrbanWard.value != '') {
+    UrbanWard.style.border = '1px solid #98FB98';
+    wad_error.innerHTML = '';
+    return true;
+  }
+}
+
+function fo_Verify() {
+  if (foNo.value != '') {
+    foNo.style.border = '1px solid #98FB98';
+    fo_ID.innerHTML = '';
+    return true;
+  }
+}
+
+function fAct_Verify() {
+  if (activ.value != '') {
+    activ.style.border = '1px solid #98FB98';
+    fAct_error.innerHTML = '';
+    return true;
+  }
+}
+
+function Stay_Verify() {
+  if (StayPeriod.value != '') {
+    StayPeriod.style.border = '1px solid #98FB98';
+    period_error.innerHTML = '';
+    return true;
+  }
+}
+
+function dor_Verify() {
+  if (dateReg.value != '') {
+    dateReg.style.border = '1px solid #98FB98';
+    dor_error.innerHTML = '';
+    return true;
+  }
 }
