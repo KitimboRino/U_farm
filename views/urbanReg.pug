@@ -10,56 +10,56 @@ head
 .uFamerReg
   h2
     |Urban Farmer Registration
-  form(role='form' name='uForm' method='POST' action='/urbanFReg' )
+  form(role='form' name='urbanFarm' method='POST' action='/urbanFReg' onsubmit='return Validate()')
     fieldset
 
       legend
         b Personal information
       
       //- first name
-      input.form-control(type='text' id='' name='firstname' placeholder='firstName')
-      span#fname.text-danger.font-weight-bold.small
+      input#fname.form-control(type='text' name='firstname' placeholder='firstName')
+      #fName.text-danger.font-weight-bold.small
 
       //- last name
-      input.form-control(type='text' id='' name='lastname' placeholder='lastname')
-      span#lname.text-danger.font-weight-bold.small
+      input#lname.form-control(type='text' name='lastname' placeholder='lastname')
+      #lName.text-danger.font-weight-bold.small
       
       //- Username   
       input.form-control(type='text' id='' name='username' placeholder='Username')
-      span#usename.text-danger.font-weight-bold.small
+      #Name.text-danger.font-weight-bold.small
 
       //- password
       input.form-control(type='text' id='' name='password' placeholder='Password')
-      span#pword.text-danger.font-weight-bold.small
+      #pwd.text-danger.font-weight-bold.small
 
       //- password confirmation
       input.form-control(type='text' id='' name='confirmPassword' placeholder='Confirm Password')
-      span#pword.text-danger.font-weight-bold.small
+      #pwordConf.text-danger.font-weight-bold.small
       
       //- Role
-      input#password.form-control(type='text' name='role' value='urbFarmers' readonly)
-      span#rol.text-danger.font-weight-bold.small
+      input#role.form-control(type='text' name='role' value='urbFarmers' readonly)
+      #rol.text-danger.font-weight-bold.small
 
       //- Gender
       select#gender.form-control
         option(value='selectGender' name='gender' selected='' disabled='') Gender
         option(value='1') Male
         option(value='2') Female
-      span#gend.text-danger.font-weight-bold.small
+      #gend.text-danger.font-weight-bold.small
     
       //- Date of birth
       label
         | Date of birth
         input.form-control3(type='date' placeholder='dd-mm-yyyy' name='dateOfBirth')
-      span#doB.text-danger.font-weight-bold.small
+      #dtb.text-danger.font-weight-bold.small
     
       //- Nin
       input.form-control(type='text' name='nin' placeholder='National Identification Number (NIN)')
-      span#niN.text-danger.font-weight-bold.small
+      #niN.text-danger.font-weight-bold.small
     
       //- Phone number
       input.form-control(type='text' placeholder='Phone' name='phone')
-      span#phn.text-danger.font-weight-bold.small
+      #phon.text-danger.font-weight-bold.small
     fieldset
       legend
         b Urban Farmer Information
@@ -71,11 +71,11 @@ head
         option(value='LC2') LC2
         option(value='LC3') LC3
         option(value='LC4') LC4
-      span#wd.text-danger.font-weight-bold.small
+      #wd.text-danger.font-weight-bold.small
     
       //- Unique Identification
       input.form-control(type='text' placeholder='Unique Identification (ID)' name='id')
-      span#uiD.text-danger.font-weight-bold.small
+      #uiD.text-danger.font-weight-bold.small
     
       //- Activities
       select#activities.form-control
@@ -83,12 +83,13 @@ head
         option(value='Horticultre') Horticulture
         option(value='Poultry') Poultry
         option(value='Dairy products') Dairy products
-      span#sAct.text-danger.font-weight-bold.small
+      #sAct.text-danger.font-weight-bold.small
     
       //-Date of registration
       label
         | Date of registration
         input.form-control2(type='date' placeholder='dd-mm-yyyy' name='dateOfReg')
-        span#dreg.text-danger.font-weight-bold.small
-    button.btn.btn-primary(type='submit' onclick='uFarm()') Button
-script(src='javascripts/uFarmer.js')
+        #dReg.text-danger.font-weight-bold.small
+        
+    button.btn.btn-primary(type='submit') Button
+script(src='javascripts/urbanFarmerValid.js')

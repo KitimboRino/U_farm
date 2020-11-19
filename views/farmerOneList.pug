@@ -84,7 +84,7 @@ div
                                     td #{user.dateOfReg}
                                     td 
                                     td
-                                        a(href='/foUpdate/'+user._id) Update
+                                        a.button.btn.btn-secondary.btn-block(href='/foUpdate/'+user._id ) Update
                                     td
                                         form(method="post" action='/foDelete')
                                             input(type="hidden", placeholder="", name="id", value=user._id)

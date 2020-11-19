@@ -27,7 +27,7 @@ router.post(
     else if (userRole == 'farmOne') {
       res.redirect('/uFarmList');
     } 
-    else userRole == 'urbFarmers';
+    else (userRole == 'urbFarmers');
     {
       res.redirect('/pUploadList');
     }

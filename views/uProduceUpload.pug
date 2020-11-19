@@ -8,32 +8,32 @@ head
   title Produce Upload
 .oFamerReg
   //- enctype is used fr uploadinf images or any file in form.
-  form(role='form' name='oForm' action='/uProdUpload' method='POST' enctype="multipart/form-data") 
+  form(role='form' name='uploadForm' action='/uProdUpload' method='POST' onsubmit='return Validate()'  enctype="multipart/form-data") 
     fieldset
       legend
         b Farmer produce upload
 
       //-Uban farmer Id
       input#id.form-control(type='text' name='id' placeholder='Unique ID')
-      span#prodname.text-danger.font-weight-bold.small
+      #Uid.text-danger.font-weight-bold.small
       
-      //- Product Name
+      //- Produce Name
       input#producename.form-control(type='text' name='produceName' placeholder='Produce name')
-      span#prodname.text-danger.font-weight-bold.small
+      #prodname.text-danger.font-weight-bold.small
 
       //- Date of upload
       label
         b Date of upload
         input.form-control2(type='date' placeholder='dd-mm-yyyy' name='dateOfUpload')
-      span#dUp.text-danger.font-weight-bold.small
+      #dUp.text-danger.font-weight-bold.small
       
       //- Phone number
       input.form-control(type='text' placeholder='Phone' name='phone')
-      span#phon.text-danger.font-weight-bold.small
+      #phon.text-danger.font-weight-bold.small
       
       //- Address Direction
       input#adress.form-control(type='text' name='address' placeholder='Address')
-      span#addr.text-danger.font-weight-bold.small
+      #addr.text-danger.font-weight-bold.small
       
       //- Mode of delivery
       label
@@ -44,44 +44,47 @@ head
         .form-check
           input#formCheck-2.form-check-input(type='radio' name='modeOfDelivery' value='Home delivery')
           label.form-check-label(for='Mode of delivery') Home delivery
-      span#rad.text-danger.font-weight-bold.small
+      #mde.text-danger.font-weight-bold.small
       
       //- Ward
-      select#ward.form-control(name='ward')
+      select#Ward.form-control(name='ward')
         option(selected='' disabled='' value='selectWard' ) Ward
         option(value='LC1') LC1
         option(value='LC2') LC2
         option(value='LC3') LC3
         option(value='LC4') LC4
-      span#wad.text-danger.font-weight-bold.small
+      #wad.text-danger.font-weight-bold.small
       
       //- Unit price/ kg
       input.form-control(type='text' placeholder='Unit price/ kg' name='unitPrice')
-      span#fone.text-danger.font-weight-bold.small
+      #uPrice.text-danger.font-weight-bold.small
       
       //- Quantity
       input.form-control(type='text' placeholder='Quantity(kg)' name='quantity')
-      span#qt.text-danger.font-weight-bold.small
+      #qt.text-danger.font-weight-bold.small
       
       //- Produce type
       select#produce.form-control(name='produceType')
         option(value='selectType' selected='' disabled='') Produce type
         option(value='Organic') Organic
         option(value='Non-organic') Non-orgnic
-      span#prod.text-danger.font-weight-bold.small
+      #prod.text-danger.font-weight-bold.small
       
       //- Mode of payment
       select#modeP.form-control(name='mPayment')
         option(value='selectMode' selected='' disabled='') Mode of payment
         option(value='Cash') Cash
         option(value='Mobile Money') Mobile Money
-      span#mode.text-danger.font-weight-bold.small
+      #mode.text-danger.font-weight-bold.small
       
       //- Add produce image
       label
         | Input produce image
         input.form-control(name='image' type='file' accept='image/*')
+        #im.text-danger.font-weight-bold.small
 
-    button.btn.btn-primary(type='submit' onclick='uFarm()') Submit
-    //- <button class="btn btn-primary" type="button" onclick=()>Reset</button>
-script(src='javascripts/upload.js')
+    button.btn.btn-primary(type='submit') Submit
+
+//- script(src='javascripts/upload.js')
+script(src='javascripts/prodUploadValid.js')
+

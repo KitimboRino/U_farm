@@ -1,0 +1,64 @@
+meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
+title= `${title}`
+link(rel="stylesheet", href="../bootstrap/css/bs/bootstrap.min.css")
+link(rel="stylesheet", href="../fonts/font-awesome.min.css")
+link(rel="stylesheet", href="../styles/Sidebar-Menu-1.css")
+link(rel="stylesheet", href="../styles/css/Sidebar-Menu.css")
+link(rel="stylesheet", href="../assets/css/styles.css")
+div
+#wrapper
+  #sidebar-wrapper(style="background-color: #78AB45;")
+    ul.sidebar-nav
+      li.sidebar-brand
+        a(href="#", style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
+      li
+        a(href="#", style="color: blue;") Agricultural Officer (AO)
+      li
+        a(href="/farmerOneReg", style="color: blue;")  Register Farmer One (FO)
+      li
+        a(href="#", style="color: blue;") Urban Farmers (UF)
+        a(href="#", style="color: blue;") Prod
+        a(href="#", style="color: blue;") Prod
+  .page-content-wrapper
+      a.btn.btn-link#menu-toggle(role="button", href="#menu-toggle")
+        i.fa.fa-bars
+      .container-fluid
+        .col-md-12
+          div
+        .col
+          .card
+            .card-body
+
+                header.card-header
+                    h4.card-title Welcome 
+                div.form-row
+                    div.col.form-group.col-md-12   
+                        div.form-row
+                            div.col-md-10
+                                p Here is the information #{item.firstname}
+                            div.col-md-2
+                                form(method="post" action='/logout') 
+                                    button.btn.btn-dark.btn-block(type="submit") Log out
+                form(method="post" action='/prodUpdate/'+item._id)
+                    table.table
+                        thead.thead-dark
+                            tr
+                                th UniqueID
+                                td 
+                                    input.form-control(value = item.id name ="firstName")
+                            tr
+                                th ProduceName
+                                td 
+                                    input.form-control(value = item.produceName name ="lastName")
+                             tr
+                                th ProductImage
+                                td 
+                                    input.form-control(value = item.image name ="lastName")
+
+                            tr
+                                td(colspan=2)
+                                    button.btn.btn-dark.btn-block(type="submit") Update
+
+script(src="../javascripts/jquery.min.js")
+script(src="../bootstrap/js/bootstrap.min.js")
+script(src="../javascripts/Sidebar-Menu.js")

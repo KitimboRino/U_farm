@@ -4,73 +4,70 @@ title Sign-In
 link(rel="stylesheet", href="bootstrap/css/bootstrap.min.css")
 link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
 link(rel="stylesheet", href="styles/Login-Form-Clean.css")
-link(rel="stylesheet", href="styles/logstyles.css")
 link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800")
 
-nav.navbar.navbar-light.navbar-expand-lg.fixed-top#mainNav
-  .container
-    button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarResponsive", type="button", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
-      i.fa.fa-align-justify
-    .collapse.navbar-collapse#navbarResponsive
-      img(src="images/logo.png", style="width: 98px; height: 60px; margin: 0px")
-      ul.nav.navbar-nav.ml-auto
-        li.nav-item(role="presentation")
-          a.nav-link.js-scroll-trigger(href="/market") Market
-        li.nav-item(role="presentation")
-          a.nav-link.js-scroll-trigger(href="#services") Services
-        li.nav-item(role="presentation")
-          a.nav-link.js-scroll-trigger(href="/cart") CART
-        li.nav-item(role="presentation")
-          a.nav-link.js-scroll-trigger(href="/login") Sign-In
-          
+body
+    nav.navbar.navbar-light.navbar-expand-lg.fixed-top#mainNav
+      .container
+        button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarResponsive", type="button", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
+          i.fa.fa-align-justify
+        .collapse.navbar-collapse#navbarResponsive
+          img(src="images/logo.png", style="width: 98px; height: 60px; margin: 0px")
+          ul.nav.navbar-nav.ml-auto
+            li.nav-item(role="presentation")
+              a.nav-link.js-scroll-trigger(href="/market") Market
+            li.nav-item(role="presentation")
+              a.nav-link.js-scroll-trigger(href="#services") Services
+            li.nav-item(role="presentation")
+              a.nav-link.js-scroll-trigger(href="/cart") CART
+            li.nav-item(role="presentation")
+              a.nav-link.js-scroll-trigger(href="/login") Sign-In
+              
 
 
-
-
-
-.login-clean
-  form(method="post" action="/login")
-    h2.sr-only Login Form
-    .illustration
-      img(src="images/logo.png", style="color: rgb(71,244,88);")
-    .form-group
-      input.form-control(type="text", name="username", placeholder="User Name")
-    .form-group
-      input.form-control(type="password", name="password", placeholder="Password")
-    .form-group
-      button.btn.btn-primary.btn-block(class='button', href='/') Log In
-    a.forgot(href="#") Forgot your id? Contact your your FO or AO
-footer.page-footer.light
-  .container
-    .row
-      .col-sm-3
-        h5 Get started
-        ul
-          li
-            a(href="#") Home
-      .col-sm-3
-        h5 About us
-        ul
-          li
-            a(href="#") Company Information
-          li
-            a(href="#") Contact us
-      .col-sm-3
-        h5 Support
-        ul
-          li
-            a(href="#") FAQ
-      .col-sm-3
-        h5 Legal
-        ul
-          li
-            a(href="#") Terms of Service
-          li
-            a(href="#") Terms of Use
-          li
-            a(href="#") Privacy Policy
-  .footer-copyright
-    p © 2020 Copyright Ufarm
+    .login-clean
+      form(method="post" action="/login")
+        h2.sr-only Login Form
+        .illustration
+          img(src="images/logo.png", style="color: rgb(71,244,88);")
+        .form-group
+          input.form-control(type="text", name="username", placeholder="User Name")
+        .form-group
+          input.form-control(type="password", name="password", placeholder="Password")
+        .form-group
+          button.btn.btn-primary.btn-block(class='button', href='/') Log In
+        a.forgot(href="#") Forgot your id? Contact your your FO or AO
+    footer.page-footer.light
+      .container
+        .row
+          .col-sm-3
+            h5 Get started
+            ul
+              li
+                a(href="#") Home
+          .col-sm-3
+            h5 About us
+            ul
+              li
+                a(href="#") Company Information
+              li
+                a(href="#") Contact us
+          .col-sm-3
+            h5 Support
+            ul
+              li
+                a(href="#") FAQ
+          .col-sm-3
+            h5 Legal
+            ul
+              li
+                a(href="#") Terms of Service
+              li
+                a(href="#") Terms of Use
+              li
+                a(href="#") Privacy Policy
+      .footer-copyright
+        p © 2020 Copyright Ufarm
 
 //- Script links
 script(src="javascripts/jquery.min.js")

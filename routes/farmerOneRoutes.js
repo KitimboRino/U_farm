@@ -69,7 +69,7 @@ router.get('/fOneList', async (req, res) => {
 });
 
 router.post('/foDelete', async (req, res) => {
-  // if user has seeion recorded
+  // if user has session recorded
   if (req.session.user) {
     try {
       //Using the "deleteOne" method from the MongoDB library, to delete a document in a mongoDB collection.
@@ -85,7 +85,7 @@ router.post('/foDelete', async (req, res) => {
   }
 });
 
-//find the details of the user using the id that has been passed using params.
+// Find the details of the user using the id that has been passed using params.
 router.get('/foUpdate/:id', async (req, res) => {
   if (req.session.user) {
     try {
@@ -100,6 +100,7 @@ router.get('/foUpdate/:id', async (req, res) => {
   }
 });
 
+//
 router.post('/foUpdate', async (req, res) => {
   if (req.session.user) {
     try {
