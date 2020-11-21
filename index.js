@@ -1,26 +1,26 @@
 // Initiate Application.
 //Module dependencies.
+// Importing express in to the by requiring it
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-Parser');
 // body-parser middleware, which will help us parse the body of our requests
+const bodyParser = require('body-Parser');
 const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 // Create an express application by calling the express function.(Instantiating)
 const app = express();
 
-//Path declarations
-
+//Import Routes
 const farmerOne = require('./routes/farmerOneRoutes');
 const urbanFarmer = require('./routes/urbanFarmerRoutes');
 const produce = require('./routes/produceRoutes');
 const userLogin = require('./routes/login_routes');
 const Users = require('./models/Users');
 
-// 
+// Module that loads the db variables from the .env file into the process env
 require('dotenv/config');
 
-  //  express-session middleware to help us save the session cookie.
+// Express-session middleware to help us save the session cookie.
 const expressSession = require('express-session')({
   // to sign the session ID cookie
   secret: 'secret',
@@ -55,6 +55,7 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // Middleware settings
+// Note .use is a method that sets up a middleware
 // Simple request time logger.
 app.use((req, res, next) => {
   console.log('A new request received at ' + Date.now());
@@ -63,7 +64,7 @@ app.use((req, res, next) => {
   // function/route handler.
   next();
 });
-
+// parse the bodies of all incoming requests generic URL encoded parser.(x-www-form-urlencoded)
 app.use(bodyParser.urlencoded({ extended: true }));
 // Setting public folder access.
 app.use(express.static('public'));
@@ -81,13 +82,12 @@ passport.serializeUser(Users.serializeUser());
 //invoked every subsequent request to deserialize the instance, providing it the unique cookie identifier as a “credential”
 passport.deserializeUser(Users.deserializeUser());
 
-
 // app.get('/', (req, res) => {
 //   // __dirname is the path to current working directory
 //   res.sendFile(__dirname + 'index.html');
 // });
 
-// Using imported routes arranged below the body perser & config
+// (Custom middleware )Using imported routes arranged below the body perser & config
 // Farmer One
 app.use('/', farmerOne);
 // Urban Farmer
@@ -103,7 +103,6 @@ app.get('/index', (req, res) => {
   // Picks up the page/ connects to page(index)
   res.render('index');
 });
-
 
 // logout, call back checking if there is a session
 app.post('/logout', (req, res) => {

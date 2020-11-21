@@ -127,3 +127,19 @@ body {
   }
 }
 
+.table thead tr {
+  background-color:  #78AB45;
+  text-align: left;
+  font-weight: bold;
+}
+
+.btn{
+  background-color:  #78AB45;
+  color: black;
+}
+
+.table .thead-dark th {
+  background-color:#78AB45;
+  border-color: #fff;
+  color:black;
+}

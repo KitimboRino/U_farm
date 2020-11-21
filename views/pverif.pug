@@ -35,21 +35,17 @@ div
                     div.col.form-group.col-md-12   
                         div.form-row
                             div.col-md-10
-                                p Here is the information #{user.firstname}
+                                p Here is the information #{item.firstname}
                             div.col-md-2
                                 form(method="post" action='/logout') 
                                     button.btn.btn-dark.btn-block(type="submit") Log out
-                form(method="post" action='/foUpdate?id='+user._id)
+                form(method="post" enctype="multipart/form-data" action='/prodUpdate/'+item._id)
                     table.table
                         thead.thead-dark
                             tr
-                                th Phonenumber
+                                th Status
                                 td 
-                                    input.form-control(value = user.phone name ="phone")
-                            tr
-                                th Activities
-                                td 
-                                    input.form-control(value = user.activities name ="activities")
+                                    input.form-control(value = item.id name ="firstName")
                             
                             tr
                                 td(colspan=2)

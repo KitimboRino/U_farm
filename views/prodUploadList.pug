@@ -6,8 +6,8 @@ title= `${title}`
 link(rel="stylesheet", href="../bootstrap/css/bs/bootstrap.min.css")
 link(rel="stylesheet", href="../fonts/font-awesome.min.css")
 link(rel="stylesheet", href="../styles/Sidebar-Menu-1.css")
-link(rel="stylesheet", href="../styles/css/Sidebar-Menu.css")
-link(rel="stylesheet", href="../assets/css/styles.css")
+//- link(rel="stylesheet", href="../styles/Sidebar-Menu.css")
+//- link(rel="stylesheet", href="../assets/css/styles.css")
 div
 #wrapper
   #sidebar-wrapper(style="background-color: #78AB45;")
@@ -59,7 +59,11 @@ div
                             th MethodPayment
                             th Activities
                             th ProductImage
+                            th Status
+                            th Action
                             th 
+                            th 
+
                     tbody
                         if items.length
                         each item in items
@@ -75,8 +79,13 @@ div
                                 td #{item.quantity}
                                 td #{item.produceType}
                                 td #{item.mPayment}
-                                td #{item.activities}
-                                td #{item.image}
+                                //- td #{item.activities}
+                                //- td #{item.image}
+                                //- td #{item.Status}
+                                td
+                                    a(href='/verify/'+item._id) Update
+
+
                                 td 
                                   img(src='/uploads/'+item.image height='60px' width='600px')
                                 td
