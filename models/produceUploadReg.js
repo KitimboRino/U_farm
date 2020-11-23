@@ -15,7 +15,7 @@ const prodSchema = new mongoose.Schema({
   mPayment: String,
   activities: String,
   image: String,
-  Status: String,
+  status: String,
 });
 
 //Associating the schema with actual collection name

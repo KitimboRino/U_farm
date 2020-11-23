@@ -67,23 +67,37 @@ head
       //- Ward
       select#ward.form-control
         option(selected='' disabled='' value='selectWard' name='ward') Ward
-        option(value='LC1') LC1
-        option(value='LC2') LC2
-        option(value='LC3') LC3
-        option(value='LC4') LC4
+        option(value='LC1') Ward 1
+        option(value='LC2') Ward 2
+        option(value='LC3') Ward 3
+        option(value='LC4') ward 4
       #wd.text-danger.font-weight-bold.small
     
       //- Unique Identification
       input.form-control(type='text' placeholder='Unique Identification (ID)' name='id')
       #uiD.text-danger.font-weight-bold.small
     
+      //- //- Activities
+      //- select#activities.form-control
+      //-   option(selected='' disabled='' value='selectAct' name='activities') Activities
+      //-   option(value='Horticultre') Horticulture
+      //-   option(value='Poultry') Poultry
+      //-   option(value='Dairy products') Dairy products
+
       //- Activities
-      select#activities.form-control
-        option(selected='' disabled='' value='selectAct' name='activities') Activities
-        option(value='Horticultre') Horticulture
-        option(value='Poultry') Poultry
-        option(value='Dairy products') Dairy products
-      #sAct.text-danger.font-weight-bold.small
+      label 
+          b Activities:  &nbsp
+      label.form-check 
+          span.form-check-label Horticulture    &nbsp
+          input.form-check-input(type="checkbox" checked name="activities" value='Horticulture')
+      label.form-check 
+          span.form-check-label Poultry   &nbsp
+          input.form-check-input(type="checkbox" checked name="activities" value='Poultry')
+      label.form-check 
+          span.form-check-label Dairy products &nbsp
+          input.form-check-input(type="checkbox" checked name="activities" value='Dairy products')
+          #sAct.text-danger.font-weight-bold.small
+
     
       //-Date of registration
       label

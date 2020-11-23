@@ -34,7 +34,7 @@ const uFarm = () => {
   }
 
   // Match the date format through regular expression (Dates).
-  const dateRegex = /^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+  const dateRegex = /^([0-9]{2})/([0-9]{2})-([0-9]{4})$/;
 
   // Function for date of birth.
   if (dob.value.match(dateRegex)) {

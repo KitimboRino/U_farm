@@ -30,26 +30,25 @@ div
             .card-body
 
                 header.card-header
-                    h4.card-title Welcome 
+                    h4.card-title Product Verification
                 div.form-row
                     div.col.form-group.col-md-12   
                         div.form-row
                             div.col-md-10
-                                p Here is the information #{item.firstname}
-                            div.col-md-2
-                                form(method="post" action='/logout') 
-                                    button.btn.btn-dark.btn-block(type="submit") Log out
-                form(method="post" enctype="multipart/form-data" action='/prodUpdate/'+item._id)
+                                p Product name: #{item.produceName}
+                            //- div.col-md-2
+                                //- form(method="post" action='/logout') 
+                                    //- button.btn.btn-dark.btn-block(type="submit") Log out
+                form(method="post" enctype="multipart/form-data" action='/prodUpdate?id='+item._id)
                     table.table
                         thead.thead-dark
                             tr
                                 th Status
                                 td 
-                                    input.form-control(value = item.id name ="firstName")
-                            
+                                    input.form-control(value = item.status name ="status")
                             tr
                                 td(colspan=2)
-                                    button.btn.btn-dark.btn-block(type="submit") Update
+                                    button.btn.btn-dark.btn-block(type='submit') Update
 
 script(src="../javascripts/jquery.min.js")
 script(src="../bootstrap/js/bootstrap.min.js")

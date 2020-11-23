@@ -14,7 +14,7 @@ const FORegSchema = new mongoose.Schema({
   residenceType: String,
   ward: String,
   fOnumber: String,
-  activities: String,
+  activities: [{ type: String }],
   periodOfStay: String,
   dateOfReg: String,
 });

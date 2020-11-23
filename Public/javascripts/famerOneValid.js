@@ -12,7 +12,7 @@ const address = document.farmerOne.address;
 const resident = document.farmerOne.residenceType;
 const UrbanWard = document.farmerOne.ward;
 const foNo = document.farmerOne.fOnumber;
-const activ = document.farmerOne.activities;
+// const activ = document.farmerOne.activities;
 const dateReg = document.farmerOne.dateOfReg;
 const StayPeriod = document.farmerOne.periodOfStay;
 
@@ -48,13 +48,13 @@ address.addEventListener('blur', addres_Verify, true);
 // resident.addEventListener('blur', resid_Verify, true);
 UrbanWard.addEventListener('blur', wad_Verify, true);
 foNo.addEventListener('blur', fo_Verify, true);
-activ.addEventListener('blur', fAct_Verify, true);
+// activ.addEventListener('blur', fAct_Verify, true);
 StayPeriod.addEventListener('blur', Stay_Verify, true);
 dateReg.addEventListener('blur', dor_Verify, true);
 
 //validations
 function Validate() {
-  //fName validation
+  //fName validation(checking empty)
   if (fname.value == '') {
     fname.style.border = '1px solid red';
     fName_error.textContent = 'First Name is required';
@@ -164,9 +164,9 @@ function Validate() {
     return false;
   }
 
-  if (StayPeriod.value == '') {
+  if (StayPeriod.value == 'selectPeriod') {
     StayPeriod.style.border = '1px solid red';
-    period_error.textContent = 'Phone is required';
+    period_error.textContent = 'Select Period of stay';
     StayPeriod.focus();
     return false;
   }
@@ -180,28 +180,44 @@ function Validate() {
   // }
 }
 
+// Regexes
+const nameRegex = /^.{5,50}[a-zA-Z]+$/; // for names lname & first & last btn (5-50)
+const alphaNumeric = /^[0-9a-zA-Z]+$/; // for alpha numeric
+const ninRegex = /^[0-9a-zA-Z]{13}$/; // for NIN exactly 13 alphanumric characters
+const phoneRegex = /^\d{10}$/; // for phone number
+
 // Event Handlers
 function fName_Verify() {
-  if (fname.value != '') {
+  if (fname.value != '' && fname.value.match(nameRegex)) {
     fname.style.border = '1px solid #98FB98';
     fName_error.innerHTML = '';
     return true;
+  } else {
+    fname.style.border = '1px solid red';
+    fName_error.textContent = 'first Name must be between 5 to 50 characters';
+    return false;
   }
 }
 
 function lName_Verify() {
-  if (lname.value != '') {
+  if (lname.value != '' && lname.value.match(nameRegex)) {
     lname.style.border = '1px solid #98FB98';
     lName_error.innerHTML = '';
     return true;
+  } else {
+    lname.style.border = '1px solid red';
+    lName_error.textContent = 'last Name must be between 5 to 50 characters';
   }
 }
 
 function Name_Verify() {
-  if (Username.value != '') {
+  if (Username.value != '' && Username.value.match(alphaNumeric)) {
     Username.style.border = '1px solid #98FB98';
     Name_error.innerHTML = '';
     return true;
+  } else {
+    Username.style.border = '1px solid red';
+    Name_error.textContent = 'User Name must be alpha Numeric characters';
   }
 }
 
@@ -238,18 +254,24 @@ function Dob_Verify() {
 }
 
 function niN_Verify() {
-  if (nin.value != '') {
+  if (nin.value != '' && nin.value.match(ninRegex)) {
     nin.style.border = '1px solid #98FB98';
     niN_error.innerHTML = '';
     return true;
+  } else {
+    nin.style.border = '1px solid red';
+    niN_error.textContent = 'Nin must be 13 alpha Numeric characters';
   }
 }
 
 function phne_Verify() {
-  if (phone.value != '') {
+  if (phone.value != '' && phone.value.match(phoneRegex)) {
     phone.style.border = '1px solid #98FB98';
     phne_error.innerHTML = '';
     return true;
+  } else {
+    phone.style.border = '1px solid red';
+    phne_error.textContent = 'Phone number must be 10 numbers';
   }
 }
 
@@ -268,6 +290,27 @@ function addres_Verify() {
 //     return true;
 //   }
 // }
+// Accesing properties by form name and assigning it to rR to give an array of elements
+// var valid = false;
+// //Looping through
+// for (var i = 0; i < resident.length; i++) {
+//   if (resident[i].checked) {
+//     valid = true;
+//     break;
+//   }
+// }
+// if (valid) {
+// } else {
+//   document.getElementById('rad').innerHTML = 'Please select residence type';
+//   return false;
+// }
+
+
+
+
+
+
+
 
 function wad_Verify() {
   if (UrbanWard.value != '') {
@@ -294,10 +337,13 @@ function fAct_Verify() {
 }
 
 function Stay_Verify() {
-  if (StayPeriod.value != '') {
+  if (StayPeriod.value != '' && StayPeriod.value != '2') {
     StayPeriod.style.border = '1px solid #98FB98';
     period_error.innerHTML = '';
     return true;
+  } else {
+    StayPeriod.style.border = '1px solid red';
+    period_error.textContent = 'Period of stay must be greater than 10 years';
   }
 }
 

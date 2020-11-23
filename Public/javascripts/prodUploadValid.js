@@ -139,6 +139,12 @@ function Validate() {
   }
 }
 
+// Regex
+const nameRegex = /^.{5,50}[a-zA-Z]+$/; // for names lname & first & last btn (5-50)
+const alphaNumeric = /^[0-9a-zA-Z]+$/; // for alpha numeric
+const ninRegex = /^[0-9a-zA-Z]{13}$/; // for NIN exactly 13 alphanumric characters
+const phoneRegex = /^\d{10}$/; // for phone number
+
 // Event Handlers for correct data
 // Unique ID
 function fiD_Verify() {
@@ -151,10 +157,13 @@ function fiD_Verify() {
 
 // Produce name
 function pName_Verify() {
-  if (pname.value != '') {
+  if (pname.value != '' && pname.value.match(alphaNumeric)) {
     pname.style.border = '1px solid #98FB98';
     pName_error.innerHTML = '';
     return true;
+  } else {
+    pname.style.border = 'red';
+    pName_error.textContent = 'Product name must be alpanumeric characters';
   }
 }
 
@@ -169,10 +178,13 @@ function DoU_Verify() {
 
 // Phone number
 function phne_Verify() {
-  if (phon.value != '') {
+  if (phon.value != '' && phon.value.match(phoneRegex)) {
     phon.style.border = '1px solid #98FB98';
     phne_error.innerHTML = '';
     return true;
+  } else {
+    phon.style.border = 'red';
+    phne_error.textContent = 'Phone number must be 10 digits';
   }
 }
 

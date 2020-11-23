@@ -10,7 +10,7 @@ const nin = document.urbanFarm.nin;
 const phone = document.urbanFarm.phone;
 const UrbanWard = document.urbanFarm.ward;
 const foNo = document.urbanFarm.id;
-const activ = document.urbanFarm.activities;
+// const activ = document.urbanFarm.activities;
 const dateReg = document.urbanFarm.dateOfReg;
 
 //Error Display picked from Id of errors in form
@@ -25,7 +25,7 @@ const niN_error = document.getElementById('niN');
 const phne_error = document.getElementById('phon');
 const wad_error = document.getElementById('wd');
 const fo_ID = document.getElementById('uiD');
-const fAct_error = document.getElementById('sAct');
+// const fAct_error = document.getElementById('sAct');
 const dor_error = document.getElementById('dReg');
 // const period_error = document.getElementById('ptay');
 
@@ -41,7 +41,7 @@ nin.addEventListener('blur', niN_Verify, true);
 phone.addEventListener('blur', phne_Verify, true);
 UrbanWard.addEventListener('blur', wad_Verify, true);
 foNo.addEventListener('blur', uID_Verify, true);
-activ.addEventListener('blur', fAct_Verify, true);
+// activ.addEventListener('blur', fAct_Verify, true);
 dateReg.addEventListener('blur', dor_Verify, true);
 
 function Validate() {
@@ -135,12 +135,12 @@ function Validate() {
   }
 
   // Activities
-  if (activ.value == 'selectAct') {
-    activ.style.border = '1px solid red';
-    fAct_error.textContent = 'Select Activities';
-    activ.focus();
-    return false;
-  }
+  // if (activ.value == 'selectAct') {
+  //   activ.style.border = '1px solid red';
+  //   fAct_error.textContent = 'Select Activities';
+  //   activ.focus();
+  //   return false;
+  // }
 
   // Date of registration
   if (dateReg.value == '') {
@@ -151,32 +151,50 @@ function Validate() {
   }
 }
 
+
+const nameRegex = /^.{5,50}[a-zA-Z]+$/; // for names lname & first & last btn (5-50)
+const alphaNumeric = /^[0-9a-zA-Z]+$/; // for alpha numeric
+const ninRegex = /^[0-9a-zA-Z]{13}$/; // for NIN exactly 13 alphanumric characters
+const phoneRegex = /^\d{10}$/; // for phone number
+
+
+
 // Event Handlers for correct data
 // First name
 function fName_Verify() {
-  if (fname.value != '') {
+  if (fname.value != '' && fname.value.match(nameRegex)) {
     fname.style.border = '1px solid #98FB98';
     fName_error.innerHTML = '';
     return true;
+  }else{
+    fname.style.border='red';
+    fName_error.textContent='First name must be between 5 to 50 characters'
   }
 }
 
 // Last name
 function lName_Verify() {
-  if (lname.value != '') {
+  if (lname.value != '' && lname.value.match(nameRegex)) {
     lname.style.border = '1px solid #98FB98';
     lName_error.innerHTML = '';
     return true;
+  }else{
+    lname.style.border='red';
+    lName_error.textContent='Last name must be between 5 to 50 characters';
   }
 }
 
 // User name
 function Name_Verify() {
-  if (Username.value != '') {
+  if (Username.value != '' && Username.value.match(alphaNumeric)) {
     Username.style.border = '1px solid #98FB98';
     Name_error.innerHTML = '';
     return true;
+  }else{
+    Username.style.border='red';
+    Name_error.textContent='User name must be between aphanumeric characters';
   }
+
 }
 
 // Password
@@ -217,19 +235,25 @@ function Dob_Verify() {
 
 // Nin number
 function niN_Verify() {
-  if (nin.value != '') {
+  if (nin.value != '' && nin.value.match(ninRegex)) {
     nin.style.border = '1px solid #98FB98';
     niN_error.innerHTML = '';
     return true;
+  }else{
+    nin.style.border='red';
+    niN_error.textContent='Nin must be 13 alphanumeric characters';
   }
 }
 
 // Phone number
 function phne_Verify() {
-  if (phone.value != '') {
+  if (phone.value != '' && phone.value.match(phoneRegex)) {
     phone.style.border = '1px solid #98FB98';
     phne_error.innerHTML = '';
     return true;
+  }else{
+    phone.style.border='red';
+    phne_error.textContent='Phone number must be 10 digits'
   }
 }
 
@@ -261,13 +285,13 @@ function uID_Verify() {
 }
 
 // Activities
-function fAct_Verify() {
-  if (activ.value != '') {
-    activ.style.border = '1px solid #98FB98';
-    fAct_error.innerHTML = '';
-    return true;
-  }
-}
+// function fAct_Verify() {
+//   if (activ.value != '') {
+//     activ.style.border = '1px solid #98FB98';
+//     fAct_error.innerHTML = '';
+//     return true;
+//   }
+// }
 
 function dor_Verify() {
   if (dateReg.value != '') {

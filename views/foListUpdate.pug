@@ -49,8 +49,21 @@ div
                             tr
                                 th Activities
                                 td 
-                                    input.form-control(value = user.activities name ="activities")
-                            
+                                    label 
+                                      b Activities:  &nbsp
+                                              label.form-check 
+                                                  span.form-check-label Mobilization    &nbsp
+                                                  input.form-check-input(type="checkbox" checked name="activities" value="Mobilization")
+                                              label.form-check 
+                                                  span.form-check-label Inspection   &nbsp
+                                                  input.form-check-input(type="checkbox" checked name="activities" value="Inspection")
+                                              label.form-check 
+                                                  span.form-check-label Regulation &nbsp
+                                                  input.form-check-input(type="checkbox" checked name="activities" value="Regulation")
+                                              label.form-check 
+                                                  span.form-check-label Support &nbsp
+                                                  input.form-check-input(type="checkbox" checked name="activities" value="Supervision")
+                                                        
                             tr
                                 td(colspan=2)
                                     button.btn.btn-dark.btn-block(type="submit") Update

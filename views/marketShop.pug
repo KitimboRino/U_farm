@@ -1,0 +1,167 @@
+meta(charset="utf-8")
+meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
+title Catalog - Brand
+link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
+link(rel="stylesheet", href="styles/smoothproducts.css")
+link(rel="stylesheet", href="styles/styleProd.css")
+nav.navbar.navbar-light.navbar-expand-lg.fixed-top#mainNav
+  .container
+    button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarResponsive", type="button", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
+      i.fa.fa-align-justify
+    .collapse.navbar-collapse#navbarResponsive
+      img(src="images/logo.png", style="width: 98px; height: 60px; margin: 0px")
+      ul.nav.navbar-nav.ml-auto
+        li.nav-item(role="presentation")
+          a.nav-link.js-scroll-trigger(href="/market") Market
+        li.nav-item(role="presentation")
+          a.nav-link.js-scroll-trigger(href="#services") Services
+        li.nav-item(role="presentation")
+          a.nav-link.js-scroll-trigger(href="/cart") Cart
+        li.nav-item(role="presentation")
+          a.nav-link.js-scroll-trigger(href="/login") Login
+
+       
+
+main.page.catalog-page
+  section.clean-block.clean-catalog.dark
+    .container
+      .block-heading
+        h2 MARKET PAGE
+        p HEALTH AND NUTRITION, FRESHNESS AND TASTE, GREAT PRICES AND PROFESSIONAL HANDLING AT YOUR FINGERTIPS
+      .content
+        .row
+          .col-md-3
+            .d-none.d-md-block
+              .filters
+                .filter-item
+                  h3 Produce type
+                  .form-check
+                    input.form-check-input#formCheck-1(type="checkbox")
+                    label.form-check-label(for="formCheck-1") Organic
+                  .form-check
+                    input.form-check-input#formCheck-2(type="checkbox")
+                    label.form-check-label(for="formCheck-2") Non-organic
+                .filter-item
+                  h3 Categories
+                  .form-check
+                    input.form-check-input#formCheck-5(type="checkbox")
+                    label.form-check-label(for="formCheck-5") Horticulture produce
+                  .form-check
+                    input.form-check-input#formCheck-6(type="checkbox")
+                    label.form-check-label(for="formCheck-6") Poultry products
+                  .form-check
+                    input.form-check-input#formCheck-7(type="checkbox")
+                    label.form-check-label(for="formCheck-7") Diary products
+            .d-md-none
+              a.btn.btn-link.d-md-none.filter-collapse(data-toggle="collapse", aria-expanded="false", aria-controls="filters", href="#filters", role="button")
+                | Filters
+                i.icon-arrow-down.filter-caret
+              .collapse#filters
+                .filters
+                  .filter-item
+                    h3 Produce type
+                    .form-check
+                      input.form-check-input#formCheck-1(type="checkbox")
+                      label.form-check-label(for="formCheck-1") Organic
+                    .form-check
+                      input.form-check-input#formCheck-2(type="checkbox")
+                      label.form-check-label(for="formCheck-2") Non-organic
+                  .filter-item
+                    h3 Categories
+                    .form-check
+                      input.form-check-input#formCheck-5(type="checkbox")
+                      label.form-check-label(for="formCheck-5") Horticulture produce
+                    .form-check
+                      input.form-check-input#formCheck-6(type="checkbox")
+                      label.form-check-label(for="formCheck-6") Poultry products
+                    .form-check
+                      input.form-check-input#formCheck-7(type="checkbox")
+                      label.form-check-label(for="formCheck-7") Diary products
+          .col-md-9
+            .products
+            
+              #carousel-1.carousel.slide(data-ride='carousel') 
+                .carousel-inner(role='listbox')
+                  .carousel-item.active
+                    img.w-100.d-block(src='images/rbanana.png' alt='Slide Image')
+                  .carousel-item
+                    img.w-100.d-block(src='images/avocado.png' alt='Slide Image')
+                  .carousel-item
+                    img.w-100.d-block(src='images/cabbage.png' alt='Slide Image')
+                div
+                  a.carousel-control-prev(href='#carousel-1' role='button' data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                  a.carousel-control-next(href='#carousel-1' role='button' data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+                ol.carousel-indicators
+                  li.active(data-target='#carousel-1' data-slide-to='0')
+                  li(data-target='#carousel-1' data-slide-to='1')
+                  li(data-target='#carousel-1' data-slide-to='2')
+
+            if items.length
+                each item in items
+                    .row.no-gutters                
+                        .col-12.col-md-6.col-lg-4
+                            .clean-product-item
+                                .image
+                                img(src='/uploads/'+item.image height='100px' width='100px')
+                                .product-name
+                                #{item.produceName}
+                                .about
+                                .price
+                                    h3 Ugx #{item.unitPrice}
+                
+                
+                    nav
+                        ul.pagination
+                        li.page-item.disabled
+                            a.page-link(href="#", aria-label="Previous")
+                            span(aria-hidden="true") «
+                        li.page-item.active
+                            a.page-link(href="#") 1
+                        li.page-item
+                            a.page-link(href="#") 2
+                        li.page-item
+                            a.page-link(href="#") 3
+                        li.page-item
+                            a.page-link(href="#", aria-label="Next")
+                            span(aria-hidden="true") »
+footer.page-footer.light
+  .container
+    .row
+      .col-sm-3
+        h5 Get started
+        ul
+          li
+            a(href="#") Home
+      .col-sm-3
+        h5 About us
+        ul
+          //- li
+          //-   a(href="#") Company Information
+          li
+            a(href="#") Contact us
+      //- .col-sm-3
+      //-   h5 Support
+      //-   ul
+      //-     li
+      //-       a(href="#") FAQ
+      //- .col-sm-3
+      //-   h5 Legal
+      //-   ul
+      //-     li
+      //-       a(href="#") Terms of Service
+      //-     li
+      //-       a(href="#") Terms of Use
+      //-     li
+      //-       a(href="#") Privacy Policy
+  .footer-copyright
+    p © 2020 Copyright Ufarm
+script(src="javascripts/jquery.min.js")
+script(src="bootstrap/js/bootstrap.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js")
+script(src="javascripts/smoothproducts.min.js")
+script(src="javascripts/marketth.js")
+

@@ -17,7 +17,7 @@ div
       li
         a(href="#", style="color: blue;") Farmer One(FO)
       li
-        a(href="/farmerOneReg", style="color: blue;")  Upload produce(UF)
+        a(href="/uProdUpload", style="color: blue;")  Upload produce(UF)
       li
         a(href="#", style="color: blue; font-weight: 3px ") Urban Farmers (UF)
         a(href="#", style="color: blue;") Prod
@@ -46,20 +46,19 @@ div
                 table.table.table-striped.table-responsive
                     thead.bg-secondary
                         tr
-                            th UniqueID
-                            th ProduceName
-                            th DateOfUpload
+                            th Unique ID
+                            th Produce Name
+                            th Date Of Upload
                             th Phone
                             th Address
-                            th MOdeOfDelivery
+                            th MOde Of Delivery
                             th Ward
-                            th UnitPrice
+                            th Unit Price
                             th Quantity
-                            th ProduceType
-                            th MethodPayment
-                            th Activities
-                            th ProductImage
+                            th Produce Type
+                            th Method Payment
                             th Status
+                            th Product Image
                             th Action
                             th 
                             th 
@@ -79,27 +78,23 @@ div
                                 td #{item.quantity}
                                 td #{item.produceType}
                                 td #{item.mPayment}
-                                //- td #{item.activities}
-                                //- td #{item.image}
-                                //- td #{item.Status}
-                                td
-                                    a(href='/verify/'+item._id) Update
-
-
+                                td #{item.status}
                                 td 
-                                  img(src='/uploads/'+item.image height='60px' width='600px')
+                                  img(src='/uploads/'+item.image height='100px' width='100px')
                                 td
-                                    a(href='/prodUpdate/'+item._id) Update
+                                  a.button.btn.btn-dark.btn-block(href='/verify/'+item._id) Verify
                                 td
-                                    form(method="post" action='/delete')
-                                        input(type="hidden", placeholder="", name="id", value=item._id)
-                                        button.btn.btn-dark.btn-block(type="submit") Delete
+                                  a.button.btn.btn-dark.btn-block(href='/prodUpdate/'+item._id) Update
+                                td
+                                  form(method="post" action='/delete')
+                                      input(type="hidden", placeholder="", name="id", value=item._id)
+                                      button.btn.btn-dark.btn-block(type="submit") Delete
                         else
                             p No registrations yet :(
-                div.form-row
-                    div.col-md-2.offset-12
-                        form(method="post" action='/logout') 
-                            button.btn.btn-dark.btn-block(type="submit") Log out
+                //- div.form-row
+                //-     div.col-md-2.offset-12
+                //-         form(method="post" action='/logout') 
+                //-             button.btn.btn-dark.btn-block(type="submit") Log out
 
 script(src="javascripts/jquery.min.js")
 script(src="bootstrap/js/bootstrap.min.js")
