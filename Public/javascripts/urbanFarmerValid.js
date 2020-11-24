@@ -10,7 +10,7 @@ const nin = document.urbanFarm.nin;
 const phone = document.urbanFarm.phone;
 const UrbanWard = document.urbanFarm.ward;
 const foNo = document.urbanFarm.id;
-// const activ = document.urbanFarm.activities;
+const activ = document.urbanFarm.activities;
 const dateReg = document.urbanFarm.dateOfReg;
 
 //Error Display picked from Id of errors in form
@@ -25,7 +25,7 @@ const niN_error = document.getElementById('niN');
 const phne_error = document.getElementById('phon');
 const wad_error = document.getElementById('wd');
 const fo_ID = document.getElementById('uiD');
-// const fAct_error = document.getElementById('sAct');
+const fAct_error = document.getElementById('sAct');
 const dor_error = document.getElementById('dReg');
 // const period_error = document.getElementById('ptay');
 
@@ -134,13 +134,18 @@ function Validate() {
     return false;
   }
 
-  // Activities
-  // if (activ.value == 'selectAct') {
-  //   activ.style.border = '1px solid red';
-  //   fAct_error.textContent = 'Select Activities';
-  //   activ.focus();
-  //   return false;
-  // }
+  //Activities validation
+  if (
+    activ[0].checked != true &&
+    activ[1].checked != true &&
+    activ[2].checked != true
+  ) {
+    fAct_error.textContent = 'Select atleast one activity';
+    return false;
+  } else {
+    fAct_error.innerHTML = '';
+    // return true;
+  }
 
   // Date of registration
   if (dateReg.value == '') {
@@ -151,13 +156,10 @@ function Validate() {
   }
 }
 
-
 const nameRegex = /^.{5,50}[a-zA-Z]+$/; // for names lname & first & last btn (5-50)
 const alphaNumeric = /^[0-9a-zA-Z]+$/; // for alpha numeric
 const ninRegex = /^[0-9a-zA-Z]{13}$/; // for NIN exactly 13 alphanumric characters
 const phoneRegex = /^\d{10}$/; // for phone number
-
-
 
 // Event Handlers for correct data
 // First name
@@ -166,9 +168,10 @@ function fName_Verify() {
     fname.style.border = '1px solid #98FB98';
     fName_error.innerHTML = '';
     return true;
-  }else{
-    fname.style.border='red';
-    fName_error.textContent='First name must be between 5 to 50 characters'
+  } else {
+    fname.style.border = 'red';
+    fName_error.textContent = 'First name must be between 5 to 50 characters';
+    return false;
   }
 }
 
@@ -178,9 +181,10 @@ function lName_Verify() {
     lname.style.border = '1px solid #98FB98';
     lName_error.innerHTML = '';
     return true;
-  }else{
-    lname.style.border='red';
-    lName_error.textContent='Last name must be between 5 to 50 characters';
+  } else {
+    lname.style.border = 'red';
+    lName_error.textContent = 'Last name must be between 5 to 50 characters';
+    return false;
   }
 }
 
@@ -190,11 +194,11 @@ function Name_Verify() {
     Username.style.border = '1px solid #98FB98';
     Name_error.innerHTML = '';
     return true;
-  }else{
-    Username.style.border='red';
-    Name_error.textContent='User name must be between aphanumeric characters';
+  } else {
+    Username.style.border = 'red';
+    Name_error.textContent = 'User name must be between aphanumeric characters';
+    return false;
   }
-
 }
 
 // Password
@@ -239,9 +243,10 @@ function niN_Verify() {
     nin.style.border = '1px solid #98FB98';
     niN_error.innerHTML = '';
     return true;
-  }else{
-    nin.style.border='red';
-    niN_error.textContent='Nin must be 13 alphanumeric characters';
+  } else {
+    nin.style.border = 'red';
+    niN_error.textContent = 'Nin must be 13 alphanumeric characters';
+    return false;
   }
 }
 
@@ -251,9 +256,10 @@ function phne_Verify() {
     phone.style.border = '1px solid #98FB98';
     phne_error.innerHTML = '';
     return true;
-  }else{
-    phone.style.border='red';
-    phne_error.textContent='Phone number must be 10 digits'
+  } else {
+    phone.style.border = 'red';
+    phne_error.textContent = 'Phone number must be 10 digits';
+    return false;
   }
 }
 

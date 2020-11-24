@@ -37,7 +37,7 @@ Ward.addEventListener('blur', ward_Verify, true);
 uPrice.addEventListener('blur', uPrice_Verify, true);
 quant.addEventListener('blur', quant_Verify, true);
 prodType.addEventListener('blur', pType_Verify, true);
-mPay.addEventListener('blur', mPay_Verify, true);
+// mPay.addEventListener('blur', mPay_Verify, true);
 img.addEventListener('blur', img_Verify, true);
 
 function Validate() {
@@ -82,12 +82,16 @@ function Validate() {
     return false;
   }
 
-  // Mode of delivery validation (check this out)
-  if (mode.checked == false) {
-    // modeD.style.border = '1px solid red';
-    modeD_error.textContent = 'Select is Mode of Delivery';
-    mode.focus();
+  //Mode of deilivery validation
+  if (
+    mode[0].checked != true &&
+    mode[1].checked != true 
+  ) {
+    modeD_error.textContent = 'Select atleast one mode of delivery';
     return false;
+  } else {
+    modeD_error.innerHTML = '';
+    // return true;
   }
 
   // Urban Ward
@@ -122,12 +126,16 @@ function Validate() {
     return false;
   }
 
-  // Mode of pay
-  if (mPay.value == 'selectMode') {
-    mPay.style.border = '1px solid red';
-    mPay_error.textContent = 'Select mode of Payment';
-    mPay.focus();
+  //Mode of pay validation
+  if (
+    mPay[0].checked != true &&
+    mPay[1].checked != true 
+  ) {
+    mPay_error.textContent = 'Select atleast one mode of pay';
     return false;
+  } else {
+    mPay_error.innerHTML = '';
+    // return true;
   }
 
   // Image Uplaod

@@ -38,16 +38,17 @@ head
       input#adress.form-control(type='text' name='address' placeholder='Address')
       #addr.text-danger.font-weight-bold.small
       
-      //- Mode of delivery
-      label
-        b  Mode of delivery
-        .form-check
-          input#formCheck-1.form-check-input(type='radio' name='modeOfDelivery' value='Pick up') 
-          label.form-check-label(for='Mode of delivery') Pick up
-        .form-check
-          input#formCheck-2.form-check-input(type='radio' name='modeOfDelivery' value='Home delivery')
-          label.form-check-label(for='Mode of delivery') Home delivery
-      #mde.text-danger.font-weight-bold.small
+      //- Mode of delivery.
+      label 
+          b Mode of delivery:  &nbsp
+      label.form-check 
+          span.form-check-label Cash   &nbsp
+          input.form-check-input(type="checkbox"  name='modeOfDelivery' value='Cash')
+      label.form-check 
+          span.form-check-label Mobile Money   &nbsp
+          input.form-check-input(type="checkbox"  name='modeOfDelivery' value='Mobile Money')
+          #mde.text-danger.font-weight-bold.small
+
       
       //- Ward
       select#Ward.form-control(name='ward')
@@ -72,13 +73,24 @@ head
         option(value='Organic') Organic
         option(value='Non-organic') Non-orgnic
       #prod.text-danger.font-weight-bold.small
-      
+
       //- Mode of payment
-      select#modeP.form-control(name='mPayment')
-        option(value='selectMode' selected='' disabled='') Mode of payment
-        option(value='Cash') Cash
-        option(value='Mobile Money') Mobile Money
-      #mode.text-danger.font-weight-bold.small
+      label 
+          b Mode of Payment:  &nbsp
+      label.form-check 
+          span.form-check-label Cash   &nbsp
+          input.form-check-input(type="checkbox"  name='mPayment' value='Cash')
+      label.form-check 
+          span.form-check-label Mobile Money   &nbsp
+          input.form-check-input(type="checkbox"  name='mPayment' value='Mobile Money')
+          #mode.text-danger.font-weight-bold.small
+
+
+
+
+
+
+
       
       //- Add produce image
       label

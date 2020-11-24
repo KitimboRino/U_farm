@@ -12,7 +12,7 @@ const address = document.farmerOne.address;
 const resident = document.farmerOne.residenceType;
 const UrbanWard = document.farmerOne.ward;
 const foNo = document.farmerOne.fOnumber;
-// const activ = document.farmerOne.activities;
+const activ = document.farmerOne.activities;
 const dateReg = document.farmerOne.dateOfReg;
 const StayPeriod = document.farmerOne.periodOfStay;
 
@@ -45,7 +45,7 @@ dateBirth.addEventListener('blur', Dob_Verify, true);
 nin.addEventListener('blur', niN_Verify, true);
 phone.addEventListener('blur', phne_Verify, true);
 address.addEventListener('blur', addres_Verify, true);
-// resident.addEventListener('blur', resid_Verify, true);
+resident.addEventListener('blur', resid_Verify, true);
 UrbanWard.addEventListener('blur', wad_Verify, true);
 foNo.addEventListener('blur', fo_Verify, true);
 // activ.addEventListener('blur', fAct_Verify, true);
@@ -93,7 +93,8 @@ function Validate() {
     passConfirm.focus();
     return false;
   }
-
+  
+  //Gender 
   if (gender.value == 'default') {
     gender.style.border = '1px solid red';
     gder_error.textContent = 'Select gender';
@@ -101,6 +102,7 @@ function Validate() {
     return false;
   }
 
+  // Date of birth
   if (dateBirth.value == '') {
     dateBirth.style.border = '1px solid red';
     Dob_error.textContent = 'Date of birth is required';
@@ -108,6 +110,7 @@ function Validate() {
     return false;
   }
 
+  // Nin number
   if (nin.value == '') {
     nin.style.border = '1px solid red';
     niN_error.textContent = 'NIN is required';
@@ -115,6 +118,7 @@ function Validate() {
     return false;
   }
 
+  // Phone number
   if (phone.value == '') {
     phone.style.border = '1px solid red';
     phne_error.textContent = 'Phone is required';
@@ -122,6 +126,7 @@ function Validate() {
     return false;
   }
 
+  // Address
   if (address.value == '') {
     address.style.border = '1px solid red';
     addres_error.textContent = 'Address is required';
@@ -129,9 +134,10 @@ function Validate() {
     return false;
   }
 
+  
   if (resident.checked == false) {
     // resident.style.border = '1px solid red';
-    resident_error.textContent = 'Phone is required';
+    resident_error.textContent = 'Select type of residence';
     resident.focus();
     return false;
   }
@@ -150,12 +156,12 @@ function Validate() {
     return false;
   }
 
-  if (activ.value == 'selectAct') {
-    activ.style.border = '1px solid red';
-    fAct_error.textContent = 'Select Activity';
-    activ.focus();
-    return false;
-  }
+  // if (activ.value == 'selectAct') {
+  //   // activ.style.border = '1px solid red';
+  //   fAct_error.textContent = 'Select Activity';
+  //   activ.focus();
+  //   return false;
+  // }
 
   if (dateReg.value == '') {
     dateReg.style.border = '1px solid red';
@@ -170,14 +176,6 @@ function Validate() {
     StayPeriod.focus();
     return false;
   }
-
-  //policy checkbox validation
-  //   if (policy.checked != true) {
-  //     policy_error.textContent = 'Please select terms and conditions';
-  //     policy.focus();
-  //     return false;
-  //   }
-  // }
 }
 
 // Regexes
@@ -207,6 +205,7 @@ function lName_Verify() {
   } else {
     lname.style.border = '1px solid red';
     lName_error.textContent = 'last Name must be between 5 to 50 characters';
+    return false;
   }
 }
 
@@ -218,6 +217,7 @@ function Name_Verify() {
   } else {
     Username.style.border = '1px solid red';
     Name_error.textContent = 'User Name must be alpha Numeric characters';
+    return false;
   }
 }
 
@@ -261,6 +261,7 @@ function niN_Verify() {
   } else {
     nin.style.border = '1px solid red';
     niN_error.textContent = 'Nin must be 13 alpha Numeric characters';
+    return false;
   }
 }
 
@@ -272,6 +273,7 @@ function phne_Verify() {
   } else {
     phone.style.border = '1px solid red';
     phne_error.textContent = 'Phone number must be 10 numbers';
+    return false;
   }
 }
 
@@ -290,27 +292,6 @@ function addres_Verify() {
 //     return true;
 //   }
 // }
-// Accesing properties by form name and assigning it to rR to give an array of elements
-// var valid = false;
-// //Looping through
-// for (var i = 0; i < resident.length; i++) {
-//   if (resident[i].checked) {
-//     valid = true;
-//     break;
-//   }
-// }
-// if (valid) {
-// } else {
-//   document.getElementById('rad').innerHTML = 'Please select residence type';
-//   return false;
-// }
-
-
-
-
-
-
-
 
 function wad_Verify() {
   if (UrbanWard.value != '') {
@@ -328,16 +309,21 @@ function fo_Verify() {
   }
 }
 
-function fAct_Verify() {
-  if (activ.value != '') {
-    activ.style.border = '1px solid #98FB98';
-    fAct_error.innerHTML = '';
-    return true;
-  }
+//Activities validation
+if (activ[0].checked != true &&
+    activ[1].checked != true &&
+    activ[2].checked != true &&
+    activ[3].checked != true){
+    fAct_error.textContent = "Select atleast one activity";
+  return false;
+}else{
+  fAct_error.innerHTML ="";
+  return true;
 }
 
+// Period of Stay
 function Stay_Verify() {
-  if (StayPeriod.value != '' && StayPeriod.value != '2') {
+  if (StayPeriod.value != '' && StayPeriod.value >10) {
     StayPeriod.style.border = '1px solid #98FB98';
     period_error.innerHTML = '';
     return true;
@@ -354,3 +340,15 @@ function dor_Verify() {
     return true;
   }
 }
+
+// function periodVerify(){
+//   if(StayPeriod.value !="" && StayPeriod.value > 10){
+//       StayPeriod.style.border = "1px solid #ffc107";
+//       period_error.innerHTML ="";
+//       return true;
+//   }else{
+//       StayPeriod.style.border = "1px solid red";
+//       period_error.textContent = "Not Eligible! Minimum 10 years";
+//       return false
+//   }
+// }

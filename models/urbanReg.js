@@ -14,7 +14,7 @@ const UFRegSchema = new mongoose.Schema({
   phone: Number,
   ward: Number,
   id: String,
-  activities: String,
+  activities: [{type: String}],
   dateOfReg: String,
 });
 
