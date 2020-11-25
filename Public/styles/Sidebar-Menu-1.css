@@ -64,6 +64,12 @@ body {
   color: #999999;
 }
 
+.sidebar-nav li i {
+  padding-right: 5px;
+  line-height: 40px;
+  float: left;
+  color: blue;
+}
 .sidebar-nav li a:hover {
   text-decoration: none;
   color: #fff;

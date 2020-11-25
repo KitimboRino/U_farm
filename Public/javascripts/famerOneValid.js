@@ -45,7 +45,7 @@ dateBirth.addEventListener('blur', Dob_Verify, true);
 nin.addEventListener('blur', niN_Verify, true);
 phone.addEventListener('blur', phne_Verify, true);
 address.addEventListener('blur', addres_Verify, true);
-resident.addEventListener('blur', resid_Verify, true);
+// resident.addEventListener('blur', resid_Verify, true);
 UrbanWard.addEventListener('blur', wad_Verify, true);
 foNo.addEventListener('blur', fo_Verify, true);
 // activ.addEventListener('blur', fAct_Verify, true);
@@ -93,8 +93,8 @@ function Validate() {
     passConfirm.focus();
     return false;
   }
-  
-  //Gender 
+
+  //Gender
   if (gender.value == 'default') {
     gender.style.border = '1px solid red';
     gder_error.textContent = 'Select gender';
@@ -134,13 +134,13 @@ function Validate() {
     return false;
   }
 
-  
   if (resident.checked == false) {
     // resident.style.border = '1px solid red';
     resident_error.textContent = 'Select type of residence';
     resident.focus();
     return false;
   }
+  
 
   if (UrbanWard.value == 'selectWard') {
     UrbanWard.style.border = '1px solid red';
@@ -156,24 +156,34 @@ function Validate() {
     return false;
   }
 
-  // if (activ.value == 'selectAct') {
-  //   // activ.style.border = '1px solid red';
-  //   fAct_error.textContent = 'Select Activity';
-  //   activ.focus();
-  //   return false;
-  // }
+  //Activities validation
+  if (
+    activ[0].checked == false &&
+    activ[1].checked == false &&
+    activ[2].checked == false &&
+    activ[3].checked == false
+  ) {
+    fAct_error.textContent = 'Select atleast one activity';
+    return false;
+  } else {
+    fAct_error.innerHTML = '';
+    // return true;
+  }
 
+  // Period of stay
+  if (StayPeriod.value == '') {
+    StayPeriod.style.border = '1px solid red';
+    period_error.textContent = 'Select Period of stay';
+    StayPeriod.focus();
+    return false;
+  }
+  
+
+  // Date of registration
   if (dateReg.value == '') {
     dateReg.style.border = '1px solid red';
     dor_error.textContent = 'Date of Registration required';
     dateReg.focus();
-    return false;
-  }
-
-  if (StayPeriod.value == 'selectPeriod') {
-    StayPeriod.style.border = '1px solid red';
-    period_error.textContent = 'Select Period of stay';
-    StayPeriod.focus();
     return false;
   }
 }
@@ -226,6 +236,8 @@ function Pwd_Verify() {
     pass.style.border = '1px solid #98FB98';
     Pwd_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -234,6 +246,8 @@ function PwdConf_Verify() {
     passConfirm.style.border = '1px solid #98FB98';
     PwdConf_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -285,14 +299,15 @@ function addres_Verify() {
   }
 }
 
-// function resid_Verify() {
-//   if (resident.value != '') {
-//     resident.style.border = '1px solid #98FB98';
-//     resident_error.innerHTML = '';
-//     return true;
-//   }
-// }
+function resid_Verify() {
+  if (resident.value != '') {
+    // resident.style.border = '1px solid #98FB98';
+    resident_error.innerHTML = '';
+    return true;
+  }
+}
 
+// Ward
 function wad_Verify() {
   if (UrbanWard.value != '') {
     UrbanWard.style.border = '1px solid #98FB98';
@@ -301,35 +316,27 @@ function wad_Verify() {
   }
 }
 
+// FO Number
 function fo_Verify() {
   if (foNo.value != '') {
     foNo.style.border = '1px solid #98FB98';
     fo_ID.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
-}
-
-//Activities validation
-if (activ[0].checked != true &&
-    activ[1].checked != true &&
-    activ[2].checked != true &&
-    activ[3].checked != true){
-    fAct_error.textContent = "Select atleast one activity";
-  return false;
-}else{
-  fAct_error.innerHTML ="";
-  return true;
 }
 
 // Period of Stay
 function Stay_Verify() {
-  if (StayPeriod.value != '' && StayPeriod.value >10) {
+  if (StayPeriod.value != '' && StayPeriod.value > 10) {
     StayPeriod.style.border = '1px solid #98FB98';
     period_error.innerHTML = '';
     return true;
   } else {
     StayPeriod.style.border = '1px solid red';
     period_error.textContent = 'Period of stay must be greater than 10 years';
+    return false;
   }
 }
 
@@ -338,17 +345,7 @@ function dor_Verify() {
     dateReg.style.border = '1px solid #98FB98';
     dor_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
-
-// function periodVerify(){
-//   if(StayPeriod.value !="" && StayPeriod.value > 10){
-//       StayPeriod.style.border = "1px solid #ffc107";
-//       period_error.innerHTML ="";
-//       return true;
-//   }else{
-//       StayPeriod.style.border = "1px solid red";
-//       period_error.textContent = "Not Eligible! Minimum 10 years";
-//       return false
-//   }
-// }

@@ -12,7 +12,7 @@ const UFRegSchema = new mongoose.Schema({
   dateOfBirth: String,
   nin: String,
   phone: Number,
-  ward: Number,
+  ward: String,
   id: String,
   activities: [{type: String}],
   dateOfReg: String,

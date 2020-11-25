@@ -6,7 +6,7 @@ title= `${title}`
 link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
 link(rel="stylesheet", href="fonts/font-awesome.min.css")
 link(rel="stylesheet", href="styles/Sidebar-Menu-1.css")
-link(rel="stylesheet", href="styles/css/Sidebar-Menu.css")
+//- link(rel="stylesheet", href="styles/css/Sidebar-Menu.css")
 link(rel="stylesheet", href="assets/css/styles.css")
 div
 #wrapper
@@ -15,13 +15,16 @@ div
       li.sidebar-brand
         a(href="#", style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
       li
-        a(href="#", style="color: blue;") Farmer One(FO)
+        a(href="#", style='color: blue;') Farmer Ones(FO)
+          i.fa.fa-table
       li
-        a(href="/farmerOneReg", style="color: blue;")  Register Urban Farmer(UF)
+        a(href="/urbanFReg", style='color: blue;')  Urban Farmers (UF)
+          i.fa.fa-file
       li
-        a(href="/pUploadList", style="color: blue;") Urban Farmers (UF)
-        a(href="#", style="color: blue;") Prod
-        a(href="#", style="color: blue;") Prod
+        a(href="/pUploadList", style="color: blue;") Agric Produce
+          i.fa.fa-bars
+        //- a(href="#", style="color: blue;") Prod
+        //- a(href="#", style="color: blue;") Prod
   .page-content-wrapper
       a.btn.btn-link#menu-toggle(role="button", href="#menu-toggle")
         i.fa.fa-bars
@@ -43,6 +46,7 @@ div
                                     input.form-control(name='gender' placeholder="Enter your search term(gender) ...")
                                 div.col-md-3
                                     input.btn.btn-dark.btn-block(type="submit")
+                                
                 table.table.table-striped.table-responsive
                     thead.bg-secondary
                         tr

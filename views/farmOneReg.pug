@@ -68,10 +68,10 @@ head
         b  Residence type
         .form-check
           input#formCheck-1.form-check-input(type='radio' value='Permanent' name='residenceType')
-          label.form-check-label(for='Residence type') Permanent
+          label(for='Residence type') Permanent
         .form-check
           input#formCheck-2.form-check-input(type='radio' value='Temporary' name='residenceType')
-          label.form-check-label(for='Residence type') Temporary
+          label(for='Residence type') Temporary
       #rad.text-danger.font-weight-bold.small
     
     fieldset
@@ -97,31 +97,26 @@ head
           b Activities:  &nbsp
       label.form-check 
           span.form-check-label Mobilization    &nbsp
-          input.form-check-input(type="checkbox" checked name="activities" value="Mobilization")
+          input.form-check-input(type="checkbox"  name="activities" value="Mobilization")
       label.form-check 
           span.form-check-label Inspection   &nbsp
-          input.form-check-input(type="checkbox" checked name="activities" value="Inspection")
+          input.form-check-input(type="checkbox"  name="activities" value="Inspection")
       label.form-check 
           span.form-check-label Regulation &nbsp
-          input.form-check-input(type="checkbox" checked name="activities" value="Regulation")
+          input.form-check-input(type="checkbox"  name="activities" value="Regulation")
       label.form-check 
           span.form-check-label Support &nbsp
-          input.form-check-input(type="checkbox" checked name="activities" value="Supervision")
+          input.form-check-input(type="checkbox"  name="activities" value="Supervision")
           #act.text-danger.font-weight-bold.small
 
-
-      //- Period of stay
-      select#StayPeriod.form-control(name='periodOfStay')
-        option(selected='' disabled='' value='selectPeriod') Period Of Stay
-        option(value='> 10 years') > 10 years
-        option(value='< 10 years') < 10 years
+      input#StayPeriod.form-control(type='number' name='periodOfStay' placeholder='Stay Period')
       #ptay.text-danger.font-weight-bold.small
       
       //- Date of registration
       label
         b Date of registration
         input#dor.form-control2(type='date' placeholder='dd-mm-yyyy' name='dateOfReg')
-      #dReg.text-danger.font-weight-bold.small
+        #dReg.text-danger.font-weight-bold.small
     button.btn.btn-primary(type='submit') Button
 
 script(src='javascripts/famerOneValid.js')

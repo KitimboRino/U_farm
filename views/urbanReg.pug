@@ -41,8 +41,8 @@ head
       #rol.text-danger.font-weight-bold.small
 
       //- Gender
-      select#gender.form-control
-        option(value='selectGender' name='gender' selected='' disabled='') Gender
+      select#gender.form-control(name='gender')
+        option(value='selectGender'  selected='' disabled='') Gender
         option(value='1') Male
         option(value='2') Female
       #gend.text-danger.font-weight-bold.small
@@ -76,13 +76,6 @@ head
       //- Unique Identification
       input.form-control(type='text' placeholder='Unique Identification (ID)' name='id')
       #uiD.text-danger.font-weight-bold.small
-    
-      //- //- Activities
-      //- select#activities.form-control
-      //-   option(selected='' disabled='' value='selectAct' name='activities') Activities
-      //-   option(value='Horticultre') Horticulture
-      //-   option(value='Poultry') Poultry
-      //-   option(value='Dairy products') Dairy products
 
       //- Activities
       label 

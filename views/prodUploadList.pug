@@ -3,25 +3,29 @@ html
 meta(charset="utf-8")
 meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
 title= `${title}`
-link(rel="stylesheet", href="../bootstrap/css/bs/bootstrap.min.css")
-link(rel="stylesheet", href="../fonts/font-awesome.min.css")
-link(rel="stylesheet", href="../styles/Sidebar-Menu-1.css")
-//- link(rel="stylesheet", href="../styles/Sidebar-Menu.css")
-//- link(rel="stylesheet", href="../assets/css/styles.css")
+link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
+link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+link(rel="stylesheet", href="styles/Sidebar-Menu-1.css")
+//- link(rel="stylesheet", href="assets/css/styles.css")
+
 div
 #wrapper
   #sidebar-wrapper(style="background-color: #78AB45;")
+    
+
     ul.sidebar-nav
-      li.sidebar-brand
-        a(href="#", style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
-      li
-        a(href="#", style="color: blue;") Farmer One(FO)
-      li
-        a(href="/uProdUpload", style="color: blue;")  Upload produce(UF)
-      li
-        a(href="#", style="color: blue; font-weight: 3px ") Urban Farmers (UF)
-        a(href="#", style="color: blue;") Prod
-        a(href="#", style="color: blue;") Prod
+        li.sidebar-brand
+          a(style="color:#343a40 ;font-size: 34px; font-weight:bold;") Ufarm
+        li
+          a(class="i.fas fa-profile" style="color:#343a40 ; font-size: 14px; font-weight:bold;") AGRICULTURAL OFFICER(AO)
+        li
+          a(class="i.fas fa-table" href="#", style="color:#343a40 ; font-size: 14px; font-weight:bold;") Farmers One List (UF)
+        li
+          a(class="i.fas fa-table" href="/farmerOneReg", style="color:#343a40 ; font-size: 14px; font-weight:bold;")  Register Farmer One (FO)
+        li
+          a(class="i.fas fa-table" href="#", style="color:#343a40 ; font-size: 14px; font-weight:bold;") Urban Farmers List (UF)
+          //- a(href="#", style="color: blue;") Prod
+          //- a(href="#", style="color: blue;") Prod  
   .page-content-wrapper
       a.btn.btn-link#menu-toggle(role="button", href="#menu-toggle")
         i.fa.fa-bars
@@ -91,10 +95,10 @@ div
                                       button.btn.btn-dark.btn-block(type="submit") Delete
                         else
                             p No registrations yet :(
-                //- div.form-row
-                //-     div.col-md-2.offset-12
-                //-         form(method="post" action='/logout') 
-                //-             button.btn.btn-dark.btn-block(type="submit") Log out
+                div.form-row
+                    div.col-md-2.offset-12
+                        form(method="post" action='/logout') 
+                            button.btn.btn-dark.btn-block(type="submit") Log out
 
 script(src="javascripts/jquery.min.js")
 script(src="bootstrap/js/bootstrap.min.js")
