@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-// const passportLocalMongoose = require('passport-local-mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 
-// // Creating a database Schema..same format as body
+// Creating a database Schema..same format as body
 const UFRegSchema = new mongoose.Schema({
   firstname: String,
   lastname: String,
@@ -19,7 +19,7 @@ const UFRegSchema = new mongoose.Schema({
 });
 
 // Setting the plugin to use the passport(test if needed)
-// UFRegSchema.plugin(passportLocalMongoose);
+UFRegSchema.plugin(passportLocalMongoose);
 
-// // Associating the Schema with actual collection name
+// Associating the Schema with actual collection name
 module.exports = mongoose.model('urbfarmer', UFRegSchema);

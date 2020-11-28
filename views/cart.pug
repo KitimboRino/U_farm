@@ -2,9 +2,6 @@ meta(charset="utf-8")
 meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
 title Shopping Cart - Brand
 link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
-//  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i" /> 
-//  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" /> 
-//  <link rel="stylesheet" href="assets/css/smoothproducts.css" /> 
 link(rel="stylesheet", href="assets/css/untitled.css")
 nav.navbar.navbar-light.navbar-expand-lg.fixed-top.bg-white.clean-navbar
   .container
@@ -28,53 +25,53 @@ main.page.shopping-cart-page
                 .row.justify-content-center.align-items-center
                   .col-md-3
                     .product-image
-                      img.img-fluid.d-block.mx-auto.image(src="images/maizeFlour.png")
+                      img.img-fluid.d-block.mx-auto.image()
                   .col-md-5.col-lg-3.product-info
-                    a.product-name(href="#") Maize flour
+                    a.product-name(href="#") 
                   .col-6.col-md-2.quantity
                     label.d-none.d-md-block(for="quantity") Quantity(/kg)
                     input#number.form-control.quantity-input(type="number", value="1")
                   .col-6.col-md-2.col-lg-4.price
-                    span Ugx 20000
-              .product
-                .row.justify-content-center.align-items-center
-                  .col-md-3
-                    .product-image
-                      img.img-fluid.d-block.mx-auto.image(src="images/chicken.png")
-                  .col-md-5.col-lg-3.product-info
-                    a.product-name(href="#") Chicken
-                  .col-6.col-md-2.quantity
-                    label.d-none.d-md-block(for="quantity") Quantity
-                    input#number.form-control.quantity-input(type="number", value="1")
-                  .col-6.col-md-2.col-lg-4.price
-                    span Ugx 15000
-              .product
-                .row.justify-content-center.align-items-center
-                  .col-md-3.col-lg-3
-                    .product-image
-                      img.img-fluid.d-block.mx-auto.image(src="images/potatoes.png")
-                  .col-md-5.col-lg-3.product-info
-                    a.product-name(href="#") Potatoes
-                  .col-6.col-md-2.quantity
-                    label.d-none.d-md-block(for="quantity") Quantity
-                    input#number.form-control.quantity-input(type="number", value="1")
-                  .col-6.col-md-2.col-lg-4.price
-                    span Ugx 25000
+                    span 
+              //- .product
+              //-   .row.justify-content-center.align-items-center
+              //-     .col-md-3
+              //-       .product-image
+              //-         img.img-fluid.d-block.mx-auto.image()
+              //-     .col-md-5.col-lg-3.product-info
+              //-       a.product-name(href="#")
+              //-     .col-6.col-md-2.quantity
+              //-       label.d-none.d-md-block(for="quantity") Quantity(kg)
+              //-       input#number.form-control.quantity-input(type="number", value="1")
+              //-     .col-6.col-md-2.col-lg-4.price
+              //-       span 
+              //- .product
+              //-   .row.justify-content-center.align-items-center
+              //-     .col-md-3.col-lg-3
+              //-       .product-image
+              //-         img.img-fluid.d-block.mx-auto.image()
+              //-     .col-md-5.col-lg-3.product-info
+              //-       a.product-name(href="#") 
+              //-     .col-6.col-md-2.quantity
+              //-       label.d-none.d-md-block(for="quantity") Quantity(kg)
+              //-       input#number.form-control.quantity-input(type="number", value="1")
+              //-     .col-6.col-md-2.col-lg-4.price
+              //-       span 
           .col-md-12.col-lg-4
             .summary
               h3 Summary
               h4
                 span.text Subtotal
-                span.price Ugx 60000
+                span.price Ugx 
               h4
                 span.text Discount
-                span.price  Ugx 0
+                span.price  Ugx 
               h4
                 span.text Delivery
-                span.price Ugx 0
+                span.price Ugx 
               h4
                 span.text Total
-                span.price Ugx 60000
+                span.price Ugx 
               button.btn.btn-primary.btn-block.btn-lg(type="button").
                 
                 CALL TO ORDER
@@ -107,7 +104,3 @@ footer.page-footer.light
   .footer-copyright
     p © 2020 Copyright Ufarm
 script(src="javascripts/jquery.min.js")
-//  <script src="assets/bootstrap/js/bootstrap.min.js"></script> 
-//  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script> 
-//  <script src="assets/js/smoothproducts.min.js"></script> 
-//  <script src="assets/js/theme.js"></script> 

@@ -3,9 +3,6 @@ const router = express.Router();
 const urbfarmer = require('../models/urbanReg');
 const Users = require('../models/Users');
 
-// router.get('/farmeronelogin', (req,res) =>{
-// //     res.render('farmeroneLogin')
-// // });
 
 router.get('/urbanFReg', (req, res) => {
   res.render('urbanReg', { title: 'Urban Farmer registration' });
@@ -30,13 +27,14 @@ router.post('/urbanFReg', async (req, res) => {
   }
 });
 
+// Retrieve data from database;
 router.get('/uFarmList', async (req, res) => {
   // Added a check
   if (req.session.user) {
     try {
       let items = await urbfarmer.find();
-      if (req.query.gender) {
-        items = await urbfarmer.find({ gender: req.query.gender });
+      if (req.query.ward) {
+        items = await urbfarmer.find({ ward: req.query.ward });
       }
       res.render('urbanFarmerList', {
         title: 'Urban Farmer List',
@@ -52,6 +50,7 @@ router.get('/uFarmList', async (req, res) => {
   }
 });
 
+// Delete data from database
 router.post('/uFarmDelete', async (req, res) => {
   if (req.session.user) {
     try {

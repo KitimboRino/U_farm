@@ -1,24 +1,28 @@
+doctype html
+html
+meta(charset="utf-8")
 meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
 title= `${title}`
 link(rel="stylesheet", href="../bootstrap/css/bs/bootstrap.min.css")
 link(rel="stylesheet", href="../fonts/font-awesome.min.css")
 link(rel="stylesheet", href="../styles/Sidebar-Menu-1.css")
-link(rel="stylesheet", href="../styles/css/Sidebar-Menu.css")
-link(rel="stylesheet", href="../assets/css/styles.css")
+
 div
 #wrapper
   #sidebar-wrapper(style="background-color: #78AB45;")
     ul.sidebar-nav
       li.sidebar-brand
-        a(href="#", style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
+        a(style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
+          i.fa.fa-tachometer.fa-2x
+      //- li
+      //-   a(href="/fOneList", style='color: blue;') Farmer Ones(FO)
+      //-     i.fa.fa-table.fa-2x
       li
-        a(href="#", style="color: blue;") Agricultural Officer (AO)
+        a(href="uFarmList", style='color: blue;')  Urban Farmers (UF)
+          i.fa.fa-table.fa-2x
       li
-        a(href="/farmerOneReg", style="color: blue;")  Register Farmer One (FO)
-      li
-        a(href="#", style="color: blue;") Urban Farmers (UF)
-        a(href="#", style="color: blue;") Prod
-        a(href="#", style="color: blue;") Prod
+        a(href="/pUploadList", style="color: blue;") Agric Produce
+          i.fa.fa-table.fa-2x
   .page-content-wrapper
       a.btn.btn-link#menu-toggle(role="button", href="#menu-toggle")
         i.fa.fa-bars
@@ -45,7 +49,14 @@ div
                             tr
                                 th Status
                                 td 
-                                    input.form-control(value = item.status name ="status")
+                                    //- input.form-control(value = item.status name ="status")
+
+                                    select#uWard.form-control(value = item.status name ="status")
+                                        option(selected='' disabled='' value='select status') Ward
+                                        option(value='Pending') Pending
+                                        option(value='Approved') Approved
+                                        option(value='Declined') Declined
+                                        
                             tr
                                 td(colspan=2)
                                     button.btn.btn-dark.btn-block(type='submit') Update

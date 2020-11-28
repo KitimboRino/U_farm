@@ -31,7 +31,7 @@ head
       #Pwd.text-danger.font-weight-bold.small
 
       //- Password confirmation
-      input#passwordConf.form-control(type='text' name='confirmPassword' placeholder='Confrim Password')
+      input#passwordConf.form-control(type='text' name='confirmPassword' placeholder='Confirm Password')
       #pwdConf.text-danger.font-weight-bold.small
 
       //- Role
@@ -82,31 +82,31 @@ head
       //- Ward
       select#uWard.form-control(name='ward')
         option(selected='' disabled='' value='selectWard') Ward
-        option(value='1') Ward 1
-        option(value='2') Ward 2
-        option(value='3') Ward 3
-        option(value='4') Ward 4
+        option(value='Ward 1') Ward 1
+        option(value='Ward 2') Ward 2
+        option(value='Ward 3') Ward 3
+        option(value='Ward 4') Ward 4
       #wad.text-danger.font-weight-bold.small
 
       //- Farmer One Number
-      input#foID.form-control(type='text' placeholder='Farmer One number' name='fOnumber')
+      input#foID.form-control(type='text' placeholder='FO Number (FO-#)' name='fOnumber')
       #fone.text-danger.font-weight-bold.small
 
       //- Activities      
       label 
           b Activities:  &nbsp
       label.form-check 
-          span.form-check-label Mobilization    &nbsp
-          input.form-check-input(type="checkbox"  name="activities" value="Mobilization")
+          .form-check-label Mobilization    &nbsp
+          input#form.form-check-input(type="checkbox"  name="activities" value="Mobilization")
       label.form-check 
-          span.form-check-label Inspection   &nbsp
-          input.form-check-input(type="checkbox"  name="activities" value="Inspection")
+          .form-check-label Inspection   &nbsp
+          input#form.form-check-input(type="checkbox"  name="activities" value="Inspection")
       label.form-check 
-          span.form-check-label Regulation &nbsp
-          input.form-check-input(type="checkbox"  name="activities" value="Regulation")
+          .form-check-label Regulation &nbsp
+          input#form.form-check-input(type="checkbox"  name="activities" value="Regulation")
       label.form-check 
-          span.form-check-label Support &nbsp
-          input.form-check-input(type="checkbox"  name="activities" value="Supervision")
+          .form-check-label Support &nbsp
+          input#form.form-check-input(type="checkbox"  name="activities" value="Support")
           #act.text-danger.font-weight-bold.small
 
       input#StayPeriod.form-control(type='number' name='periodOfStay' placeholder='Stay Period')

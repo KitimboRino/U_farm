@@ -4,28 +4,25 @@ meta(charset="utf-8")
 meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
 title= `${title}`
 link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
-link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+link(rel="stylesheet", href="fonts/font-awesome.min.css")
 link(rel="stylesheet", href="styles/Sidebar-Menu-1.css")
-//- link(rel="stylesheet", href="assets/css/styles.css")
 
 div
 #wrapper
   #sidebar-wrapper(style="background-color: #78AB45;")
-    
-
     ul.sidebar-nav
-        li.sidebar-brand
-          a(style="color:#343a40 ;font-size: 34px; font-weight:bold;") Ufarm
-        li
-          a(class="i.fas fa-profile" style="color:#343a40 ; font-size: 14px; font-weight:bold;") AGRICULTURAL OFFICER(AO)
-        li
-          a(class="i.fas fa-table" href="#", style="color:#343a40 ; font-size: 14px; font-weight:bold;") Farmers One List (UF)
-        li
-          a(class="i.fas fa-table" href="/farmerOneReg", style="color:#343a40 ; font-size: 14px; font-weight:bold;")  Register Farmer One (FO)
-        li
-          a(class="i.fas fa-table" href="#", style="color:#343a40 ; font-size: 14px; font-weight:bold;") Urban Farmers List (UF)
-          //- a(href="#", style="color: blue;") Prod
-          //- a(href="#", style="color: blue;") Prod  
+      li.sidebar-brand
+        a(style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
+          i.fa.fa-tachometer.fa-2x
+      //- li
+      //-   a(href="/fOneList", style='color: blue;') Farmer Ones(FO)
+      //-     i.fa.fa-table.fa-2x
+      li
+        a(href="uFarmList", style='color: blue;')  Urban Farmers (UF)
+          i.fa.fa-table.fa-2x
+      li
+        a(href="/pUploadList", style="color: blue;") Agric Produce
+          i.fa.fa-table.fa-2x
   .page-content-wrapper
       a.btn.btn-link#menu-toggle(role="button", href="#menu-toggle")
         i.fa.fa-bars
@@ -37,7 +34,7 @@ div
             .card-body
 
                 header.card-header
-                    h4.card-title Welcome 
+                    h4.card-title WELCOME
                 |&nbsp
                 div.form-row
                     div.col.form-group.col-md-10    
@@ -90,8 +87,8 @@ div
                                 td
                                   a.button.btn.btn-dark.btn-block(href='/prodUpdate/'+item._id) Update
                                 td
-                                  form(method="post" action='/delete')
-                                      input(type="hidden", placeholder="", name="id", value=item._id)
+                                  form(method="post" action='/deleteProduce')
+                                      input(type="hidden", placeholder="", name="_id", value=item._id)
                                       button.btn.btn-dark.btn-block(type="submit") Delete
                         else
                             p No registrations yet :(

@@ -68,7 +68,7 @@ body {
   padding-right: 5px;
   line-height: 40px;
   float: left;
-  color: blue;
+  color:#000;
 }
 .sidebar-nav li a:hover {
   text-decoration: none;

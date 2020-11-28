@@ -9,7 +9,7 @@ const dateBirth = document.urbanFarm.dateOfBirth;
 const nin = document.urbanFarm.nin;
 const phone = document.urbanFarm.phone;
 const UrbanWard = document.urbanFarm.ward;
-const foNo = document.urbanFarm.id;
+const ufNo = document.urbanFarm.id;
 const activ = document.urbanFarm.activities;
 const dateReg = document.urbanFarm.dateOfReg;
 
@@ -24,7 +24,7 @@ const Dob_error = document.getElementById('dtb');
 const niN_error = document.getElementById('niN');
 const phne_error = document.getElementById('phon');
 const wad_error = document.getElementById('wd');
-const fo_ID = document.getElementById('uiD');
+const uf_error = document.getElementById('uiD');
 const fAct_error = document.getElementById('sAct');
 const dor_error = document.getElementById('dReg');
 // const period_error = document.getElementById('ptay');
@@ -40,7 +40,7 @@ dateBirth.addEventListener('blur', Dob_Verify, true);
 nin.addEventListener('blur', niN_Verify, true);
 phone.addEventListener('blur', phne_Verify, true);
 UrbanWard.addEventListener('blur', wad_Verify, true);
-foNo.addEventListener('blur', uID_Verify, true);
+ufNo.addEventListener('blur', uID_Verify, true);
 // activ.addEventListener('blur', fAct_Verify, true);
 dateReg.addEventListener('blur', dor_Verify, true);
 
@@ -127,10 +127,10 @@ function Validate() {
   }
 
   // Unique ID
-  if (foNo.value == '') {
-    foNo.style.border = '1px solid red';
-    fo_ID.textContent = 'Unique ID is required';
-    foNo.focus();
+  if (ufNo.value == '') {
+    ufNo.style.border = '1px solid red';
+    uf_error.textContent = 'Unique ID is required';
+    ufNo.focus();
     return false;
   }
 
@@ -160,6 +160,7 @@ const nameRegex = /^.{5,50}[a-zA-Z]+$/; // for names lname & first & last btn (5
 const alphaNumeric = /^[0-9a-zA-Z]+$/; // for alpha numeric
 const ninRegex = /^[0-9a-zA-Z]{13}$/; // for NIN exactly 13 alphanumric characters
 const phoneRegex = /^\d{10}$/; // for phone number
+const ufRegex = /UF-[1-9]{1,}\d?/; //UF regex
 
 // Event Handlers for correct data
 // First name
@@ -225,6 +226,8 @@ function gder_Verify() {
     gender.style.border = '1px solid #98FB98';
     gder_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -234,6 +237,8 @@ function Dob_Verify() {
     dateBirth.style.border = '1px solid #98FB98';
     Dob_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -269,6 +274,8 @@ function addres_Verify() {
     address.style.border = '1px solid #98FB98';
     addres_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -278,26 +285,23 @@ function wad_Verify() {
     UrbanWard.style.border = '1px solid #98FB98';
     wad_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
 // Unique ID
 function uID_Verify() {
-  if (foNo.value != '') {
-    foNo.style.border = '1px solid #98FB98';
-    fo_ID.innerHTML = '';
+  if (ufNo.value != '' && ufNo.value.match(ufRegex)) {
+    ufNo.style.border = '1px solid #98FB98';
+    uf_error.innerHTML = '';
     return true;
+  } else {
+    ufNo.style.border = 'red';
+    uf_error.textContent = 'Correct ID format required';
+    return false;
   }
 }
-
-// Activities
-// function fAct_Verify() {
-//   if (activ.value != '') {
-//     activ.style.border = '1px solid #98FB98';
-//     fAct_error.innerHTML = '';
-//     return true;
-//   }
-// }
 
 function dor_Verify() {
   if (dateReg.value != '') {

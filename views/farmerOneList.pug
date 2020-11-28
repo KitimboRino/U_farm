@@ -4,25 +4,25 @@ meta(charset="utf-8")
 meta(name="viewport", content="width=device-width,initial-scale=1,shrink-to-fit=no")
 title= `${title}`
 link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
-link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+link(rel="stylesheet", href="fonts/font-awesome.min.css")
 link(rel="stylesheet", href="styles/Sidebar-Menu-1.css")
-link(rel="stylesheet", href="assets/css/styles.css")
+
 div
 #wrapper
   #sidebar-wrapper(style="background-color: #78AB45;")
     ul.sidebar-nav
       li.sidebar-brand
-        a(style="color:#343a40 ;font-size: 34px; font-weight:bold;") Ufarm
+        a(style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
+          i.fa.fa-tachometer.fa-2x
       li
-        a(class="i.fas fa-profile" style="color:#343a40 ; font-size: 14px; font-weight:bold;") AGRICULTURAL OFFICER(AO)
+        a(href="/fOneList", style='color: blue;') Farmer Ones(FO)
+          i.fa.fa-table.fa-2x
       li
-        a(class="i.fas fa-table" href="#", style="color:#343a40 ; font-size: 14px; font-weight:bold;") Farmers One List (UF)
+        a(href="", style='color: blue;')  Urban Farmers (UF)
+          i.fa.fa-table.fa-2x
       li
-        a(class="i.fas fa-table" href="/farmerOneReg", style="color:#343a40 ; font-size: 14px; font-weight:bold;")  Register Farmer One (FO)
-      li
-        a(class="i.fas fa-table" href="#", style="color:#343a40 ; font-size: 14px; font-weight:bold;") Urban Farmers List (UF)
-        //- a(href="#", style="color: blue;") Prod
-        //- a(href="#", style="color: blue;") Prod
+        a(href="/pUploadList", style="color: blue;") Agric Produce
+          i.fa.fa-table.fa-2x
   .page-content-wrapper
       a.btn.btn-link#menu-toggle(role="button", href="#menu-toggle")
         i.fa.fa-bars
@@ -34,7 +34,7 @@ div
             .card-body
 
                 header.card-header
-                    h4.card-title Welcome #{currentUser.username}
+                    h4.card-title WELCOME AGRIC OFFICER: #{currentUser.username}
                     |&nbsp
                     div.form-row
                         div.col.form-group.col-md-10    
@@ -44,12 +44,15 @@ div
                                         input.form-control(name='ward' placeholder="Enter your search term(ward) ...")
                                     div.col-md-3
                                       input.btn.btn-dark.btn-block(type="submit")
+                                    div.col-md-2
+                                      a.button.btn.btn-secondary.btn-block(href="/farmerOneReg") FO Reg
                     table.table.table-striped.table-responsive
                         thead.bg-secondary
                             tr
                                 th First Name 
                                 th Last Name
                                 th User Name
+                                th Role
                                 th Gender
                                 th Date Of Birth
                                 th Nin
@@ -70,6 +73,7 @@ div
                                     td #{user.firstName}
                                     td #{user.lastName}
                                     td #{user.username}
+                                    td #{user.role}
                                     td #{user.gender}
                                     td #{user.dateOfBirth}
                                     td #{user.nin}
@@ -83,10 +87,10 @@ div
                                     td #{user.dateOfReg}
                                     td 
                                       a.button.btn.btn-secondary.btn-block(href='/foUpdate/'+user._id ) Update
-                                    td
-                                      form(method="post" action='/foDelete')
-                                          input(type="hidden", placeholder="", name="id", value=user._id)
-                                          button.btn.btn-secondary.btn-block(type="submit") Delete
+                                    //- td
+                                    //-   form(method="post" action='/foDelete')
+                                    //-       input(type="hidden", placeholder="", name="id", value=user._id)
+                                    //-       button.btn.btn-secondary.btn-block(type="submit") Delete
                                     
                             else
                                 p No Registrations Available

@@ -15,8 +15,7 @@ router.get('/fOneList', (req, res) => {
 
 // Process the username and password that are submitted in the login page
 router.post(
-  '/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  '/login', passport.authenticate('local', { failureRedirect: '/login' }),
   (req, res) => {
     req.session.user = req.user;
     const userRole = roles[req.user.role];
@@ -29,7 +28,7 @@ router.post(
     } 
     else (userRole == 'urbFarmers');
     {
-      res.redirect('/pUploadList');
+      res.redirect('/uProdUpload');
     }
   }
 );

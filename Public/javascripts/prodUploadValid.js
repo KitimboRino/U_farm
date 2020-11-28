@@ -152,14 +152,19 @@ const nameRegex = /^.{5,50}[a-zA-Z]+$/; // for names lname & first & last btn (5
 const alphaNumeric = /^[0-9a-zA-Z]+$/; // for alpha numeric
 const ninRegex = /^[0-9a-zA-Z]{13}$/; // for NIN exactly 13 alphanumric characters
 const phoneRegex = /^\d{10}$/; // for phone number
+const ufRegex = /UF-[1-9]{1,}\d?/; //for FO number
 
 // Event Handlers for correct data
 // Unique ID
 function fiD_Verify() {
-  if (foNo.value != '') {
+  if (foNo.value != '' && foNo.value.match(ufRegex)) {
     foNo.style.border = '1px solid #98FB98';
     Uid_error.innerHTML = '';
     return true;
+  }else{
+    foNo.style.border = 'red';
+    Uid_error.textContent = 'UF number should have required format';
+    return false;
   }
 }
 
@@ -172,6 +177,7 @@ function pName_Verify() {
   } else {
     pname.style.border = 'red';
     pName_error.textContent = 'Product name must be alpanumeric characters';
+    return false;
   }
 }
 
@@ -193,6 +199,7 @@ function phne_Verify() {
   } else {
     phon.style.border = 'red';
     phne_error.textContent = 'Phone number must be 10 digits';
+    return false;
   }
 }
 

@@ -95,7 +95,7 @@ function Validate() {
   }
 
   //Gender
-  if (gender.value == 'default') {
+  if (gender.value === 'default') {
     gender.style.border = '1px solid red';
     gder_error.textContent = 'Select gender';
     gender.focus();
@@ -134,13 +134,13 @@ function Validate() {
     return false;
   }
 
-  if (resident.checked == false) {
-    // resident.style.border = '1px solid red';
+  if (resident[0].checked == false && resident[1].checked == false) {
     resident_error.textContent = 'Select type of residence';
-    resident.focus();
     return false;
+  } else {
+    resident_error.innerHTML = '';
+    // return false;
   }
-  
 
   if (UrbanWard.value == 'selectWard') {
     UrbanWard.style.border = '1px solid red';
@@ -177,7 +177,6 @@ function Validate() {
     StayPeriod.focus();
     return false;
   }
-  
 
   // Date of registration
   if (dateReg.value == '') {
@@ -193,6 +192,7 @@ const nameRegex = /^.{5,50}[a-zA-Z]+$/; // for names lname & first & last btn (5
 const alphaNumeric = /^[0-9a-zA-Z]+$/; // for alpha numeric
 const ninRegex = /^[0-9a-zA-Z]{13}$/; // for NIN exactly 13 alphanumric characters
 const phoneRegex = /^\d{10}$/; // for phone number
+const foRegex = /FO-[1-9]{1,}\d?/; //for FO number
 
 // Event Handlers
 function fName_Verify() {
@@ -202,7 +202,8 @@ function fName_Verify() {
     return true;
   } else {
     fname.style.border = '1px solid red';
-    fName_error.textContent = 'first Name must be between 5 to 50 characters';
+    fName_error.textContent = 'First Name must be between 5 to 50 characters';
+    fname.focus();
     return false;
   }
 }
@@ -214,7 +215,8 @@ function lName_Verify() {
     return true;
   } else {
     lname.style.border = '1px solid red';
-    lName_error.textContent = 'last Name must be between 5 to 50 characters';
+    lName_error.textContent = 'Last Name must be between 5 to 50 characters';
+    lname.focus();
     return false;
   }
 }
@@ -227,6 +229,7 @@ function Name_Verify() {
   } else {
     Username.style.border = '1px solid red';
     Name_error.textContent = 'User Name must be alpha Numeric characters';
+    Username.focus();
     return false;
   }
 }
@@ -256,6 +259,8 @@ function gder_Verify() {
     gender.style.border = '1px solid #98FB98';
     gder_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -264,6 +269,8 @@ function Dob_Verify() {
     dateBirth.style.border = '1px solid #98FB98';
     Dob_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -275,6 +282,7 @@ function niN_Verify() {
   } else {
     nin.style.border = '1px solid red';
     niN_error.textContent = 'Nin must be 13 alpha Numeric characters';
+    nin.focus();
     return false;
   }
 }
@@ -287,6 +295,7 @@ function phne_Verify() {
   } else {
     phone.style.border = '1px solid red';
     phne_error.textContent = 'Phone number must be 10 numbers';
+    phone.focus();
     return false;
   }
 }
@@ -301,9 +310,10 @@ function addres_Verify() {
 
 function resid_Verify() {
   if (resident.value != '') {
-    // resident.style.border = '1px solid #98FB98';
     resident_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
@@ -313,16 +323,21 @@ function wad_Verify() {
     UrbanWard.style.border = '1px solid #98FB98';
     wad_error.innerHTML = '';
     return true;
+  } else {
+    return false;
   }
 }
 
 // FO Number
 function fo_Verify() {
-  if (foNo.value != '') {
+  if (foNo.value != '' && foNo.value.match(foRegex)) {
     foNo.style.border = '1px solid #98FB98';
     fo_ID.innerHTML = '';
     return true;
   } else {
+    foNo.style.border = '1px solid red';
+    fo_ID.textContent = 'FO number should have required format';
+    foNo.focus();
     return false;
   }
 }
@@ -336,6 +351,7 @@ function Stay_Verify() {
   } else {
     StayPeriod.style.border = '1px solid red';
     period_error.textContent = 'Period of stay must be greater than 10 years';
+    StayPeriod.focus();
     return false;
   }
 }

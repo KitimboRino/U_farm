@@ -1,7 +1,9 @@
 // Initiate Application.
 //Module dependencies.
-// Importing express in to the by requiring it
+// Importing express in to the app by requiring it(i.e using the require keyword)
 const express = require('express');
+
+// Path module provides a way of working with directories and file paths.
 const path = require('path');
 // body-parser middleware, which will help us parse the body of our requests
 const bodyParser = require('body-Parser');
@@ -51,7 +53,8 @@ mongoose.connection
 // Configurations
 // Loading view templete engine.
 app.set('view engine', 'pug');
-// Setting view files i.e pug in a directory called views.
+
+//Set directory to contain the templates ('views')
 app.set('views', path.join(__dirname, 'views'));
 
 // Middleware settings
@@ -119,7 +122,7 @@ app.post('/logout', (req, res) => {
 
 // Creates error when non existent path is selected, so we need to cater for some of these in the project.
 app.get('*', (req, res) => {
-  res.send('error page');
+  res.send('404 Oops, it looks like the page doesnt exist');
 });
 
 // Listen. Created a server and it listens to port: 3000

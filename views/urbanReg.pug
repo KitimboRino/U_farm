@@ -3,7 +3,7 @@ head
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Urban Farmer Registration
-  link(rel='stylesheet' href='bootstrap/css/bootstrap.min.css')
+  //- link(rel='stylesheet' href='bootstrap/css/bootstrap.min.css')
   link(rel='stylesheet' href='bootstrap/css/bs/bootstrap.min.css')
   link(rel='stylesheet' href='styles/uFarmstyle.css')
   title Document
@@ -43,8 +43,8 @@ head
       //- Gender
       select#gender.form-control(name='gender')
         option(value='selectGender'  selected='' disabled='') Gender
-        option(value='1') Male
-        option(value='2') Female
+        option(value='Male') Male
+        option(value='Female') Female
       #gend.text-danger.font-weight-bold.small
     
       //- Date of birth
@@ -65,30 +65,30 @@ head
         b Urban Farmer Information
     
       //- Ward
-      select#ward.form-control
-        option(selected='' disabled='' value='selectWard' name='ward') Ward
-        option(value='LC1') Ward 1
-        option(value='LC2') Ward 2
-        option(value='LC3') Ward 3
-        option(value='LC4') ward 4
+      select#ward.form-control(name='ward')
+        option(selected='' disabled='' value='selectWard' ) Ward
+        option(value='Ward 1') Ward 1
+        option(value='Ward 2') Ward 2
+        option(value='Ward 3') Ward 3
+        option(value='Ward 4') ward 4
       #wd.text-danger.font-weight-bold.small
     
       //- Unique Identification
-      input.form-control(type='text' placeholder='Unique Identification (ID)' name='id')
+      input.form-control(type='text' placeholder='Unique Identification (UF-#)' name='id')
       #uiD.text-danger.font-weight-bold.small
 
       //- Activities
       label 
-          b Activities:  &nbsp
+          b Activities:
       label.form-check 
-          span.form-check-label Horticulture    &nbsp
-          input.form-check-input(type="checkbox"  name="activities" value='Horticulture')
+          .form-check-label Horticulture  
+          input#form.form-check-input(type="checkbox"  name="activities" value='Horticulture')
       label.form-check 
-          span.form-check-label Poultry   &nbsp
-          input.form-check-input(type="checkbox"  name="activities" value='Poultry')
+          .form-check-label Poultry 
+          input#form.form-check-input(type="checkbox"  name="activities" value='Poultry')
       label.form-check 
-          span.form-check-label Dairy products &nbsp
-          input.form-check-input(type="checkbox"  name="activities" value='Dairy products')
+          .form-check-label Dairy product
+          input#form.form-check-input(type="checkbox"  name="activities" value='Dairy products')
           #sAct.text-danger.font-weight-bold.small
 
     

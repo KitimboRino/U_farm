@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 /* Creating a Database Schema....schema should be the same format as req.body */
 const FORegSchema = new mongoose.Schema({
@@ -18,6 +19,9 @@ const FORegSchema = new mongoose.Schema({
   periodOfStay: String,
   dateOfReg: String,
 });
+
+// Setting the plugin to use passport
+FORegSchema.plugin(passportLocalMongoose);
 
 //Associating the schema with actual collection name
 module.exports = mongoose.model('farmerOne', FORegSchema);

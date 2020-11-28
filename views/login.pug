@@ -12,7 +12,7 @@ body
         button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarResponsive", type="button", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
           i.fa.fa-align-justify
         .collapse.navbar-collapse#navbarResponsive
-          img(src="images/logo.png", style="width: 98px; height: 60px; margin: 0px")
+          img(src="images/logo.png" href="/index" style="width: 98px; height: 60px; margin: 0px")
           ul.nav.navbar-nav.ml-auto
             li.nav-item(role="presentation")
               a.nav-link.js-scroll-trigger(href="/market") Market
@@ -26,14 +26,19 @@ body
 
 
     .login-clean
-      form(method="post" action="/login")
+      form(method="post" action="/login" name="logIn")
         h2.sr-only Login Form
         .illustration
           img(src="images/logo.png", style="color: rgb(71,244,88);")
+        
         .form-group
-          input.form-control(type="text", name="username", placeholder="Username/ UrbanF ID")
+          input.form-control(type="text", name="username", placeholder="Username")
+          #unme.text-danger.font-weight-bold.small
+
         .form-group
           input.form-control(type="password", name="password", placeholder="Password")
+          #fName.text-danger.font-weight-bold.small
+        
         .form-group
           button.btn.btn-primary.btn-block(class='button', href='/') Log In
         a.forgot(href="#") Forgot your id? Contact your your FO or AO
@@ -44,34 +49,18 @@ body
             h5 Get started
             ul
               li
-                a(href="#") Home
+                a(href="/index") Home
           .col-sm-3
             h5 About us
             ul
-              //- li
-              //-   a(href="#") Company Information
               li
-                a(href="#") Contact us
-          //- .col-sm-3
-          //-   h5 Support
-          //-   ul
-          //-     li
-          //-       a(href="#") FAQ
-          //- .col-sm-3
-          //-   h5 Legal
-          //-   ul
-          //-     li
-          //-       a(href="#") Terms of Service
-          //-     li
-          //-       a(href="#") Terms of Use
-          //-     li
-          //-       a(href="#") Privacy Policy
+                a(href="/index#contact") Contact us
       .footer-copyright
-        p © 2020 Copyright Ufarm
+        p © 2020 Rino Copyright Ufarm
 
 //- Script links
 script(src="javascripts/jquery.min.js")
 script(src="bootstrap/js/bootstrap.min.js")
-script(src="javascripts/bs-init.js")
-script(src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js")
 script(src="javascripts/creative.js")
+script(src="javascripts/loginValid.js")
+

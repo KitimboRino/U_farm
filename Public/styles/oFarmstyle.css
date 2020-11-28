@@ -16,7 +16,8 @@ body {
   display: inline-block;
   width: 500px;
   height: 800px;
-  padding-top: 100px;
+  margin-bottom: 100px;
+  margin-top:50px;
 }
 
 /* Form styling */
@@ -60,7 +61,7 @@ legend {
   margin: 5px;
 }
 
-/* Styling error text */
-.text-danger {
-  display: block;
+/* Styling Activities checkboxes */
+#form{
+  margin-top:-17px;
 }

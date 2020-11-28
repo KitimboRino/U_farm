@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
+
 
 /* Creating a Database Schema....schema should be the same format as req.body */
 const prodSchema = new mongoose.Schema({
@@ -18,5 +20,7 @@ const prodSchema = new mongoose.Schema({
   status: String,
 });
 
+// Setting the plugin to use passport
+prodSchema.plugin(passportLocalMongoose);
 //Associating the schema with actual collection name
 module.exports = mongoose.model('uProduce', prodSchema);

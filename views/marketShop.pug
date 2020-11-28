@@ -100,8 +100,8 @@ main.page.catalog-page
                   li(data-target='#carousel-1' data-slide-to='1')
                   li(data-target='#carousel-1' data-slide-to='2')
 
-            if items.length
-                each item in items
+              if items.length
+                  each item in items
                     .row.no-gutters                
                         .col-12.col-md-6.col-lg-4
                             .clean-product-item
@@ -112,22 +112,22 @@ main.page.catalog-page
                                 .about
                                 .price
                                     h3 Ugx #{item.unitPrice}
-                
-                
-                    nav
-                        ul.pagination
-                        li.page-item.disabled
-                            a.page-link(href="#", aria-label="Previous")
-                            span(aria-hidden="true") «
-                        li.page-item.active
-                            a.page-link(href="#") 1
-                        li.page-item
-                            a.page-link(href="#") 2
-                        li.page-item
-                            a.page-link(href="#") 3
-                        li.page-item
-                            a.page-link(href="#", aria-label="Next")
-                            span(aria-hidden="true") »
+                  
+                  
+                        //- nav
+                        //-     ul.pagination
+                        //-     li.page-item.disabled
+                        //-         a.page-link(href="#", aria-label="Previous")
+                        //-         span(aria-hidden="true") «
+                        //-     li.page-item.active
+                        //-         a.page-link(href="#") 1
+                        //-     li.page-item
+                        //-         a.page-link(href="#") 2
+                        //-     li.page-item
+                        //-         a.page-link(href="#") 3
+                        //-     li.page-item
+                        //-         a.page-link(href="#", aria-label="Next")
+                        //-         span(aria-hidden="true") »
 footer.page-footer.light
   .container
     .row

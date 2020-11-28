@@ -6,25 +6,23 @@ title= `${title}`
 link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
 link(rel="stylesheet", href="fonts/font-awesome.min.css")
 link(rel="stylesheet", href="styles/Sidebar-Menu-1.css")
-//- link(rel="stylesheet", href="styles/css/Sidebar-Menu.css")
-link(rel="stylesheet", href="assets/css/styles.css")
+
 div
 #wrapper
   #sidebar-wrapper(style="background-color: #78AB45;")
     ul.sidebar-nav
       li.sidebar-brand
-        a(href="#", style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
+        a(style="background-color: rgba(255,255,255,0);color: rgb(0,0,0);font-size: 34px;") Ufarm
+          i.fa.fa-tachometer.fa-2x
+      //- li
+      //-   a(href="/fOneList", style='color: blue;') Farmer Ones(FO)
+      //-     i.fa.fa-table.fa-2x
       li
-        a(href="#", style='color: blue;') Farmer Ones(FO)
-          i.fa.fa-table
-      li
-        a(href="/urbanFReg", style='color: blue;')  Urban Farmers (UF)
-          i.fa.fa-file
+        a(href="", style='color: blue;')  Urban Farmers (UF)
+          i.fa.fa-table.fa-2x
       li
         a(href="/pUploadList", style="color: blue;") Agric Produce
-          i.fa.fa-bars
-        //- a(href="#", style="color: blue;") Prod
-        //- a(href="#", style="color: blue;") Prod
+          i.fa.fa-table.fa-2x
   .page-content-wrapper
       a.btn.btn-link#menu-toggle(role="button", href="#menu-toggle")
         i.fa.fa-bars
@@ -36,34 +34,35 @@ div
             .card-body
 
                 header.card-header
-                    h4.card-title Welcome #{currentUser.username}
+                    h4.card-title WELCOME FARMER ONE: #{currentUser.username}
                 |&nbsp
                 div.form-row
                     div.col.form-group.col-md-10    
                         form.search(action='/uFarmList')
                             div.form-row
                                 div.col-md-4
-                                    input.form-control(name='gender' placeholder="Enter your search term(gender) ...")
+                                    input.form-control(name='ward' placeholder="Search Ward...")
                                 div.col-md-3
                                     input.btn.btn-dark.btn-block(type="submit")
+                                div.col-md-2
+                                    a.button.btn.btn-secondary.btn-block(href="/urbanFReg") UF Reg
                                 
                 table.table.table-striped.table-responsive
                     thead.bg-secondary
                         tr
-                            th First Name
-                            th Last Name
-                            th User Name
-                            th Role
-                            th Gender
-                            th Date Of Birth
+                            th FIRST NAME
+                            th LAST NAME
+                            th USER NAME
+                            th ROLE
+                            th GENDER
+                            th DATE OF BIRTH
                             th NIN
-                            th Phone Number
-                            th Ward
+                            th PHONE NUMBER
+                            th WARD
                             th ID
-                            th Activities
-                            th Date Of Reg
+                            th ACTIVITIES
+                            th DATE OF REGISTRATION
                             th
-                            th 
                     tbody
                         if users.length
                         each user in users
@@ -81,8 +80,8 @@ div
                                 td #{user.activities}
                                 td #{user.dateOfReg}
                                 td
-                                td
-                                    a(href='/uFarmUpdate/'+user._id) Update
+                                //- td
+                                //-     a(href='/uFarmUpdate/'+user._id) Update
                                 td
                                     form(method="post" action='/uFarmDelete')
                                         input(type="hidden", placeholder="", name="id", value=user._id)

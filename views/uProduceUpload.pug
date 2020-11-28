@@ -14,7 +14,7 @@ head
         b Farmer produce upload
 
       //-Uban farmer Id
-      input#id.form-control(type='text' name='id' placeholder='Unique ID')
+      input#id.form-control(type='text' name='id' placeholder='UF Number (UF-#)')
       #Uid.text-danger.font-weight-bold.small
       
       //- Produce Name
@@ -42,21 +42,21 @@ head
       label 
           b Mode of delivery:  &nbsp
       label.form-check 
-          span.form-check-label Cash   &nbsp
-          input.form-check-input(type="checkbox"  name='modeOfDelivery' value='Cash')
+          .form-check-label Pick up   &nbsp
+          input#form.form-check-input(type="checkbox"  name='modeOfDelivery' value='Pick up')
       label.form-check 
-          span.form-check-label Mobile Money   &nbsp
-          input.form-check-input(type="checkbox"  name='modeOfDelivery' value='Mobile Money')
+          .form-check-label Home delivery   &nbsp
+          input#form.form-check-input(type="checkbox"  name='modeOfDelivery' value='Home delivery')
           #mde.text-danger.font-weight-bold.small
 
       
       //- Ward
       select#Ward.form-control(name='ward')
         option(selected='' disabled='' value='selectWard' ) Ward
-        option(value='LC1') LC1
-        option(value='LC2') LC2
-        option(value='LC3') LC3
-        option(value='LC4') LC4
+        option(value='Ward 1') Ward 1
+        option(value='Ward 2') Ward 2
+        option(value='Ward 3') Ward 3
+        option(value='Ward 4') Ward 4
       #wad.text-danger.font-weight-bold.small
       
       //- Unit price/ kg
@@ -78,19 +78,12 @@ head
       label 
           b Mode of Payment:  &nbsp
       label.form-check 
-          span.form-check-label Cash   &nbsp
-          input.form-check-input(type="checkbox"  name='mPayment' value='Cash')
+          .form-check-label Cash   &nbsp
+          input#form.form-check-input(type="checkbox"  name='mPayment' value='Cash')
       label.form-check 
-          span.form-check-label Mobile Money   &nbsp
-          input.form-check-input(type="checkbox"  name='mPayment' value='Mobile Money')
+          .form-check-label Mobile Money   &nbsp
+          input#form.form-check-input(type="checkbox"  name='mPayment' value='Mobile Money')
           #mode.text-danger.font-weight-bold.small
-
-
-
-
-
-
-
       
       //- Add produce image
       label
@@ -100,10 +93,10 @@ head
 
       select#status.form-control(name='Status' hidden)
         option(selected='' disabled='' value='selectWard' ) Ward
-        option(value='LC1') LC1
-        option(value='LC2') LC2
-        option(value='LC3') LC3
-        option(value='LC4') LC4
+        option(value= 1) Ward 1
+        option(value= 2) Ward 2
+        option(value= 3) Ward 3
+        option(value= 4) Ward 4
 
 
 

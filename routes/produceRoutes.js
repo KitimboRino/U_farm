@@ -10,8 +10,7 @@ const storage = multer.diskStorage({
   destination: './public/uploads/',
   filename: (req, file, cb) => {
     cb(
-      null,
-      file.fieldname + '-' + Date.now() + path.extname(file.originalname)
+      null,file.fieldname + '-' + Date.now() + path.extname(file.originalname)
     );
   },
 });
@@ -20,6 +19,7 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
 }).single('image');
+
 
 // Get Method
 router.get('/uProdUpload', (req, res) => {
@@ -88,20 +88,6 @@ router.get('/prodUpdate/:id', async (req, res) => {
   }
 });
 
-// router.post('/update', async (req, res) => {
-//   if (req.session.user) {
-//     try {
-//       await uProduce.findOneAndUpdate({ _id: req.query.id }, req.body);
-//       res.redirect('urbanFarmerList');
-//     } catch (err) {
-//       res.status(404).send('Unable to update item in the database');
-//     }
-//   } else {
-//     console.log("can't find session");
-//     res.redirect('/login');
-//   }
-// });
-
 // Produce update.
 router.post('/prodUpdate', upload, async (req, res) => {
   try {
@@ -121,7 +107,18 @@ router.post('/prodUpdate', upload, async (req, res) => {
   }
 });
 
-// Verificaation of Produce
+// Delete produce
+router.post('/deleteProduce', async (req, res) => {
+  try {
+    await uProduce.deleteOne({ _id: req.body.id });
+    res.redirect('/pUploadList');
+  } catch (err) {
+    res.status(400).send('Sorry! Data posting failed');
+  }
+});
+
+
+// Verification of Produce
 router.get('/verify/:id', async (req, res) => {
   if (req.session.user) {
     try {
@@ -136,7 +133,7 @@ router.get('/verify/:id', async (req, res) => {
   }
 });
 
-//Display of apporvde Produce in market
+//Display of approved Produce in marketShop
 router.get('/shopCart', async (req, res) => {
   try {
     const uproduce = await uProduce.find({ status: 'Approved' });

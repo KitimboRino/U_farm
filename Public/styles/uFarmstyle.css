@@ -57,3 +57,7 @@ legend {
   display: block;
 }
 
+/* Styling checkboxes */
+#form{
+  margin-top:-17px;
+}
