@@ -5,7 +5,7 @@ link(rel="stylesheet", href="bootstrap/css/bs/bootstrap.min.css")
 link(rel="stylesheet", href="assets/css/untitled.css")
 nav.navbar.navbar-light.navbar-expand-lg.fixed-top.bg-white.clean-navbar
   .container
-    a.navbar-brand.logo(href="#") Ufarm
+    a.navbar-brand.logo(href="/index") Ufarm
     button.navbar-toggler(data-toggle="collapse", data-target="#navcol-1")
       span.sr-only Toggle navigation
       span.navbar-toggler-icon
@@ -83,24 +83,12 @@ footer.page-footer.light
         h5 Get started
         ul
           li
-            a(href="#") Home
+            a(href="/index") Home
       .col-sm-3
         h5 About us
         ul
           li
-            a(href="#") Company Information
-          li
-            a(href="#") Contact us
-          //  <li><a href="#">Reviews</a></li> 
-      .col-sm-3
-        h5 Legal
-        ul
-          li
-            a(href="#") Terms of Service
-          li
-            a(href="#") Terms of Use
-          li
-            a(href="#") Privacy Policy
+            a(href="/index#contact") Contact us
   .footer-copyright
     p © 2020 Copyright Ufarm
 script(src="javascripts/jquery.min.js")

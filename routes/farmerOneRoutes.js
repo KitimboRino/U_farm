@@ -13,34 +13,26 @@ router.get('/cart', (req, res) => {
   res.render('cart', { title: 'Cart' });
 });
 
-
 // Get reads the farmOneReg.pug and displays it on the path
 router.get('/farmerOneReg', (req, res) => {
   res.render('farmOneReg', { title: 'Farmer One Registration' });
 });
 
-// save data to database (Get all route)
-// post gets info from form
+// save data to database.
 router.post('/farmerOneReg', async (req, res) => {
-  // we put await inside a try to catch the errors
   try {
-    //Create an instance of the model for data entered(req.body==got from the user)
     const user = new Users(req.body);
     const items = new farmerOne(req.body);
     await items.save();
-    // Harshing password to be checked by passport
     await Users.register(user, req.body.password, (err) => {
       if (err) {
-        // if any error
         throw err;
       }
-      // otherwise
       res.redirect('/fOneList');
     });
     console.log('save success');
     res.redirect('/fOneList');
   } catch (err) {
-    // .catch is a promise and used because nodejs asynchronously awaits
     res.status(400).send('Sorry! Something went wrong.');
     console.log(err);
   }
@@ -48,9 +40,8 @@ router.post('/farmerOneReg', async (req, res) => {
 
 // Retrieve data from the database;
 router.get('/fOneList', async (req, res) => {
-  // Added a check
   if (req.session.user) {
-      // Allows you to define a block of code to be tested for errors while it is being executed
+    // Allows you to define a block of code to be tested for errors while it is being executed
     try {
       let items = await farmerOne.find();
       if (req.query.ward) {
@@ -71,24 +62,6 @@ router.get('/fOneList', async (req, res) => {
   }
 });
 
-// Deleting data from database
-// router.post('/foDelete', async (req, res) => {
-//   // if user has session recorded
-//   if (req.session.user) {
-//     try {
-//       //Using the "deleteOne" method from the MongoDB library, to delete a document in a mongoDB collection.
-//       await farmerOne.deleteOne({ _id: req.body.id });
-//       res.redirect('back');
-//     } catch (err) {
-//       res.status(400).send('Unable to delete item in the database');
-//     }
-//     // otherwise redirect the user back to login
-//   } else {
-//     console.log('cant find session');
-//     res.redirect('/login');
-//   }
-// });
-
 // Find the details of the user using the id that has been passed using params.
 router.get('/foUpdate/:id', async (req, res) => {
   if (req.session.user) {
@@ -104,7 +77,7 @@ router.get('/foUpdate/:id', async (req, res) => {
   }
 });
 
-//Find the details of the user and update 
+//Find the details of the user and update
 router.post('/foUpdate', async (req, res) => {
   if (req.session.user) {
     try {
@@ -120,4 +93,3 @@ router.post('/foUpdate', async (req, res) => {
 });
 
 module.exports = router;
-

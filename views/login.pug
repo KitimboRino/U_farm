@@ -12,7 +12,7 @@ body
         button.navbar-toggler.navbar-toggler-right(data-toggle="collapse", data-target="#navbarResponsive", type="button", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
           i.fa.fa-align-justify
         .collapse.navbar-collapse#navbarResponsive
-          img(src="images/logo.png" href="/index" style="width: 98px; height: 60px; margin: 0px")
+          img(src="images/logo.png" style="width: 98px; height: 60px; margin: 0px")
           ul.nav.navbar-nav.ml-auto
             li.nav-item(role="presentation")
               a.nav-link.js-scroll-trigger(href="/market") Market
@@ -32,11 +32,11 @@ body
           img(src="images/logo.png", style="color: rgb(71,244,88);")
         
         .form-group
-          input.form-control(type="text", name="username", placeholder="Username")
+          input.form-control(type="text", name="username", placeholder="Username", required)
           #unme.text-danger.font-weight-bold.small
 
         .form-group
-          input.form-control(type="password", name="password", placeholder="Password")
+          input.form-control(type="password", name="password", placeholder="Password" required)
           #fName.text-danger.font-weight-bold.small
         
         .form-group

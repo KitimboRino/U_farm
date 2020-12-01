@@ -20,7 +20,6 @@ nav.navbar.navbar-light.navbar-expand-lg.fixed-top#mainNav
         li.nav-item(role="presentation")
           a.nav-link.js-scroll-trigger(href="/login") Login
 
-       
 
 main.page.catalog-page
   section.clean-block.clean-catalog.dark
@@ -108,55 +107,25 @@ main.page.catalog-page
                                 .image
                                 img(src='/uploads/'+item.image height='100px' width='100px')
                                 .product-name
-                                #{item.produceName}
-                                .about
+                                    h3     #{item.produceName}
+                                .quantity
+                                    h3     #{item.quantity}
                                 .price
                                     h3 Ugx #{item.unitPrice}
-                  
-                  
-                        //- nav
-                        //-     ul.pagination
-                        //-     li.page-item.disabled
-                        //-         a.page-link(href="#", aria-label="Previous")
-                        //-         span(aria-hidden="true") «
-                        //-     li.page-item.active
-                        //-         a.page-link(href="#") 1
-                        //-     li.page-item
-                        //-         a.page-link(href="#") 2
-                        //-     li.page-item
-                        //-         a.page-link(href="#") 3
-                        //-     li.page-item
-                        //-         a.page-link(href="#", aria-label="Next")
-                        //-         span(aria-hidden="true") »
-footer.page-footer.light
+
   .container
     .row
       .col-sm-3
         h5 Get started
         ul
           li
-            a(href="#") Home
+            a(href="/index") Home
       .col-sm-3
         h5 About us
         ul
-          //- li
-          //-   a(href="#") Company Information
           li
-            a(href="#") Contact us
-      //- .col-sm-3
-      //-   h5 Support
-      //-   ul
-      //-     li
-      //-       a(href="#") FAQ
-      //- .col-sm-3
-      //-   h5 Legal
-      //-   ul
-      //-     li
-      //-       a(href="#") Terms of Service
-      //-     li
-      //-       a(href="#") Terms of Use
-      //-     li
-      //-       a(href="#") Privacy Policy
+            a(href="") Contact us
+
   .footer-copyright
     p © 2020 Copyright Ufarm
 script(src="javascripts/jquery.min.js")

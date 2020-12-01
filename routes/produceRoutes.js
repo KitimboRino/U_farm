@@ -5,7 +5,7 @@ const multer = require('multer');
 const path = require('path');
 
 // settings
-//Setting the image upload storage engine (mutler)
+//Setting the image upload storage engine.
 const storage = multer.diskStorage({
   destination: './public/uploads/',
   filename: (req, file, cb) => {
