@@ -144,7 +144,6 @@ function Validate() {
     return false;
   } else {
     fAct_error.innerHTML = '';
-    // return true;
   }
 
   // Date of registration

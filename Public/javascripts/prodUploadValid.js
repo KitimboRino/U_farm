@@ -32,16 +32,14 @@ pname.addEventListener('blur', pName_Verify, true);
 dateUpload.addEventListener('blur', DoU_Verify, true);
 phon.addEventListener('blur', phne_Verify, true);
 add.addEventListener('blur', addre_Verify, true);
-// mode.addEventListener('blur', modeD_Verify, true);
 Ward.addEventListener('blur', ward_Verify, true);
 uPrice.addEventListener('blur', uPrice_Verify, true);
 quant.addEventListener('blur', quant_Verify, true);
 prodType.addEventListener('blur', pType_Verify, true);
-// mPay.addEventListener('blur', mPay_Verify, true);
 img.addEventListener('blur', img_Verify, true);
 
 function Validate() {
-  // foNo validation
+  // UF ID validation
   if (foNo.value == '') {
     foNo.style.border = '1px solid red';
     Uid_error.textContent = 'Urban Farmer ID is required';
@@ -77,7 +75,7 @@ function Validate() {
   //address validation
   if (add.value == '') {
     add.style.border = '1px solid red';
-    addr_error.textContent = 'Username is required';
+    addr_error.textContent = 'Address is required';
     add.focus();
     return false;
   }

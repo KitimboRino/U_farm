@@ -139,9 +139,9 @@ function Validate() {
     return false;
   } else {
     resident_error.innerHTML = '';
-    // return false;
   }
 
+  // Ward
   if (UrbanWard.value == 'selectWard') {
     UrbanWard.style.border = '1px solid red';
     wad_error.textContent = 'Select Ward';
@@ -149,6 +149,7 @@ function Validate() {
     return false;
   }
 
+  // FO ID
   if (foNo.value == '') {
     foNo.style.border = '1px solid red';
     fo_ID.textContent = 'FO number is required';
@@ -167,7 +168,7 @@ function Validate() {
     return false;
   } else {
     fAct_error.innerHTML = '';
-    // return true;
+  
   }
 
   // Period of stay
