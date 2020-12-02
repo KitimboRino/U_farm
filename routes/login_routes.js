@@ -3,12 +3,12 @@ const router = express.Router();
 const passport = require('passport');
 const roles = require('../roles');
 
-// Gets displays a login page
-// get for rendering the login for FO
+// Login page
 router.get('/login', (req, res) => {
   res.render('login', { title: 'Login Form' });
 });
 
+// Farmer One List
 router.get('/fOneList', (req, res) => {
   res.render('farmerOneList', { title: 'Farmer One' });
 });

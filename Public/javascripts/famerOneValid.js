@@ -196,6 +196,7 @@ const phoneRegex = /^\d{10}$/; // for phone number
 const foRegex = /FO-[1-9]{1,}\d?/; //for FO number
 
 // Event Handlers
+// First name
 function fName_Verify() {
   if (fname.value != '' && fname.value.match(nameRegex)) {
     fname.style.border = '1px solid #98FB98';
@@ -209,6 +210,7 @@ function fName_Verify() {
   }
 }
 
+// last name
 function lName_Verify() {
   if (lname.value != '' && lname.value.match(nameRegex)) {
     lname.style.border = '1px solid #98FB98';
@@ -222,6 +224,7 @@ function lName_Verify() {
   }
 }
 
+// Username
 function Name_Verify() {
   if (Username.value != '' && Username.value.match(alphaNumeric)) {
     Username.style.border = '1px solid #98FB98';
@@ -235,6 +238,7 @@ function Name_Verify() {
   }
 }
 
+// Password
 function Pwd_Verify() {
   if (pass.value != '') {
     pass.style.border = '1px solid #98FB98';
@@ -255,6 +259,7 @@ function PwdConf_Verify() {
   }
 }
 
+// Gender
 function gder_Verify() {
   if (gender.value != '') {
     gender.style.border = '1px solid #98FB98';
@@ -265,6 +270,7 @@ function gder_Verify() {
   }
 }
 
+// Date of birth
 function Dob_Verify() {
   if (dateBirth.value != '') {
     dateBirth.style.border = '1px solid #98FB98';
@@ -275,6 +281,7 @@ function Dob_Verify() {
   }
 }
 
+// Nin
 function niN_Verify() {
   if (nin.value != '' && nin.value.match(ninRegex)) {
     nin.style.border = '1px solid #98FB98';
@@ -288,6 +295,7 @@ function niN_Verify() {
   }
 }
 
+// Phone number
 function phne_Verify() {
   if (phone.value != '' && phone.value.match(phoneRegex)) {
     phone.style.border = '1px solid #98FB98';
@@ -301,6 +309,7 @@ function phne_Verify() {
   }
 }
 
+// Adress
 function addres_Verify() {
   if (address.value != '') {
     address.style.border = '1px solid #98FB98';
@@ -309,6 +318,7 @@ function addres_Verify() {
   }
 }
 
+// Residence 
 function resid_Verify() {
   if (resident.value != '') {
     resident_error.innerHTML = '';
@@ -357,6 +367,7 @@ function Stay_Verify() {
   }
 }
 
+// Date of registration
 function dor_Verify() {
   if (dateReg.value != '') {
     dateReg.style.border = '1px solid #98FB98';
