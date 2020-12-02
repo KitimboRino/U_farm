@@ -59,7 +59,7 @@ passport.use(Users.createStrategy());
 passport.serializeUser(Users.serializeUser());
 passport.deserializeUser(Users.deserializeUser());
 
-// (Custom middleware )Using imported routes
+// Using imported routes (Custom middleware )
 app.use('/', farmerOne);
 app.use('/', urbanFarmer);
 app.use('/', produce);

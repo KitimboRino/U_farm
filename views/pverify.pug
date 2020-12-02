@@ -40,9 +40,9 @@ div
                         div.form-row
                             div.col-md-10
                                 p Product name: #{item.produceName}
-                            //- div.col-md-2
-                                //- form(method="post" action='/logout') 
-                                    //- button.btn.btn-dark.btn-block(type="submit") Log out
+                            div.col-md-2
+                                form(method="post" action='/logout') 
+                                    button.btn.btn-dark.btn-block(type="submit") Log out
                 form(method="post" enctype="multipart/form-data" action='/prodUpdate?id='+item._id)
                     table.table
                         thead.thead-dark
@@ -52,7 +52,7 @@ div
                                     //- input.form-control(value = item.status name ="status")
 
                                     select#uWard.form-control(value = item.status name ="status")
-                                        option(selected='' disabled='' value='select status') Ward
+                                        option(selected='' disabled='' value='select status') Status
                                         option(value='Pending') Pending
                                         option(value='Approved') Approved
                                         option(value='Declined') Declined

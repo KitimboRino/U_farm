@@ -10,7 +10,8 @@ const storage = multer.diskStorage({
   destination: './public/uploads/',
   filename: (req, file, cb) => {
     cb(
-      null,file.fieldname + '-' + Date.now() + path.extname(file.originalname)
+      null,
+      file.fieldname + '-' + Date.now() + path.extname(file.originalname)
     );
   },
 });
@@ -19,7 +20,6 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage,
 }).single('image');
-
 
 // Get Method
 router.get('/uProdUpload', (req, res) => {
@@ -43,7 +43,6 @@ router.post('/uProdUpload', upload, async (req, res) => {
 
 router.get('/pUploadList', async (req, res) => {
   // Added a check
-  // if (req.session.user) {
   try {
     let item = await uProduce.find();
     if (req.query.ward) {
@@ -52,26 +51,11 @@ router.get('/pUploadList', async (req, res) => {
     res.render('prodUploadList', {
       title: 'Urban Farmer List',
       items: item,
-      // currentUser: req.session.user,
     });
   } catch (err) {
     res.status(400).send('Unable to find items in the database');
   }
 });
-
-// router.post('/delete', async (req, res) => {
-//   if (req.session.user) {
-//     try {
-//       await uProduce.deleteOne({ _id: req.body.id });
-//       res.redirect('back');
-//     } catch (err) {
-//       res.status(400).send('Unable to delete item in the database');
-//     }
-//   } else {
-//     console.log('cant find session');
-//     res.redirect('/login');
-//   }
-// });
 
 // find the details of the user using the id that has benn passed through the parama
 router.get('/prodUpdate/:id', async (req, res) => {
@@ -101,16 +85,6 @@ router.post('/prodUpdate', upload, async (req, res) => {
     } else {
       await uProduce.findOneAndUpdate({ _id: req.query.id }, req.body);
     }
-    res.redirect('/pUploadList');
-  } catch (err) {
-    res.status(400).send('Sorry! Data posting failed');
-  }
-});
-
-// Delete produce
-router.post('/deleteProduce', async (req, res) => {
-  try {
-    await uProduce.deleteOne({ _id: req.body.id });
     res.redirect('/pUploadList');
   } catch (err) {
     res.status(400).send('Sorry! Data posting failed');
